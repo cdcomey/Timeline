@@ -1,0 +1,178 @@
+//default
+<tag>
+
+//states/colonies/territories
+Virginia
+Massachusetts
+Maryland
+Rhode Island
+Connecticut
+North Carolina
+South Carolina
+New York
+New Jersey
+New Hampshire
+Pennsylvania
+Delaware
+Georgia
+Vermont
+Kentucky
+Tennessee
+Ohio
+Louisiana
+Indiana
+Mississippi
+Illinois
+Alabama
+Maine
+Missouri
+Arkansas
+Michigan
+Florida
+Texas
+Iowa
+Wisconsin
+California
+Minnesota
+Oregon
+Kansas
+West Virginia
+Nevada
+Nebraska
+Colorado
+North Dakota
+South Dakota
+Montana
+Washington
+Idaho
+Wyoming
+Utah
+Oklahoma
+New Mexico
+Arizona
+Alaska
+Hawaii
+District of Columbia
+Island territories
+
+//people
+Christopher Columbus
+John Smith
+Pocahontas
+John Winthrop
+George Washington
+John Adams
+Thomas Jefferson
+James Madison
+Alexander Hamilton
+Benjamin Franklin
+Andrew Jackson
+Henry Clay
+John C. Calhoun
+Daniel Webster
+Stephen Douglas
+
+//institutions
+Internal House action
+Internal Senate action
+
+//foreign countries
+//north america and caribbean
+Canada
+Mexico
+Nicaragua
+Panama
+Haiti
+Dominican Republic
+Cuba
+
+//south america
+Brazil
+Argentina
+Chile
+Venezuela
+
+//europe
+England/Great Britain/United Kingdom
+France
+Germany
+Russia/USSR
+Spain
+Portugal
+Netherlands
+
+//asia
+China
+Japan
+Korea
+Vietnam
+Philippines
+Pakistan
+India
+
+//middle east
+Saudi Arabia
+Israel
+Syria
+Lebanon
+Iraq
+Iran
+Yemen
+
+//africa
+Chad
+Libya
+Somalia
+Sudan/South Sudan
+
+
+//wars
+Wars against American Indians
+Rebellion/Revolution
+King Philip's War
+French and Indian War
+Pontiac's War
+American Revolutionary War
+Northwest Indian War
+//Quasi-War?
+//First Barbary War?
+War of 1812
+Mexican War
+US Civil War
+Spanish-American War
+//Philippine-American War?
+World War I
+World War II
+Korean War
+Vietnam War
+//Gulf War?
+
+//periods
+Colonial Period
+Maryland-Pennsylvania-Delaware border dispute
+American Revolution
+Stamp Act Crisis
+Townshend Act Crisis
+
+//minorities/movements
+Slavery/Servitude
+Segregation/Civil Rights
+Feminism
+American Indians
+Asians
+Hispanics
+Labor unions/Farmers
+
+//religion
+Protestantism
+Catholicism
+Mormonism
+Judaism
+Islam
+
+//other
+Tax
+Tariff
+Firsts
+Holiday/National Observance
+Uncertain dates

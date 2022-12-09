@@ -1,0 +1,187 @@
+Title: Umayyad Caliphate
+Description: 
+isPeriod: true
+Date: 01/01/0661 - 01/01/0750
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Abbasid Caliphate
+Description: 
+isPeriod: true
+Date: 01/01/0750 - 01/01/0778
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Osman I
+Description: 
+isPeriod: true
+Date: 01/01/1299 - 01/01/1324
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Orhan
+Description: 
+isPeriod: true
+Date: 01/01/1324 - 01/01/1362
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Murad I
+Description: 
+isPeriod: true
+Date: 01/01/1362 - 01/01/1389
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Bayezid I
+Description: 
+isPeriod: true
+Date: 01/01/1389 - 01/01/1402
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Interregnum
+Description: 
+isPeriod: true
+Date: 07/20/1402 - 07/05/1413
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Timur dies
+Description: 
+isPeriod: false
+Date: 01/01/1405
+Color: 128/128/128
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: Sultan Murad II
+Description: 
+isPeriod: true
+Date: 01/01/1421 - 01/01/1451
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Mehmed II, "the Conqueror"
+Description: 
+isPeriod: true
+Date: 01/01/1451 - 01/01/1520
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Suleiman, "the Magnificent"
+Description: 
+isPeriod: true
+Date: 01/01/1520 - 01/01/1566
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Murad IV
+Description: 
+isPeriod: true
+Date: 01/01/1623 - 01/01/1640
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Control of Turhan
+Description: 
+isPeriod: true
+Date: 01/01/1648 - 01/01/1656
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sultan Mehmed IV
+Description: 
+isPeriod: true
+Date: 01/01/1648 - 01/01/1687
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Grand Vizier Mohammed Kuprili
+Description: 
+isPeriod: true
+Date: 01/01/1656 - 01/01/1661
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Grand Vizier Fazil Ahmed Kuprili
+Description: 
+isPeriod: true
+Date: 01/01/1661 - 01/01/1676
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Grand Vizier Kara Mustafa Pasha
+Description: 
+isPeriod: true
+Date: 01/01/1676 - 01/01/1683
+Color: 128/128/128
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+

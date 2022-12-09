@@ -1,0 +1,31 @@
+<category>;128;128;128;Gray
+Administration/Reign;0;255;0;Lime
+American Indians;255;216;177;Apricot
+Battle/Attack/Siege;75;0;130;Violet
+Census/Statistic;0;192;0;Light Green
+Conflict with under 1000 deaths;255;0;0;Red
+Conflict with over 1000 deaths;224;0;0;Dark Red
+Conflict with over 10,000 deaths;192;0;0;Darker Red
+Conflict with over 100,000 deaths;160;0;0;Even Darker Red
+Conflict with over 1 million deaths;128;0;0;Maroon
+Constitution/Charter;0;128;128;Teal
+Courts;139;69;19;Brown
+Economy;255;255;0;Yellow
+Election;0;255;255;Cyan
+Exploration;0;0;255;Blue
+General period;192;192;192;Light Gray
+Governing entity;255;250;200;Beige
+Holiday/National observance;128;0;255;Violet
+Ideology/Political Party;128;0;128;Purple
+Immigration/Migration;255;216;177;TBD
+Individual;0;0;0;Black
+Invention/Construction;128;128;0;Gold
+Legislation/Policy;0;128;0;Green
+Literature/Speech;255;255;255;White
+Military;255;0;128;Pink
+Natural Disaster;0;0;128;Dark Blue
+Organization/Company;255;128;128;TBD
+Protest/Riot;255;128;0;Orange
+Sport;255;0;255;Magenta
+Territory change;192;239;69;TBD
+Treaty/Foreign policy;0;128;255;Light Blue

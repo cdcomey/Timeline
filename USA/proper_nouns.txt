@@ -1,0 +1,123 @@
+Adams
+Andrew
+Nicolás
+Christopher
+Columbus
+Cortés
+Diego
+George
+Hernán
+Jackson
+James
+Jefferson
+John
+Madison
+Ovando
+Juan
+Ponce
+Velázquez
+Thomas
+Appalachian Mountains
+Appalachians
+Atlantic
+Atlantic Ocean
+Mississippi River
+Missouri River
+Ohio River
+Colorado River
+Columbia River
+Gulf of Mexico
+Tennessee River
+Pacific
+Pacific Ocean
+Spaniard
+Spaniards
+Spanish
+Spain
+America
+American
+Americans
+Britain
+British
+France
+French
+German
+Germans
+Great Britain
+Portugal
+Portuguese
+the UK
+the US
+Aztec
+Aztec Empire
+Inca
+Inca Empire
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
