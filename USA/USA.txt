@@ -331,7 +331,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                           
+Images: images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                               
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -495,7 +495,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.              
+Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                  
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -610,7 +610,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/universalis_cosmographia.jpg;Caption              
+Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/universalis_cosmographia.jpg;Caption                  
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -1047,7 +1047,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/munster_map.JPG;Caption              
+Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/munster_map.JPG;Caption                  
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -8545,6 +8545,17 @@ Tags: American Revolution
 Images: none
 end
 
+Title: James Cook lands in Hawaii
+Description: James Cook was a British explorer famous for being the first European to explore much of the Pacific. In 1776, he took two ships, the Resolution and the Discovery, and took to the ocean for the third time. After spending two years in islands he discovered on his previous voyages, like New Zealand and Tahiti, on January 18, 1778, he landed in an archipelago unbeknownst to any European.
+isPeriod: true
+Date: 01/18/1778 - 02/02/1778
+Color: 0/0/255
+Category: Exploration
+Alignment: null
+Tags: Hawaii
+Images: none
+end
+
 Title: <b>French Treaty of Alliance, and of Amity and Commerce</b>
 Description: An alliance between France and the US, with the former agreeing to assist the latter in their fight for independence from Great Britain. France was originally neutral in the conflict. On the one hand, they still resented the British for their recent defeat in the Seven Years' War, and were eager to enact their revenge. However, that same war left them broke, leaving them cautious to engage in another war with the country that they were not sure they could win. The Battle of Saratoga in 1777 tipped the scales in the US' favor, proving to the French that the fledgling nation had a chance at winning. Negotiations were opened between the two countries, with the US using their Model Treaty to draft an agreement. The nations signed two treaties in tandem: the Treaty of Alliance, in which they agreed to defend each other from British aggression, and the Treaty of Amity and Commerce, which was a commercial alliance. The French provided much-needed support to the Americas, helping them to win the War of Independence. It was ratified by the US on May 4, and by France on July 16.
 isPeriod: false
@@ -12318,6 +12329,17 @@ Tags: none
 Images: none
 end
 
+Title: First travel through the Continental Divide's South Pass
+Description: The Continental Divide is a great mountain range that extends from the northern tip of Alaska to the Strait of Magellan in South America. The main part of the divide in the US is the Rocky Mountains in the West, running from northern New Mexico, through Colorado, Wyoming, Montana, and terminating in Canada. The South Pass is a 35-mile wide pass in the mountain range in modern-day southern Wyoming. Indians native to the area had known about it for a long time, but the first non-Indians did not cross it until 1812. That year, seven men from the Pacific Fur Company, founded in 1810 to collect furs in the Pacific Northwest to sell, learned of a shorter way through the mountains from a Shoshone, allowing them to avoid attacks from hostile Crows. This path would later be used by over half a million American emigrants traveling to the West as part of one of the main migration trails.
+isPeriod: false
+Date: 10/22/1812
+Color: 0/0/255
+Category: Exploration
+Alignment: Centered
+Tags: Wyoming
+Images: none
+end
+
 Title: Election of 1812
 Description: An election in which incumbent Democratic-Republican James Madison was re-elected, defeating Federalist DeWitt Clinton. Northern Republicans wanted someone other than a Virginian to be their nominee, so they rallied first behind Vice President George Clinton, then his nephew DeWitt. The schism grew when the New York caucus nearly unanimously voted for Clinton for nominee, as it was filled with Republicans opposed to the new War of 1812 started by Madison. Nevertheless, Madison was elected the nominee, though not by the landslide expected from incumbents. The Federalists originally planned on running John Marshall, but with so much support for Clinton in New York they could not count on a victory there, which could result in a 3-way tie. This would put the election in the hands of the Republican-controlled House of Representatives, who would surely vote in Madison. Eventually, Clinton was voted in as nominee, though there was much bitter debate and disagreement from various states, such as Virginia, who voted for Rufus King in the primaries instead. Less emphasis was put on the campaigns in this election, with the war taking the spotlight. Madison swept the South, while Clinton took New England (except for Vermont). The election came down to New York and Pennsylvania, both of which Clinton needed to win. He won in his home state of New York, but lost Pennsylvania and the presidency to Madison.
 
@@ -12345,6 +12367,17 @@ Date: 01/01/1813 - 08/01/1814
 Color: 255/0/0
 Category: Conflict with under 1000 deaths
 Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Francis Cabot Lowell founds the Boston Manufacturing Company
+Description: Lowell mills
+isPeriod: false
+Date: 01/01/1813
+Color: 255/128/128
+Category: Organization/Company
+Alignment: Centered
 Tags: none
 Images: none
 end
@@ -14423,12 +14456,12 @@ Tags: none
 Images: none
 end
 
-Title: Manifest Destiny
+Title: John O'Sullivan coins the term "manifest destiny"
 Description: The first mention of manifest destiny, the widely-held American belief that the country was destined to spread their "empire of liberty" from one side of the continent to the other. The phrase was mentioned in John O'Sullivan's newspaper "The New York Morning News." This ideology was accepted by many an American and served as a primary reason for westward expansion.
 isPeriod: false
 Date: 12/27/1845
-Color: 0/0/0
-Category: null
+Color: 128/128/128
+Category: <category>
 Alignment: Centered
 Tags: none
 Images: none
@@ -15256,7 +15289,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: images/maps/elections/1860_Electoral_Map.png;test              
+Images: images/maps/elections/1860_Electoral_Map.png;test                  
 end
 
 Title: Crittenden Compromise
