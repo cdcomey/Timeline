@@ -392,9 +392,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				} else {
 					selectedEvent.getImages().get(imageIndex).drawFromFile(g, 
 						prevImageButtonX1 + prevImageButton.getWidth()/2, 
-						prevImageButtonY1 + prevImageButton.getHeight() + 5, 
+						prevImageButtonY1 + prevImageButton.getHeight() + 5 + (screenHeight*2/3 * 1/2), 
 						screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
-						screenHeight*2/3, true, false);
+						screenHeight*2/3, true, true);
 					g.setColor(Color.white);
 					g.drawRect(
 						descriptionPaneX1 + descriptionPaneW1 + 5,

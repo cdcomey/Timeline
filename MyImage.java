@@ -53,8 +53,8 @@ public class MyImage{
 				width = (int)((double)(maxHeight)/height * width);
 				height = maxHeight;
 			} else if (width > maxWidth && height > maxHeight){
-				// System.out.println("case 3a");
 				if (height - maxHeight >= width - maxWidth){
+					// System.out.println("case 3a");
 					width = (int)((double)(maxHeight)/height * width);
 					height = maxHeight;
 				} else {
@@ -63,11 +63,13 @@ public class MyImage{
 					width = maxWidth;
 				}
 			}
-			
+			// print(y + " - " + (height/2));
+			// print("" + yCentered);
 			if (xCentered)
 				x -= width/2;
 			if (yCentered)
 				y -= height/2;
+			// print("y after: " + y);
 			g.drawImage(img, x, y, width, height, null);
         } catch (IOException e) {
 			System.err.println("IOException in MyImage.drawFromFile()\n" + e);
