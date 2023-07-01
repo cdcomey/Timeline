@@ -31,7 +31,9 @@ public class MyImage{
 	
 	public void drawFromFile(Graphics g, int x, int y, int maxWidth, int maxHeight, boolean xCentered, boolean yCentered){
 		BufferedImage img = null;
+		print("image name = " + imageName);
         try {
+
 			File file = new File(imageName);
             img = ImageIO.read(file);
 			
@@ -101,5 +103,9 @@ public class MyImage{
         } catch (IOException e) {
 			System.err.println("IOException in MyImage.drawFromURL()\n" + e);
 		}
+	}
+
+	private static void print(String s){
+		System.out.println(s);
 	}
 }

@@ -14,7 +14,7 @@ public class Event implements Comparable<Event>{
 	private boolean isPeriod, present;
 	private Date date, date2;
 	private static Date today;
-	private static String cap_list_path;
+	private static String dir;
 	private Color color;
 	private String hex;
 	private String category, alignment;
@@ -357,7 +357,7 @@ public class Event implements Comparable<Event>{
 	private String capitalize(String s){
 		String path = "";
 		try{
-			path = cap_list_path + "/proper_nouns.txt";
+			path = dir + "/proper_nouns.txt";
 			File dictionary = new File(path);
 			Scanner sc = new Scanner(dictionary);
 			while (sc.hasNextLine()){
@@ -379,7 +379,7 @@ public class Event implements Comparable<Event>{
 	}
 	
 	public void addImage(String imageName, String caption){
-		images.add(new MyImage(imageName, caption));
+		images.add(new MyImage(dir + "/" + imageName, caption));
 	}
 	
 	public void deleteImage(int index){
@@ -387,16 +387,16 @@ public class Event implements Comparable<Event>{
 	}
 	
 	public void setImage(int index, String imageName, String caption){
-		images.set(index, new MyImage(imageName, caption));
+		images.set(index, new MyImage(dir + "/" + imageName, caption));
 	}
 
-	// sets the path for the capitalization list
+	// sets the path for the directory
 	// this should only be run once
 	public static void setCapListPath(String path){
-		if (path == null || cap_list_path != null){
+		if (path == null || dir != null){
 			return;
 		}
 
-		cap_list_path = path;
+		dir = path;
 	}
 }
