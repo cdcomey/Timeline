@@ -34,7 +34,6 @@ import java.util.TreeSet;
 
 public class Screen extends JPanel implements ActionListener, KeyListener, MouseListener{
 	
-	//instance variables
 	private final int screenWidth = 1920;
 	private final int screenHeight = 960;
 	
@@ -84,6 +83,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		eventTree = new TreeSet<Event>();
 		this.timelineType = timelineType;
+		Event.setCapListPath(timelineType);
 		readFromFile(timelineType);
 		
 		titleField = new JTextField("Event Title");

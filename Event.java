@@ -14,6 +14,7 @@ public class Event implements Comparable<Event>{
 	private boolean isPeriod, present;
 	private Date date, date2;
 	private static Date today;
+	private static String cap_list_path;
 	private Color color;
 	private String hex;
 	private String category, alignment;
@@ -354,8 +355,10 @@ public class Event implements Comparable<Event>{
 	}
 	
 	private String capitalize(String s){
+		String path = "";
 		try{
-			File dictionary = new File("proper_nouns.txt");
+			path = cap_list_path + "/proper_nouns.txt";
+			File dictionary = new File(path);
 			Scanner sc = new Scanner(dictionary);
 			while (sc.hasNextLine()){
 				String properNoun = sc.nextLine();
@@ -369,7 +372,7 @@ public class Event implements Comparable<Event>{
 				s = s.replaceAll(stringToReplace, properNoun);
 			}
 		} catch (FileNotFoundException ex){
-			System.err.println("FileNotFoundException in Event.capitalize()");
+			System.err.println("FileNotFoundException in Event.capitalize(): could not find " + path);
 		}
 			
 		return s;
@@ -385,5 +388,15 @@ public class Event implements Comparable<Event>{
 	
 	public void setImage(int index, String imageName, String caption){
 		images.set(index, new MyImage(imageName, caption));
+	}
+
+	// sets the path for the capitalization list
+	// this should only be run once
+	public static void setCapListPath(String path){
+		if (path == null || cap_list_path != null){
+			return;
+		}
+
+		cap_list_path = path;
 	}
 }
