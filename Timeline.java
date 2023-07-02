@@ -29,25 +29,25 @@ public class Timeline{
 	private int currentYear, currentYearLength;
 	private Date leftDate, rightDate;
 	
-	private Iterator<Event> it;
+	private Iterator<GenericEvent> it;
 	private DLList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
 	
 	public Timeline(int screenWidth, int screenHeight){
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
 		
-		centerYear = 1492;							// the initial year at the center of the screen, can (and likely will) be changed by the user
-		zoomLevel = 4;									// determines how many years are shown on-screen at one time, can be changed by the user
-		lineCenter = screenHeight*1/2;			// y-coordinate of the top-left corner of the center line
-		lineLength = 25;								// used for determining dimensions of the triangles on the ends of the line
-		notchWidth = 3;								// how wide each notch is
-		notchHeight = 10;								// how tall each notch is
+		centerYear = 1776;	// the initial year at the center of the screen, can (and likely will) be changed by the user
+		zoomLevel = 4;	// determines how many years are shown on-screen at one time, can be changed by the user
+		lineCenter = screenHeight*1/2;	// y-coordinate of the top-left corner of the center line
+		lineLength = 25;	// used for determining dimensions of the triangles on the ends of the line
+		notchWidth = 3;	// how wide each notch is
+		notchHeight = 10;	// how tall each notch is
 		
 		//determine the coordinates of the left arrow to be drawn on the timeline
-		T1xCoords = new int[3];																// being a triangle, it of course has three sides
-		T1xCoords[0] = 0;																		// one point will always be on the very left side of the screen
-		T1xCoords[1] = screenWidth / (int)(lineLength * Math.sqrt(2));		// the next is a certain distance away, so that the triangle is equilateral
-		T1xCoords[2] = T1xCoords[1];														// the last will be just below the second
+		T1xCoords = new int[3];	// being a triangle, it of course has three sides
+		T1xCoords[0] = 0;	// one point will always be on the very left side of the screen
+		T1xCoords[1] = screenWidth / (int)(lineLength * Math.sqrt(2));	// the next is a certain distance away, so that the triangle is equilateral
+		T1xCoords[2] = T1xCoords[1];	// the last will be just below the second
 		
 		// the triangles and lines may be shifted up and down by the user, so the height is not static and so should 
 		T1yCoords = new int[3];
@@ -91,11 +91,11 @@ public class Timeline{
 			// System.out.println("i: " + i);
 			currentYearLength = Date.isLeapYear(currentYear) ? 366 : 365;	// we will need this to position events on the timeline later
 			String yearString = Date.yearString(currentYear, modernDating);
-			g.setFont(Event.boldFont());
+			g.setFont(GenericEvent.boldFont());
 			g.drawString(yearString, notchX - g.getFontMetrics().stringWidth(yearString) / 2, notchY - g.getFontMetrics().getHeight());
 	}
 	
-	private void findPeriodCoords(Graphics g, TreeSet<Event> eventSet, String[] tags, byte taggedEventsVisibility){
+	private void findPeriodCoords(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility){
 		it = eventSet.iterator();
 		
 		leftDate = new Date(1, 1, centerYear - (numberOfNotches / 2));		// the leftmost visible date on the timeline
@@ -106,12 +106,13 @@ public class Timeline{
 		int periodHeight = 30;	
 		
 		while (it.hasNext()){	// the condition doesn't really matter, we will be exiting with break statements
-			Event currentPeriod = it.next();
-			if (!currentPeriod.getIsPeriod()) // we are only concerned with periods right now, so we ignore non-periods
+			GenericEvent ge = it.next();
+			if (!(ge instanceof Period)) // we are only concerned with periods right now, so we ignore non-periods
 				continue;
+			Period currentPeriod = (Period)ge;
 			
 			Date periodDate = currentPeriod.getDate();	// the date on which the period starts
-			Date periodDate2 = currentPeriod.isPresent() ? Event.today() : currentPeriod.getDate2();	// the date on which the period ends
+			Date periodDate2 = currentPeriod.isPresent() ? GenericEvent.today() : currentPeriod.getDate2();	// the date on which the period ends
 			
 			// if the start date is after the rightmost visible date, then it should not be visible on the timeline, so we skip it
 			if (periodDate.compareTo(rightDate) > 0)
@@ -246,7 +247,7 @@ public class Timeline{
 		}
 	}
 	
-	private void findEventCoords(Graphics g, TreeSet<Event> eventSet, String[] tags, byte taggedEventsVisibility){
+	private void findEventCoords(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility){
 		it = eventSet.iterator();
 		int eventX1 = -1;
 		int eventX2 = -1;
@@ -254,15 +255,17 @@ public class Timeline{
 		int eventHeight = 30;
 		int lineX = -1;
 		
-		if (Event.today().getYear() == currentYear){
-			eventX1 = (int)((currentYear - leftDate.getYear())*(space+notchWidth) + T1xCoords[2] + Event.today().getDayOfYear() * ((space+notchWidth) / (double)currentYearLength));
+		if (GenericEvent.today().getYear() == currentYear){
+			eventX1 = (int)((currentYear - leftDate.getYear())*(space+notchWidth) + T1xCoords[2] + GenericEvent.today().getDayOfYear() * ((space+notchWidth) / (double)currentYearLength));
 			drawnLineCoordinates.add(new Rectangle(eventX1, 0, notchWidth, screenHeight, timelineColor));
 		}
 		
 		while (it.hasNext()){
-			Event currentEvent = it.next();
-			if (currentEvent == null || currentEvent.getIsPeriod())
+			GenericEvent ge = it.next();
+			if (ge == null || ge instanceof Period)
 				continue;
+
+			Event currentEvent = (Event)ge;
 			
 			boolean skipEvent = false;
 				
@@ -371,7 +374,7 @@ public class Timeline{
 		}	
 	}
 	
-	public void drawTimeline(Graphics g, TreeSet<Event> eventSet, String[] tags, byte taggedEventsVisibility, boolean modernDating, boolean darkMode){
+	public void drawTimeline(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility, boolean modernDating, boolean darkMode){
 		timelineColor = darkMode ? Color.white : Color.black;
 		
 		drawBasicLine(g);

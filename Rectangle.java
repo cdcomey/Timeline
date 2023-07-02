@@ -5,7 +5,7 @@ public class Rectangle{
 	
 	private final int x, x2, width, height;
 	private int y, y2;
-	private final Event event;
+	private final GenericEvent event;
 	private final boolean detached;
 	private final Color color;
 	
@@ -28,7 +28,7 @@ public class Rectangle{
 		y2 = y + height;
 	}
 	
-	public Rectangle(int x, int y, int width, int height, Event event, boolean detached, Color color){
+	public Rectangle(int x, int y, int width, int height, GenericEvent event, boolean detached, Color color){
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -46,7 +46,7 @@ public class Rectangle{
 	public int getY2(){ return y2; }
 	public int getWidth(){ return width; }
 	public int getHeight(){ return height; }
-	public Event getEvent(){ return event; }
+	public GenericEvent getEvent(){ return event; }
 	public boolean isDetached(){ return detached; }
 	public Color getColor(){ return color; }
 	

@@ -53,8 +53,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private FileNameExtensionFilter filter;
 	
 	private Timeline timeline;
-	private Event selectedEvent;
-	private TreeSet<Event> eventTree;
+	private GenericEvent selectedEvent;
+	private TreeSet<GenericEvent> eventTree;
 	private boolean editMode, modernDating, controlKeyDown, shiftKeyDown, showTagHider, darkMode;
 	private byte taggedEventsVisibility; // -1 is hide tagged events, 0 is show all, 1 is show only tagged events
 	private String[] tagList;
@@ -81,9 +81,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		addKeyListener(this);
 		addMouseListener(this);
 		
-		eventTree = new TreeSet<Event>();
+		eventTree = new TreeSet<GenericEvent>();
 		this.timelineType = timelineType;
-		Event.setCapListPath(timelineType);
+		GenericEvent.setCapListPath(timelineType);
 		readFromFile(timelineType);
 		
 		titleField = new JTextField("Event Title");
@@ -423,15 +423,15 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		if (e.getSource() == saveChangesButton){
 			saveChanges();
 		} else if (e.getSource() == addNewEventButton){
-			Event event = new Event(false);
+			Event event = new Event();
 			eventTree.add(event);
 			selectedEvent = event;
 			updateComponentVisibility(false);
 			initializeFieldText();
 		} else if (e.getSource() == addNewPeriodButton){
-			Event event = new Event(true);
-			eventTree.add(event);
-			selectedEvent = event;
+			Period period = new Period();
+			eventTree.add(period);
+			selectedEvent = period;
 			updateComponentVisibility(true);
 			initializeFieldText();
 		} else if (e.getSource() == removeEventButton){
@@ -484,10 +484,10 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			}
 		} else if (e.getSource() == prevImageButton){
 			imageIndex = (byte)Math.max(0, imageIndex-1);
-			updateComponentVisibility(selectedEvent.getIsPeriod());
+			updateComponentVisibility(selectedEvent instanceof Period);
 		} else if (e.getSource() == nextImageButton){
 			imageIndex = (byte)Math.min(imageIndex+1, selectedEvent.getImages().size() - 1);
-			updateComponentVisibility(selectedEvent.getIsPeriod());
+			updateComponentVisibility(selectedEvent instanceof Period);
 		} else if (e.getSource() == findImageButton){
 			int result = chooser.showOpenDialog(null);
 			if (result == chooser.APPROVE_OPTION){
@@ -511,7 +511,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void saveChanges(){
-		Event event = new Event(selectedEvent.getIsPeriod());
+		GenericEvent event = new GenericEvent();
 		boolean allChecksPassed = false;
 		try{
 			// title and description
@@ -561,7 +561,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				
 				if (red == selectedEvent.getColor().getRed() && green == selectedEvent.getColor().getGreen() && blue == selectedEvent.getColor().getBlue() 
 					|| red < 0 || green < 0 || blue < 0 || red > 255 || green > 255 || blue > 255){
-					int[] rgbColors = Event.HextoRGB(hexField.getText());
+					int[] rgbColors = GenericEvent.HextoRGB(hexField.getText());
 					red = rgbColors[0];
 					green = rgbColors[1];
 					blue = rgbColors[2];
@@ -576,10 +576,10 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					tags.add(tagArr[i]);
 			}
 			
-			if (selectedEvent.getIsPeriod() && presentCheckBox.isSelected()){
-				event = new Event(title, description, month, day, year, true, red, green, blue, category.toString(), tags, selectedEvent.getImages());
+			if (selectedEvent instanceof Period && presentCheckBox.isSelected()){
+				event = new Period(title, description, month, day, year, true, red, green, blue, category.toString(), tags, selectedEvent.getImages());
 				allChecksPassed = true;
-			} else if (selectedEvent.getIsPeriod() && !presentCheckBox.isSelected()){
+			} else if (selectedEvent instanceof Period && !presentCheckBox.isSelected()){
 				String month2String = month2Field.getText();
 				int month2 = 0;
 				if ("1234567890".contains("" + month2String.charAt(0)))
@@ -606,7 +606,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				if (year == year2 && month == month2 && day == day2)
 					throw new IndexOutOfBoundsException("date1 is the same as date2");
 				
-				event = new Event(title, description, month, day, year, month2, day2, year2, red, green, blue, category.getTitle(), tags, selectedEvent.getImages());
+				event = new Period(title, description, month, day, year, month2, day2, year2, red, green, blue, category.getTitle(), tags, selectedEvent.getImages());
 				allChecksPassed = true;
 			} else {
 				String alignment = eventAlignmentComboBox.getSelectedItem().toString();
@@ -624,7 +624,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			eventTree.remove(selectedEvent);
 			eventTree.add(event);
 			selectedEvent = null;
-			updateComponentVisibility(event.getIsPeriod());
+			updateComponentVisibility(event instanceof Period);
 			writeToFile();
 		}
 	}
@@ -633,7 +633,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		/* try {
 			FileInputStream fis = new FileInputStream("events.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			eventTree = (TreeSet<Event>)(in.readObject());
+			eventTree = (TreeSet<GenericEvent>)(in.readObject());
 			in.close();
 		} catch (Exception ex){
 			System.err.println(ex);
@@ -648,7 +648,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
             //read all bytes from buffered input stream and create string out of it
             String s = new String(bis.readAllBytes());
 			String[] eventArr = s.split("\nend\n\n");
-			eventTree = new TreeSet<Event>();
+			eventTree = new TreeSet<GenericEvent>();
 			
 			for (int i = 0; i < eventArr.length; i++){
 				eventString = eventArr[i];
@@ -662,7 +662,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				int day = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
 				eventString = eventString.substring(eventString.indexOf("/") + 1);
 				
-				Event event;
+				GenericEvent event;
 				if (isPeriod){
 					int year = Integer.parseInt(eventString.substring(0, eventString.indexOf(" - ")));
 					eventString = eventString.substring(eventString.indexOf(" - ") + 3);
@@ -702,7 +702,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					}
 					
 					if (date2String.equals("present")){
-						event = new Event(title, description, month, day, year, true, red, green, blue, category, tagList, imgList);
+						event = new Period(title, description, month, day, year, true, red, green, blue, category, tagList, imgList);
 					} else {
 						int month2 = Integer.parseInt(date2String.substring(0, date2String.indexOf("/")));
 						date2String = date2String.substring(date2String.indexOf("/") + 1);
@@ -710,7 +710,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						date2String = date2String.substring(date2String.indexOf("/") + 1);
 						int year2 = Integer.parseInt(date2String);
 						
-						event = new Event(title, description, month, day, year, month2, day2, year2, red, green, blue, category, tagList, imgList);
+						event = new Period(title, description, month, day, year, month2, day2, year2, red, green, blue, category, tagList, imgList);
 					}
 				} else {
 					int year = Integer.parseInt(eventString.substring(0, eventString.indexOf("\nColor: ")));
@@ -764,7 +764,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	
 	private void readFromTimelineFile(){
 		try{
-			eventTree = new TreeSet<Event>();
+			eventTree = new TreeSet<GenericEvent>();
 			File file = new File("US History Timeline.txt");
 			FileReader reader = new FileReader(file);
 			char[] text = new char[473453];
@@ -834,9 +834,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				int year2, month2, day2;
 				
 				if (timeStr2.equals("@")){
-					year2 = Event.today().getYear();
-					month2 = Event.today().getMonth();
-					day2 = Event.today().getDay();
+					year2 = GenericEvent.today().getYear();
+					month2 = GenericEvent.today().getMonth();
+					day2 = GenericEvent.today().getDay();
 				} else {
 				
 					year2 = Integer.parseInt(timeStr2.substring(0, timeStr2.indexOf(' ')));
@@ -857,7 +857,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						day2 = Integer.parseInt(timeStr2.substring(0, timeStr2.indexOf(' ')));
 				}
 				
-				eventTree.add(new Event(title, description, month, day, year, month2, day2, year2, 128, 128, 128, "null", null, null));
+				eventTree.add(new Period(title, description, month, day, year, month2, day2, year2, 128, 128, 128, "null", null, null));
 			}
 			
 			reader.close();
@@ -870,7 +870,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private void writeToFile(){
 		File file = new File(timelineType + "/" + timelineType + ".txt");
 		String s = "";
-		for (Event e : eventTree){
+		for (GenericEvent e : eventTree){
 			s += e.toStringVerbose() + "\nend\n\n";
 		}
 		
@@ -941,7 +941,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		} else if (e.getKeyCode() == 112){ //F1
 			editMode = !editMode;
 			showTagHider = false;
-			updateComponentVisibility(selectedEvent == null ? true : selectedEvent.getIsPeriod());
+			updateComponentVisibility(selectedEvent == null ? true : selectedEvent instanceof Period);
 		} else if (e.getKeyCode() == 113){ //F2
 			modernDating = !modernDating;
 			BCCheckBox.setText(modernDating ? "BCE" : "BC");
@@ -1010,7 +1010,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			selectedEvent = null;
 		}
 		
-		updateComponentVisibility(selectedEvent == null ? true : selectedEvent.getIsPeriod());
+		updateComponentVisibility(selectedEvent == null ? true : selectedEvent instanceof Period);
 		repaint();
 	}
 	
@@ -1061,7 +1061,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		} else if (!editMode && selectedEvent != null){
 			descriptionTextArea.setEditable(false);
 			descriptionTextArea.setFont(new Font("Helvetica", Font.PLAIN, 30));
-			descriptionTextArea.setText(selectedEvent.toString(Event.today().getYear(), modernDating));
+			descriptionTextArea.setText(selectedEvent.toString(GenericEvent.today().getYear(), modernDating));
 			descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
 			prevImageButton.setVisible(imageIndex > 0);
 			nextImageButton.setVisible(imageIndex < selectedEvent.getImages().size() - 1);
@@ -1134,44 +1134,45 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			dayField.setText(Integer.toString(selectedEvent.getDay()));
 			BCCheckBox.setSelected(selectedEvent.getYear() < 0);
 			
-			if (selectedEvent.getIsPeriod()){
-				month2Field.setText(Integer.toString(selectedEvent.getMonth2()));
-				day2Field.setText(Integer.toString(selectedEvent.getDay2()));
-				BCCheckBox2.setSelected(selectedEvent.getYear2() < 0);
+			if (selectedEvent instanceof Period){
+				Period p = (Period)selectedEvent;
+				month2Field.setText(Integer.toString(p.getMonth2()));
+				day2Field.setText(Integer.toString(p.getDay2()));
+				BCCheckBox2.setSelected(p.getYear2() < 0);
 				
-				if (selectedEvent.getYear2() <= 0)
-					year2Field.setText(Integer.toString(-selectedEvent.getYear2()+1));
+				if (p.getYear2() <= 0)
+					year2Field.setText(Integer.toString(-p.getYear2()+1));
 				else
-					year2Field.setText(Integer.toString(selectedEvent.getYear2()));
+					year2Field.setText(Integer.toString(p.getYear2()));
 			}
 		}
 		
 		presentFieldHandler();
 		
-		if (selectedEvent.getIsPeriod()){
-			eventAlignmentComboBox.setSelectedItem(selectedEvent.getAlignment());
-			eventAlignmentComboBox.setSelectedIndex(1);
+		if (!(selectedEvent instanceof Period)){
+			Event e = (Event)selectedEvent;
+			eventAlignmentComboBox.setSelectedItem(e.getAlignment());
 		}
 	}
 	
 	private void presentFieldHandler(){
 		if (presentCheckBox.isSelected()){
-			if (selectedEvent.getIsPeriod()){
+			if (selectedEvent instanceof Period){
 				month2Field.setEditable(false);
-				month2Field.setText(Event.today().getMonth() + "");
+				month2Field.setText(GenericEvent.today().getMonth() + "");
 				day2Field.setEditable(false);
-				day2Field.setText(Event.today().getDay() + "");
+				day2Field.setText(GenericEvent.today().getDay() + "");
 				year2Field.setEditable(false);
-				year2Field.setText(Event.today().getYear() + "");
+				year2Field.setText(GenericEvent.today().getYear() + "");
 				BCCheckBox2.setEnabled(false);
 				BCCheckBox2.setSelected(false);
 			} else {
 				monthField.setEditable(false);
-				monthField.setText(Event.today().getMonth() + "");
+				monthField.setText(GenericEvent.today().getMonth() + "");
 				dayField.setEditable(false);
-				dayField.setText(Event.today().getDay() + "");
+				dayField.setText(GenericEvent.today().getDay() + "");
 				yearField.setEditable(false);
-				yearField.setText(Event.today().getYear() + "");
+				yearField.setText(GenericEvent.today().getYear() + "");
 				BCCheckBox.setEnabled(false);
 				BCCheckBox.setSelected(false);
 			}
@@ -1180,7 +1181,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			dayField.setEditable(true);
 			yearField.setEditable(true);
 			BCCheckBox.setEnabled(true);
-			if (selectedEvent.getIsPeriod()){
+			if (selectedEvent instanceof Period){
 				month2Field.setEditable(true);
 				day2Field.setEditable(true);
 				year2Field.setEditable(true);
