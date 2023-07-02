@@ -1,12 +1,5 @@
-import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.Font;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-import java.util.Calendar;
+import java.util.ArrayList;
 
 public class Event extends GenericEvent{
 	
@@ -21,12 +14,12 @@ public class Event extends GenericEvent{
 		color = new Color(128, 128, 128);
 		hex = RGBtoHex(color.getRed(), color.getGreen(), color.getBlue());
 		category = "<category>";
-		tags = new DLList<String>();
-		images = new DLList<MyImage>();
+		tags = new ArrayList<String>();
+		images = new ArrayList<MyImage>();
 	}
 	
 	//standard event with separate dates and a defined color
-	public Event(String title, String description, int month, int day, int year, int red, int green, int blue, String category, String alignment, DLList<String> tags, DLList<MyImage> images){
+	public Event(String title, String description, int month, int day, int year, int red, int green, int blue, String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images){
 		this.title = title;
 		this.description = capitalize(description);
 		date = new Date(month, day, year);
@@ -35,10 +28,10 @@ public class Event extends GenericEvent{
 		this.category = category;
 		this.alignment = alignment;
 		// this.tags = setTags(tags);
-		this.tags = new DLList<String>();
+		this.tags = new ArrayList<String>();
 		for (int i = 0; i < tags.size(); i++)
 			this.tags.add(tags.get(i));
-		this.images = new DLList<MyImage>();
+		this.images = new ArrayList<MyImage>();
 		for (int i = 0; i < images.size(); i++)
 			this.images.add(images.get(i));
 	}

@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import java.util.TreeSet;
 import java.util.Iterator;
+import java.util.ArrayList;
 
 /*
 TIMELINE STRUCTURE
@@ -30,7 +31,7 @@ public class Timeline{
 	private Date leftDate, rightDate;
 	
 	private Iterator<GenericEvent> it;
-	private DLList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
+	private ArrayList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
 	
 	public Timeline(int screenWidth, int screenHeight){
 		this.screenWidth = screenWidth;
@@ -379,7 +380,7 @@ public class Timeline{
 		
 		drawBasicLine(g);
 		
-		drawnEventCoordinates = new DLList<Rectangle>();
+		drawnEventCoordinates = new ArrayList<Rectangle>();
 		
 		// notch position is based on the one at the center of the timeline, out of the ones currently on screen
 		notchPosition = numberOfNotches / -2;
@@ -387,8 +388,8 @@ public class Timeline{
 		for (int i = 0; i < numberOfNotches; i++, notchPosition++){
 			drawNotchAndYear(g, i, modernDating);
 			
-			drawnPeriodCoordinates = new DLList<Rectangle>();
-			drawnLineCoordinates = new DLList<Rectangle>();
+			drawnPeriodCoordinates = new ArrayList<Rectangle>();
+			drawnLineCoordinates = new ArrayList<Rectangle>();
 			
 			//periods
 			findPeriodCoords(g, eventSet, tags, taggedEventsVisibility);
@@ -427,8 +428,8 @@ public class Timeline{
 	}
 	
 	public int getCenterYear(){ return centerYear; }
-	public DLList<Rectangle> getDrawnEventCoordinates(){ return drawnEventCoordinates; }
-	public DLList<Rectangle> getDrawnPeriodCoordinates(){ return drawnPeriodCoordinates; }
+	public ArrayList<Rectangle> getDrawnEventCoordinates(){ return drawnEventCoordinates; }
+	public ArrayList<Rectangle> getDrawnPeriodCoordinates(){ return drawnPeriodCoordinates; }
 	public void setCenterYear(int c){ centerYear = c; }
 	
 	public void zoomOut(){

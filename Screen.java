@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 
 import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class Screen extends JPanel implements ActionListener, KeyListener, MouseListener{
 	
@@ -169,7 +170,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		hexField.setBounds((redField.getX() + blueField.getX() + blueField.getWidth() - 70)/2, redField.getY() + redField.getHeight() + 20, 70, fieldHeight);
 		add(hexField);
 		
-		DLList<Tag> categoriesList = new DLList<Tag>();
+		ArrayList<Tag> categoriesList = new ArrayList<Tag>();
 		try{
 			File file = new File(timelineType + "/categories.txt");
 			FileReader reader = new FileReader(file);
@@ -220,7 +221,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		tagPane.setBounds(redField.getX() - 10, eventAlignmentComboBox.getY() + eventAlignmentComboBox.getHeight() + 100, 500, 100);
 		add(tagPane);
 		
-		DLList<String> tagStrings = new DLList<String>();
+		ArrayList<String> tagStrings = new ArrayList<String>();
 		try{
 			File file = new File(timelineType + "/tags.txt");
 			FileReader reader = new FileReader(file);
@@ -570,7 +571,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			
 			// tags
 			String[] tagArr = tagTextArea.getText().split(", ");
-			DLList<String> tags = new DLList<String>();
+			ArrayList<String> tags = new ArrayList<String>();
 			if (tagArr.length > 0 && !tagArr[0].equals("none") && tagArr[0].length() > 1){
 				for (int i = 0; i < tagArr.length; i++)
 					tags.add(tagArr[i]);
@@ -681,7 +682,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					String alignment = eventString.substring(0, eventString.indexOf("\nTags: "));
 					eventString = eventString.substring(eventString.indexOf("Tags: ") + 6);
 					String[] tagArr = eventString.substring(0, eventString.indexOf("\nImages: ")).split(", ");
-					DLList<String> tagList = new DLList<String>();
+					ArrayList<String> tagList = new ArrayList<String>();
 					for (int j = 0; j < tagArr.length; j++){
 						if (tagArr[j].equals("none"))
 							break;
@@ -689,7 +690,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					}
 					
 					eventString = eventString.substring(eventString.indexOf("Images: ") + 8);
-					DLList<MyImage> imgList = new DLList<MyImage>();
+					ArrayList<MyImage> imgList = new ArrayList<MyImage>();
 					if (!eventString.equals("none")){
 						// System.out.println("string: " + eventString);
 						String[] imgArr = eventString.split(" \\| ");
@@ -726,7 +727,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					String alignment = eventString.substring(0, eventString.indexOf("\nTags: "));
 					eventString = eventString.substring(eventString.indexOf("Tags: ") + 6);
 					String[] tagArr = eventString.substring(0, eventString.indexOf("\nImages: ")).split(", ");
-					DLList<String> tagList = new DLList<String>();
+					ArrayList<String> tagList = new ArrayList<String>();
 					for (int j = 0; j < tagArr.length; j++){
 						if (tagArr[j].equals("none"))
 							break;
@@ -737,7 +738,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					String[] imgArr = {eventString};
 					if (eventString.indexOf(" | ") >= 0)
 						imgArr = eventString.split(" | ");
-					DLList<MyImage> imgList = new DLList<MyImage>();
+					ArrayList<MyImage> imgList = new ArrayList<MyImage>();
 					for (int j = 0; j < imgArr.length; j++){
 						if (imgArr[j].equals("none"))
 							break;

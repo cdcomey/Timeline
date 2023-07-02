@@ -4,9 +4,10 @@ import java.awt.Font;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
+import java.util.Scanner;
 import java.util.Calendar;
+import java.util.ArrayList;
 
 public class GenericEvent implements Comparable<GenericEvent>{
 	
@@ -17,8 +18,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	protected Color color;
 	protected String hex;
 	protected String category;
-	protected DLList<String> tags;
-	protected DLList<MyImage> images;
+	protected ArrayList<String> tags;
+	protected ArrayList<MyImage> images;
 	
 	protected static final Font normalFont = new Font("Helvetica", Font.PLAIN, 14);
 	protected static final Font boldFont = new Font("Helvetica", Font.BOLD, 14);
@@ -36,8 +37,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		color = new Color(128, 128, 128);
 		hex = RGBtoHex(color.getRed(), color.getGreen(), color.getBlue());
 		category = "<category>";
-		tags = new DLList<String>();
-		images = new DLList<MyImage>();
+		tags = new ArrayList<String>();
+		images = new ArrayList<MyImage>();
 		
 	}
 	
@@ -52,8 +53,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	public String getHex(){ return hex; }
 	public String getCategory(){ return category; }
 	public static Date today(){ return today; }
-	public DLList<String> getTags(){ return tags; }
-	public DLList<MyImage> getImages(){ return images; }
+	public ArrayList<String> getTags(){ return tags; }
+	public ArrayList<MyImage> getImages(){ return images; }
 	public static Font boldFont(){ return boldFont; }
 	
 	public String getTagString(){
@@ -119,8 +120,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		return rgbColors;
 	}
 	
-	private DLList<String> setTags(DLList<String> localTags){
-		DLList<String> newTags = new DLList<String>();
+	private ArrayList<String> setTags(ArrayList<String> localTags){
+		ArrayList<String> newTags = new ArrayList<String>();
 		if (localTags == null)
 			return newTags;
 		
