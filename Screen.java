@@ -491,7 +491,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			updateComponentVisibility(selectedEvent instanceof Period);
 		} else if (e.getSource() == findImageButton){
 			int result = chooser.showOpenDialog(null);
-			if (result == chooser.APPROVE_OPTION){
+			if (result == JFileChooser.APPROVE_OPTION){
 				imagePath = chooser.getSelectedFile().getPath();
 			}
 			imageIndex++;
@@ -1104,7 +1104,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		redField.setText(Date.numFormat(selectedEvent.getColor().getRed(), 3));
 		greenField.setText(Date.numFormat(selectedEvent.getColor().getGreen(), 3));
 		blueField.setText(Date.numFormat(selectedEvent.getColor().getBlue(), 3));
-		hexField.setText(selectedEvent.RGBtoHex(selectedEvent.getColor().getRed(), selectedEvent.getColor().getGreen(), selectedEvent.getColor().getBlue()));
+		hexField.setText(GenericEvent.RGBtoHex(selectedEvent.getColor().getRed(), selectedEvent.getColor().getGreen(), selectedEvent.getColor().getBlue()));
 		
 		Tag temp1 = new Tag(selectedEvent.getCategory(), selectedEvent.getColor());
 		boolean categoryBoxSet = false;
