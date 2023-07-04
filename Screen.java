@@ -617,7 +617,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				allChecksPassed = true;
 			} else {
 				String alignment = eventAlignmentComboBox.getSelectedItem().toString();
-				event = new Event(title, description, month, day, year, red, green, blue, category.getTitle(), alignment, tags, selectedEvent.getImages(), false);
+				boolean isImageEvent = isImageEventCheckBox.isSelected();
+				event = new Event(title, description, month, day, year, red, green, blue, category.getTitle(), alignment, tags, selectedEvent.getImages(), isImageEvent);
 				allChecksPassed = true;
 			}
 		} catch (Exception ex){
@@ -661,8 +662,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				eventString = eventArr[i];
 				String title = eventString.substring(eventString.indexOf("Title: ") + 7, eventString.indexOf("\nDescription: "));
 				String description = eventString.substring(eventString.indexOf("Description: ") + 13, eventString.indexOf("\nType: "));
-				String type = eventString.substring(eventString.indexOf("Type: ") + 6, eventString.indexOf("\nDate: "));
-				boolean isPeriod = type.equals("Period");
+				String type = eventString.substring(eventString.indexOf("Type: ") + 6, eventString.indexOf("\nDate: "));				
 				eventString = eventString.substring(eventString.indexOf("\nDate: ") + 7);
 				
 				int month = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
@@ -671,7 +671,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				eventString = eventString.substring(eventString.indexOf("/") + 1);
 				
 				GenericEvent event;
-				if (isPeriod){
+				if (type.equals("Period")){
 					int year = Integer.parseInt(eventString.substring(0, eventString.indexOf(" - ")));
 					eventString = eventString.substring(eventString.indexOf(" - ") + 3);
 					
@@ -752,7 +752,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
-					event = new Event(title, description, month, day, year, red, green, blue, category, alignment, tagList, imgList, false);
+					event = new Event(title, description, month, day, year, red, green, blue, category, alignment, tagList, imgList, type.equals("ImageEvent"));
 				}
 				
 				eventTree.add(event);
