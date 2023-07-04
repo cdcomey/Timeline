@@ -31,13 +31,13 @@ public class Timeline{
 	private Date leftDate, rightDate;
 	
 	private Iterator<GenericEvent> it;
-	private ArrayList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
+	private ArrayList<Rectangle> drawnEventCoordinates, drawnImageEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
 	
 	public Timeline(int screenWidth, int screenHeight){
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
 		
-		centerYear = 1776;	// the initial year at the center of the screen, can (and likely will) be changed by the user
+		centerYear = 1860;	// the initial year at the center of the screen, can (and likely will) be changed by the user
 		zoomLevel = 4;	// determines how many years are shown on-screen at one time, can be changed by the user
 		lineCenter = screenHeight*1/2;	// y-coordinate of the top-left corner of the center line
 		lineLength = 25;	// used for determining dimensions of the triangles on the ends of the line
@@ -380,7 +380,6 @@ public class Timeline{
 		
 		drawBasicLine(g);
 		
-		drawnEventCoordinates = new ArrayList<Rectangle>();
 		
 		// notch position is based on the one at the center of the timeline, out of the ones currently on screen
 		notchPosition = numberOfNotches / -2;
@@ -388,14 +387,22 @@ public class Timeline{
 		for (int i = 0; i < numberOfNotches; i++, notchPosition++){
 			drawNotchAndYear(g, i, modernDating);
 			
+			drawnEventCoordinates = new ArrayList<Rectangle>();
+			drawnImageEventCoordinates = new ArrayList<Rectangle>();
 			drawnPeriodCoordinates = new ArrayList<Rectangle>();
 			drawnLineCoordinates = new ArrayList<Rectangle>();
 			
 			//periods
 			findPeriodCoords(g, eventSet, tags, taggedEventsVisibility);
+			// System.out.println("finished finding period coords for " + currentYear);
 			
 			//events
 			findEventCoords(g, eventSet, tags, taggedEventsVisibility);
+			// System.out.println("finished finding event coords for " + currentYear);
+
+			//image events
+			// findEventCoords(g, eventSet, tags, taggedEventsVisibility, true);
+			// System.out.println("finished finding image event coords for " + currentYear);
 			// System.out.println(centerYear + " - (" + numberOfNotches + " / 2) = " + deviation);
 			
 			for (int j = 0; j < drawnLineCoordinates.size(); j++){
@@ -415,14 +422,23 @@ public class Timeline{
 				}
 			}
 			
-			// System.out.println(currentYear + ": " + drawnEventCoordinates.size());
-			
 			for (int j = 0; j < drawnEventCoordinates.size(); j++){
 				Rectangle rect = drawnEventCoordinates.get(j);
 				rect.drawMe(g);
 				g.setColor(setTextColor(rect.getColor()));
 				rect.getEvent().drawString(g, rect.getX() + 5, rect.getY() + g.getFontMetrics().getHeight() + 3);
 			}
+
+			// System.out.println("finished drawing events for " + currentYear);
+
+			for (int j = 0; j < drawnImageEventCoordinates.size(); j++){
+				Rectangle rect = drawnImageEventCoordinates.get(j);
+				rect.drawMe(g);
+				g.setColor(setTextColor(rect.getColor()));
+				rect.getEvent().drawString(g, rect.getX() + 5, rect.getY() + g.getFontMetrics().getHeight() + 3);
+			}
+
+			// System.out.println("finished drawing image events for " + currentYear);
 		}
 		// System.out.println("//////////////////////////////////////////////////////////////////////////////");
 	}

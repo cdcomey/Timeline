@@ -71,6 +71,13 @@ public class Rectangle{
 		} else {
 			g.fillRect(x, y, width, height);
 		}
+
+		if (event instanceof Event){
+			Event e = (Event)event;
+			if (e.getIsImageEvent() && e.getImages().size() > 0){
+				e.getImages().get(0).drawFromFile(g, x + width/2, y + (height-2*spacing)/2, width-2*spacing, height-2*spacing, true, true);
+			}
+		}
 	}
 	
 	public void drawDashedLine(Graphics g, int length, int space){
