@@ -48,7 +48,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private JTextField redField, greenField, blueField, hexField;
 	private JComboBox<String> eventAlignmentComboBox, eventShapeComboBox, tagComboBox;
 	private JComboBox<Tag> categoryComboBox;
-	private JCheckBox eventPositionCheckBox, BCCheckBox, BCCheckBox2, presentCheckBox;
+	private JCheckBox eventPositionCheckBox, BCCheckBox, BCCheckBox2, presentCheckBox, isImageEventCheckBox;
 	
 	private JFileChooser chooser;
 	private FileNameExtensionFilter filter;
@@ -153,6 +153,12 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		presentCheckBox.setOpaque(false);
 		add(presentCheckBox);
 		presentCheckBox.addActionListener(this);
+
+		isImageEventCheckBox = new JCheckBox("Image Event");
+		isImageEventCheckBox.setBounds(BCCheckBox.getX() + BCCheckBox.getWidth() + 40 + 90 + 40, BCCheckBox.getY(), 110, fieldHeight);
+		isImageEventCheckBox.setOpaque(false);
+		add(isImageEventCheckBox);
+		isImageEventCheckBox.addActionListener(this);
 		
 		redField = new JTextField("RED");
 		redField.setBounds(monthField.getX(), descriptionPaneY2 + 10, 30, fieldHeight);
@@ -1080,6 +1086,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			BCCheckBox2.setVisible(showEditTools2);
 			eventAlignmentComboBox.setVisible(false);
 			presentCheckBox.setBounds(BCCheckBox2.getX() + BCCheckBox2.getWidth() + 40, BCCheckBox2.getY(), 90, BCCheckBox2.getHeight());
+			isImageEventCheckBox.setVisible(false);
 		} else {
 			month2Field.setVisible(false);
 			day2Field.setVisible(false);
@@ -1087,6 +1094,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			BCCheckBox2.setVisible(false);
 			eventAlignmentComboBox.setVisible(showEditTools2);
 			presentCheckBox.setBounds(BCCheckBox.getX() + BCCheckBox.getWidth() + 40, BCCheckBox.getY(), 90, BCCheckBox.getHeight());
+			isImageEventCheckBox.setVisible(showEditTools2);
 		}
 		
 		tagComboBox.setVisible(showEditTools2 || showTagHider);
@@ -1146,6 +1154,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					year2Field.setText(Integer.toString(-p.getYear2()+1));
 				else
 					year2Field.setText(Integer.toString(p.getYear2()));
+			} else if (selectedEvent instanceof Event){
+				Event e = (Event)selectedEvent;
+				isImageEventCheckBox.setSelected(e.getIsImageEvent());
 			}
 		}
 		

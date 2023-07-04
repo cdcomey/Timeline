@@ -41,6 +41,7 @@ public class Event extends GenericEvent{
 	}
 
 	public String getAlignment(){ return alignment; }
+	public boolean getIsImageEvent(){ return isImageEvent; }
 	
 	@Override
 	public String toString(){
