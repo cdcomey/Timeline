@@ -611,7 +611,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				allChecksPassed = true;
 			} else {
 				String alignment = eventAlignmentComboBox.getSelectedItem().toString();
-				event = new Event(title, description, month, day, year, red, green, blue, category.getTitle(), alignment, tags, selectedEvent.getImages());
+				event = new Event(title, description, month, day, year, red, green, blue, category.getTitle(), alignment, tags, selectedEvent.getImages(), false);
 				allChecksPassed = true;
 			}
 		} catch (Exception ex){
@@ -654,8 +654,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			for (int i = 0; i < eventArr.length; i++){
 				eventString = eventArr[i];
 				String title = eventString.substring(eventString.indexOf("Title: ") + 7, eventString.indexOf("\nDescription: "));
-				String description = eventString.substring(eventString.indexOf("Description: ") + 13, eventString.indexOf("\nisPeriod: "));
-				boolean isPeriod = Boolean.parseBoolean(eventString.substring(eventString.indexOf("isPeriod: ") + 10, eventString.indexOf("\nDate: ")));
+				String description = eventString.substring(eventString.indexOf("Description: ") + 13, eventString.indexOf("\nType: "));
+				String type = eventString.substring(eventString.indexOf("Type: ") + 6, eventString.indexOf("\nDate: "));
+				boolean isPeriod = type.equals("Period");
 				eventString = eventString.substring(eventString.indexOf("\nDate: ") + 7);
 				
 				int month = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
@@ -745,7 +746,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
-					event = new Event(title, description, month, day, year, red, green, blue, category, alignment, tagList, imgList);
+					event = new Event(title, description, month, day, year, red, green, blue, category, alignment, tagList, imgList, false);
 				}
 				
 				eventTree.add(event);
@@ -802,7 +803,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				else
 					day = Integer.parseInt(timeStr.substring(0, timeStr.indexOf(' ')));
 				
-				eventTree.add(new Event(title, description, month, day, year, 128, 128, 128, "<category>", "Centered", null, null));
+				eventTree.add(new Event(title, description, month, day, year, 128, 128, 128, "<category>", "Centered", null, null, false));
 			}
 			
 			String[] periods = s2.split("Type: Period\n");

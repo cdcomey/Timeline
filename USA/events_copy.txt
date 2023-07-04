@@ -95,7 +95,7 @@ Images: none
 end
 
 Title: Bjarni Herjólfsson discovers Vinland
-Description: After Erik the Red set up colonies in Greenland in 892, he reMained their for three years until his exile expired. He subsequently returned to Iceland, he hoped to attract more settlers there, and even called it "Greenland" in order to make the land seem more appealing (though Greenland was actually anything but green). He convinced 25 sips to embark with him in 985.
+Description: After Erik the Red set up colonies in Greenland in 892, he remained their for three years until his exile expired. He subsequently returned to Iceland, he hoped to attract more settlers there, and even called it "Greenland" in order to make the land seem more appealing (though Greenland was actually anything but green). He convinced 25 sips to embark with him in 985.
 
 The journey was perilous, with only 14 making the complete trip. One of these ships contained Bjarni Herjólfsson, a merchant who was blown off course on his way to Greenland. After three days, he discovered land west of Greenland, an area that would later be known as Vinland (modern day Newfoundland). While he didn't explore it and soon rejoined the fleet, he later described the incident to Erik the Red's son, Lief Erikson, who would establish a settlement there in 1000. This event was the first time a European had ever sighted the mainland of the Americas.
 isPeriod: false
@@ -249,7 +249,7 @@ end
 Title: Iroquois Confederacy formed
 Description: The Iroquois Confederacy, known as the Five Nations to the English, was an alliance of Midwestern and Northeastern tribes, the Cayuga, Mohawk, Oneida, Onondaga, and Seneca. They appeared to have originated around modern-day Quebec, specifically Montreal, but were driven south due to wars with neighboring tribes. Oral Iroquois history states that the confederacy was formed by Dekanawida ("the Great Peacemaker"), Hiawatha, and Jigonhsasee ("the Mother of Nations"). Dekanawida created an oral pact known as the Great Peace and the three brought it to the five rival tribes, who agreed to band together and protect each other.
 
-Once the Iroquois Confederacy was formed, they fought little amongst each other and usually fought against other tribes together. This teamwork, along with their frequent warring with nearby tribes, allowed them to become the dominant tribes in the region, with a population of 12,000 at their peak in 1600. When the French and English arrived in North America, the Iroquois became adept at playing them off against each other in order to reduce their presence and distract them from conquering the land. They defeated many of their enemies during the Beaver Wars of the 17th century, such as the Huron and Susquehannock. They initially sided with the French, as they were usually more cooperative than the English in their affairs, but started to side with the English in the 1670s and into the four colonial wars between the French and the English/British. They reMained a dominant force in America until the end of the War of 1812, which removed the last of Native American power in the country.
+Once the Iroquois Confederacy was formed, they fought little amongst each other and usually fought against other tribes together. This teamwork, along with their frequent warring with nearby tribes, allowed them to become the dominant tribes in the region, with a population of 12,000 at their peak in 1600. When the French and English arrived in North America, the Iroquois became adept at playing them off against each other in order to reduce their presence and distract them from conquering the land. They defeated many of their enemies during the Beaver Wars of the 17th century, such as the Huron and Susquehannock. They initially sided with the French, as they were usually more cooperative than the English in their affairs, but started to side with the English in the 1670s and into the four colonial wars between the French and the English/British. They remained a dominant force in America until the end of the War of 1812, which removed the last of Native American power in the country.
 isPeriod: false
 Date: 01/01/1450
 Color: 255/250/200
@@ -331,7 +331,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                       
+Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                               
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -495,7 +495,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.          
+Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                  
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -578,7 +578,7 @@ end
 Title: Christopher Columbus dies
 Description: After a final voyage ending in 1504, Columbus returned to Spain. Along the way back, he suffered from an illness, possibly reactive arthritis. This illness weakened him, and when he arrived in Spain he would live on for just two more years. His last acts were to demand that he be given one tenth of all the riches and goods from the newly-discovered lands as he had been promised a decade ago. The Spanish Crown declined, reminding him that he had been removed as governor and so was not entitled to his rewards anymore. Columbus refused to accept defeat. He followed the royal court as it moved around Spanish cities, maintaining his demands. On May 20, 1506, he died at 54 years old in Valladolid, Spain. Columbus died believing that he had found a westward route to Asia. A year later, the continents were instead named in honor of Amerigo Vespucci, who had recognized them as separate from Asia.
 
-Despite his disgrace in 1500, Columbus reMained wildly popular after his death. He was regarded as a founding figure of the New World by its later inhabitants. Various locations were named after Columbus and the feminized form of his name, "Columbia." These include Columbia, South Carolina (a state capital), Columbus, Ohio (another state capital), the Columbia River, the District of Columbia, British Columbia, the Republic of Colombia, and various other cities. Columbia was often used to refer to the United States as an entity. Various countries, including the United States, Spain, and Italy, celebrate October 12 as Columbus Day. He is generally credited with being the first European to discover the Americas, though in recent times his legacy has diminished for various reasons. These include the discovery of Leif Erikson's voyage in 1000, his cruelty to natives, and his own belief that he had landed in Asia.
+Despite his disgrace in 1500, Columbus remained wildly popular after his death. He was regarded as a founding figure of the New World by its later inhabitants. Various locations were named after Columbus and the feminized form of his name, "Columbia." These include Columbia, South Carolina (a state capital), Columbus, Ohio (another state capital), the Columbia River, the District of Columbia, British Columbia, the Republic of Colombia, and various other cities. Columbia was often used to refer to the United States as an entity. Various countries, including the United States, Spain, and Italy, celebrate October 12 as Columbus Day. He is generally credited with being the first European to discover the Americas, though in recent times his legacy has diminished for various reasons. These include the discovery of Leif Erikson's voyage in 1000, his cruelty to natives, and his own belief that he had landed in Asia.
 isPeriod: false
 Date: 05/20/1506
 Color: 0/0/0
@@ -610,7 +610,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/universalis_cosmographia.jpg;Caption          
+Images: USA/images/maps/universalis_cosmographia.jpg;Caption                  
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -707,7 +707,7 @@ Images: none
 end
 
 Title: Santiago, Cuba founded
-Description: Santiago de Cuba was the fifth town founded by Spaniards during their initial conquest of Cuba. It was founded in 1515, close to the southernmost point on the island. Over time, it grew into a city, and became the capital of the colony of Cuba in 1522. In 1563, the Governor of Cuba moved his residence from Santiago to Havana, unofficially relocating the capital there. In 1589, that relocation was made official, but Santiago reMained as one of the island's largest and influential cities. Today, it is the second-largest city in Cuba, behind Havana.
+Description: Santiago de Cuba was the fifth town founded by Spaniards during their initial conquest of Cuba. It was founded in 1515, close to the southernmost point on the island. Over time, it grew into a city, and became the capital of the colony of Cuba in 1522. In 1563, the Governor of Cuba moved his residence from Santiago to Havana, unofficially relocating the capital there. In 1589, that relocation was made official, but Santiago remained as one of the island's largest and influential cities. Today, it is the second-largest city in Cuba, behind Havana.
 isPeriod: false
 Date: 07/25/1515
 Color: 192/239/69
@@ -720,7 +720,7 @@ end
 Title: Havana, Cuba founded
 Description: Havana was the sixth town the Spaniards built in Cuba. The name "Havana" actually belonged to several towns, most of which failed soon after establishment. The original Havana was built in 1514 or 1515 on the island's southern coast. It was relocated several years later because they determined that a bay on the island's north coast was more suitable for a port town. This port, then known as el Puerto de Carenas, was situated at the mouth of the Gulf of Mexico, allowing easy access to the mainland. It also sat adjacent to the Gulf Stream, a powerful current that Europeans used as a launcher to propel their ships into the Atlantic Ocean to begin their voyage to Europe. As such, the bay was a natural point for sailors to resupply before heading off.
 
-Havana's full name was San Cristóbal de la Habana. San Cristóbal, or Saint Christopher, was to be the city's patron saint. Habana, anglicized to Havana, is of unknown origin. Upon its founding, it was used as a base of operations to move from the Caribbean to the mainland. In the mid-16th century, the Spanish Crown ordered a large fleet together to protect transAtlantic merchant vessels from pirates. This fleet was to set up base in the bay near Havana. The town's commerce and population began to expand, growing into the most prominent city on the island. In 1563, the Governor of Cuba moved his residence to Havana, unofficially designating it as the island's capital. By the end of the century, the Spanish Crown had designated Havana "the key to the New World and Rampart of the Indies." Havana would go on to become the official capital of the colony, and later the nation of Cuba, as well as its largest city, both of which it remains to this day.
+Havana's full name was San Cristóbal de la Habana. San Cristóbal, or Saint Christopher, was to be the city's patron saint. Habana, anglicized to Havana, is of unknown origin. Upon its founding, it was used as a base of operations to move from the Caribbean to the mainland. In the mid-16th century, the Spanish Crown ordered a large fleet together to protect transatlantic merchant vessels from pirates. This fleet was to set up base in the bay near Havana. The town's commerce and population began to expand, growing into the most prominent city on the island. In 1563, the Governor of Cuba moved his residence to Havana, unofficially designating it as the island's capital. By the end of the century, the Spanish Crown had designated Havana "the key to the New World and Rampart of the Indies." Havana would go on to become the official capital of the colony, and later the nation of Cuba, as well as its largest city, both of which it remains to this day.
 isPeriod: false
 Date: 08/25/1515
 Color: 192/239/69
@@ -1047,7 +1047,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: /home/charlie/Desktop/CompSciLabs/Calendar/images/maps/munster_map.JPG;Caption          
+Images: USA/images/maps/munster_map.JPG;Caption                  
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -2303,8 +2303,8 @@ Tags: none
 Images: none
 end
 
-Title: Transatlantic slave trade begins
-Description: Licenses to transport African slaves begins the transAtlantic slave trade.
+Title: transatlantic slave trade begins
+Description: Licenses to transport African slaves begins the transatlantic slave trade.
 isPeriod: false
 Date: 01/01/1632
 Color: 0/0/0
@@ -2471,7 +2471,7 @@ Images: none
 end
 
 Title: Anne Hutchinson trial
-Description: Anne Hutchinson was a woman described as bold-spirited who had unconventional ideas of religion in the dominantly Puritan Massachusetts Bay. Hutchinson believed that Puritan ministers' methods of determining the status of one's salvation or damnation was based on their attendance of church, which was not valid. She held radical beliefs, like that she was a prophetess that God spoke to directly, and that God would destroy both Boston and England. She began holding meetings in her house of several dozen people, usually women, to discuss sermons. Leading Puritans like John Winthrop deemed her to be a threat to society and placed her on trial for Antinomianism (the belief in one's own judgment over that of the church) and sedition (expressing opinions dangerous to authority and the social order). They were also upset that she was not behaving like the typical woman for the time, being outspoken and rebellious instead of quiet and submissive. Though Hutchinson defiantly debated the interpretation of certain Bible passages during her trial, the Puritans reMained unconvinced and exiled her and her followers from Massachusetts. They moved to Westchester in modern-day New York, but were killed soon after in a war with Native Americans. The trial demonstrated how individual interpretation of the Bible often led to criticism of the church, which prominent Puritans feared.
+Description: Anne Hutchinson was a woman described as bold-spirited who had unconventional ideas of religion in the dominantly Puritan Massachusetts Bay. Hutchinson believed that Puritan ministers' methods of determining the status of one's salvation or damnation was based on their attendance of church, which was not valid. She held radical beliefs, like that she was a prophetess that God spoke to directly, and that God would destroy both Boston and England. She began holding meetings in her house of several dozen people, usually women, to discuss sermons. Leading Puritans like John Winthrop deemed her to be a threat to society and placed her on trial for Antinomianism (the belief in one's own judgment over that of the church) and sedition (expressing opinions dangerous to authority and the social order). They were also upset that she was not behaving like the typical woman for the time, being outspoken and rebellious instead of quiet and submissive. Though Hutchinson defiantly debated the interpretation of certain Bible passages during her trial, the Puritans remained unconvinced and exiled her and her followers from Massachusetts. They moved to Westchester in modern-day New York, but were killed soon after in a war with Native Americans. The trial demonstrated how individual interpretation of the Bible often led to criticism of the church, which prominent Puritans feared.
 isPeriod: false
 Date: 11/07/1637
 Color: 154/99/36
@@ -3026,7 +3026,7 @@ Images: none
 end
 
 Title: Battle of the Severn
-Description: A conflict between Maryland colonists on the Severn River near modern-day Annapolis. After the English Civil War, Parliament appointed two Commissioners to force Virginia to obey Parliament. One was Richard Bennett, who became Virginia's governor, and the other was William Claiborne, who had previously tried to seize the island during the war. They forced Governor William Stone to resign, allowing them to take control of the colony. The general assembly passed dozens of laws under their watch, including the prohibition of Catholics who had taken up arms against Parliament (which included most of them), a repeal of the Toleration Act of 1649, and the prohibition of practicing Catholicism. On January 31, 1655, a ship arrived captained by Roger Heamans. Another then showed up with a letter from Lord Protector Oliver Cromwell addressing William Stone as governor. Stone used this to assert the validity of his former position. The Commissioners appointed William Fuller to head the attack for the coming conflict. Heamans began firing upon boats on the Severn on March 24, and the next day the Puritan forces led by Fuller and the Catholic and moderate Protestant forces led by Roger Heamans engaged each other on the river. After about 30 minutes of fighting, Fuller emerged victorious, even wounding Stone. The assembly reMained in power until 1658, when Lord Baltimore's proprietorship was restored.
+Description: A conflict between Maryland colonists on the Severn River near modern-day Annapolis. After the English Civil War, Parliament appointed two Commissioners to force Virginia to obey Parliament. One was Richard Bennett, who became Virginia's governor, and the other was William Claiborne, who had previously tried to seize the island during the war. They forced Governor William Stone to resign, allowing them to take control of the colony. The general assembly passed dozens of laws under their watch, including the prohibition of Catholics who had taken up arms against Parliament (which included most of them), a repeal of the Toleration Act of 1649, and the prohibition of practicing Catholicism. On January 31, 1655, a ship arrived captained by Roger Heamans. Another then showed up with a letter from Lord Protector Oliver Cromwell addressing William Stone as governor. Stone used this to assert the validity of his former position. The Commissioners appointed William Fuller to head the attack for the coming conflict. Heamans began firing upon boats on the Severn on March 24, and the next day the Puritan forces led by Fuller and the Catholic and moderate Protestant forces led by Roger Heamans engaged each other on the river. After about 30 minutes of fighting, Fuller emerged victorious, even wounding Stone. The assembly remained in power until 1658, when Lord Baltimore's proprietorship was restored.
 
 Casualties:
 17 Stone-loyal men killed in battle
@@ -3326,7 +3326,7 @@ Images: none
 end
 
 Title: <b>New Netherland captured and annexed by England</b>
-Description: Despite frequent pleas from the New Dutch to be supplied with defenses to protect themselves from the ever-increasing colonial power of the English, the Dutch West India Company reMained ambivalent towards the future of its colony. In order to remove their maritime rival from North America, King Charles II of England ordered the annexation of New Netherland in March 1664. England claimed that John Cabot, an Italian explorer working for the English, had discovered the land first, giving their country the right to it. On August 27, four English ships arrived at the Dutch colony, and were met with no resistance. King Charles II gifted the colony to his brother, the duke of York, granting him ultimate authority over the land. The colony was subsequently renamed to New York. The duke of York in turn gifted part of New York to Sir George Carteret in order to repay a debt, who named his new land New Jersey after his ancestral home.
+Description: Despite frequent pleas from the New Dutch to be supplied with defenses to protect themselves from the ever-increasing colonial power of the English, the Dutch West India Company remained ambivalent towards the future of its colony. In order to remove their maritime rival from North America, King Charles II of England ordered the annexation of New Netherland in March 1664. England claimed that John Cabot, an Italian explorer working for the English, had discovered the land first, giving their country the right to it. On August 27, four English ships arrived at the Dutch colony, and were met with no resistance. King Charles II gifted the colony to his brother, the duke of York, granting him ultimate authority over the land. The colony was subsequently renamed to New York. The duke of York in turn gifted part of New York to Sir George Carteret in order to repay a debt, who named his new land New Jersey after his ancestral home.
 isPeriod: false
 Date: 08/27/1664
 Color: 75/0/130
@@ -4689,7 +4689,7 @@ Images: none
 end
 
 Title: Delaware Colony founded
-Description: After New Netherland was captured by England in 1664, Delaware had reMained part of Maryland. When Pennsylvania was chartered in 1681, William Penn was granted Delaware as well. However, the Pennsylvanians and Delawareans disliked each other, and in 1701 Penn decided to grant the latter their own representative assembly, though they were still controlled by the same governor. The two colonies would continue in this relationship until 1776, when it declared independence from Great Britain.
+Description: After New Netherland was captured by England in 1664, Delaware had remained part of Maryland. When Pennsylvania was chartered in 1681, William Penn was granted Delaware as well. However, the Pennsylvanians and Delawareans disliked each other, and in 1701 Penn decided to grant the latter their own representative assembly, though they were still controlled by the same governor. The two colonies would continue in this relationship until 1776, when it declared independence from Great Britain.
 isPeriod: false
 Date: 07/20/1701
 Color: 192/239/69
@@ -6564,7 +6564,7 @@ Images: none
 end
 
 Title: Battle of Fort Duquesne
-Description: A battle in the French and Indian War in which 750 British men led by Major James Grant attacked French Fort Duquesne in modern-day Pittsburgh, PA. Grant attempted a diversion and ambush strategy, but both parties were caught by French and Indian men. The Indians were well-adapted to fighting in the forest, using the trees as cover from British bullets. Grant and Major Andrew Lewis were both captured, leading the rest of the British to retreat. However, the French knew that a much larger attack was coming, so they reMained in the fort until November 26, when they burned it down.
+Description: A battle in the French and Indian War in which 750 British men led by Major James Grant attacked French Fort Duquesne in modern-day Pittsburgh, PA. Grant attempted a diversion and ambush strategy, but both parties were caught by French and Indian men. The Indians were well-adapted to fighting in the forest, using the trees as cover from British bullets. Grant and Major Andrew Lewis were both captured, leading the rest of the British to retreat. However, the French knew that a much larger attack was coming, so they remained in the fort until November 26, when they burned it down.
 
 Casualties:
 104 British killed
@@ -6852,7 +6852,7 @@ Images: none
 end
 
 Title: Treaty of Paris (1763)
-Description: The 1763 Treaty of Paris was an agreement between Great Britain, Portugal, Spain, and France that ended the Seven Years' War and the French and Indian War. France ceded nearly all of its land in North America to Great Britain. This included Canada and the eastern half of French Louisiana, the latter being the region east of the Mississippi River and west of the Appalachian Mountains. For their part, Spain gave up East Florida to Great Britain. France also gave up control of Dominica, Grenada, Saint Vincent and the Grenadines, and Tobago, all lucrative sugar islands, to Great Britain. In return, France reMained in control of western Louisiana and the island of Guadeloupe. This sugar colony produced 6 million pounds a year, while Canada made comparatively less and was more expensive to maintain, so France saw this as a favorable loss. Voltaire once quipped that Canada was nothing more than "a few acres of snow." The French Canadians, on the other hand, were outraged at the French concession and their home country's indifferent attitude towards their plight.
+Description: The 1763 Treaty of Paris was an agreement between Great Britain, Portugal, Spain, and France that ended the Seven Years' War and the French and Indian War. France ceded nearly all of its land in North America to Great Britain. This included Canada and the eastern half of French Louisiana, the latter being the region east of the Mississippi River and west of the Appalachian Mountains. For their part, Spain gave up East Florida to Great Britain. France also gave up control of Dominica, Grenada, Saint Vincent and the Grenadines, and Tobago, all lucrative sugar islands, to Great Britain. In return, France remained in control of western Louisiana and the island of Guadeloupe. This sugar colony produced 6 million pounds a year, while Canada made comparatively less and was more expensive to maintain, so France saw this as a favorable loss. Voltaire once quipped that Canada was nothing more than "a few acres of snow." The French Canadians, on the other hand, were outraged at the French concession and their home country's indifferent attitude towards their plight.
 
 The French Canadians were Catholic, which the British were apprehensive about governing. However, they moreso feared aggravating tensions with France by deporting or forcibly converting the Canadians, as well as the possibility that those deported would escape to and strengthen other French American colonies, so for the time being the British left them be. France was of course upset at their loss, but saw the treaty as quite favorable due to their retention of their Caribbean sugar islands and the loss of the expensive Canada. They hoped that the Americans would rebel against the British, a wish that would come true 25 years later.
 
@@ -6884,15 +6884,19 @@ Description: Pontiac's Rebellion was a war between British colonists and troops 
 
 The war immediately followed and was directly caused by the end of the French and Indian War. Great Britain defeated France and gained recognition of nearly all of the eastern portion of North America, and prepared to settle colonists in the new region. Most of the Indians living there had preferred the relatively positive relationships they shared with the French, and were upset to learn that they would only be seeing the British, who tended to treat them significantly worse. Not only did colonists come in droves, but the military followed, intending to secure a newly won region but tensing the situation further. General Jeffrey Amherst, the British commander-in-chief in North America, further deteriorated their relationship in February 1761 by ending the policy of gift-giving. The Indians had seen the many gifts given by the French as fair payment for use of what they considered their land, but Amherst saw this as unnecessary bribery, and was pressured by Great Britain's lack of finances to end such an expensive policy. Amherst also limited the amount of gunpowder traders could sell to Indians. Several years prior the Cherokee had fought against the British, but gave up due to a lack of gunpowder, and Amherst hoped that limiting the resource would discourage any future uprisings. The Indians objected, claiming that gunpowder was necessary for food to eat and fur to trade.
 
-This tension erupted on April 28, 1763, when Odawa chief Pontiac convinced several hundred Indians from various tribes to attack the British-controlled Fort Detroit near where there would later be a city of the same name. Pontiac besieged the fort for several months, defeating a surprise attack by British reinforcements at the Battle of Bloody Run on July 31. Meanwhile, Indians elsewhere attacked other British forts in the region, successfully capturing eight: Forts Sandusky, St. Joseph, Miami, Ouiatenonin, Michilimackinac, Venango, Le Boeuf, and Presque, the last falling on June 21. The British garrisons were often lured out of the forts under false pretenses before being killed.
+This tension erupted on April 28, 1763, when Odawa chief Pontiac convinced several hundred Indians from various tribes to attack the British-controlled Fort Detroit. On May 7, he showed up to the fort with 300 men, planning a peaceful entry into the fort, then attacking with concealed weapons. Henry Gladwin, the fort's commander, was apparently already aware of this plan and refused to let the Indians in. Pontiac tried once again two days later, but to no avail. Instead, Pontiac besieged the fort for several months. Smaller contingents attacked nearby British settlements, even ritually cannibalizing one of the soldiers. The Indians attacked several times throughout the siege, but were never able to penetrate the fort's defenses.
+
+On July 29, 260 British soldiers led by Captain James Dalyell arrived to relieve Fort Detroit. Accompanying him was Major Robert Rogers, a famous British Ranger commander who fought in the French and Indian War. That night, Dalyell and 250 soldiers snuck out of the fort to ambush Pontiac's men, but were ambushed themselves. 23 British soldiers died, including Dalyell, and 41 were wounded in the Battle of Bloody Run, so called because the nearby Parent's Creedk supposedly ran red with British blood. The siege continued until October 31, when Pontiac called it off after realizing it was going nowhere.
+
+Meanwhile, Indians elsewhere attacked other British forts in the region, successfully capturing eight: Forts Sandusky, St. Joseph, Miami, Ouiatenonin, Michilimackinac, Venango, Le Boeuf, and Presque, the last falling on June 21. With the exception of Ouiatenonin, every fort was captured using subterfuge, often by the same strategy Pontiac had tried at Fort Detroit.
 
 Fearing for their safety, settlers in western Pennsylvania sought refuge in Fort Pitt, which Pontiac's confederacy advanced on and besieged. Becoming increasingly desperate, the officers in Fort Pitt gave to the besieging Delaware Indians blankets previously used by people infected with smallpox in hopes of the disease spreading among their attackers. It is unsure how effective this strategy was, but in terms of the total number of Indian deaths from smallpox it was a small factor.
 
-Colonel Henry Bouquet was dispatched with 500 troops to assist Fort Pitt. On August 1, most of the besieging Indians left the fort and marched to meet his force. They fought on August 5 at the Battle of Bushy Run, where Bouquet narrowly defeated the force, and on August 20 rescued Fort Pitt. This victory would not last long, as on September 14 several hundred Indians attacked a supply train near Fort Niagara, killing more than 70, which the British dubbed the Devil's Hole Massacre.
+Colonel Henry Bouquet was dispatched with 500 troops to assist Fort Pitt. On August 1, most of the besieging Indians left the fort and marched to meet his force. They fought on August 5 at the Battle of Bushy Run, one of the largest in the war. The British lost over fifty men, and the Indians lost two prominent chiefs. Bouquet repelled the Indian assault on August 6, and saved Fort Pitt on August 20. The next major battle would not be seen until September 14, when 300 Seneca ambushed a supply train heading to Fort Niagara at the so-called Devil's Hole, an area near Niagara Gorge with rough terrain. 21 of the 24 men on the wagon train were killed, the remaining three escaping to nearby Lewiston, where a detachment of a light infantry unit was stationed. They sent out two companies to rescue the train, but they too were defeated by the Seneca, losing eighty soldiers. The dead soldiers were scalped and thrown into the gorge.
 
-The early success of Pontiac's confederacy prompted a group of western Pennsylvanians to form a vigilante group called the Paxton Boys to attack Indians living in the region. On December 14, the Paxton Boys killed six Susquehannocks living peacefully in the village of Conestoga, and another 14 that were placed in protective custody in Lancaster. In January the next year, several hundred Paxton Boys marched on Philadelphia, but were eventually dispersed by the presence of British troops, local militia, and negotiations with Benjamin Franklin.
+The early success of Pontiac's confederacy prompted a group of western Pennsylvanians to form a vigilante group called the Paxton Boys, based in the town of Paxton, to attack Indians living in the region. They targeted friendly Indians living among the settlers who posed no threat. On December 14, fifty Paxton Boys killed the six Susquehannocks they found in the village of Conestoga. The remaining fourteen Susquehannocks fled to Lancaster, where the mayor placed them under protective custody. On December 27, the Paxton Boys arrived in Lancaster, where they broke into the jail and killed the Susquehannock hiding there. In January the next year, several hundred Paxton Boys marched on Philadelphia, but were eventually dispersed by the presence of British troops, local militia, and negotiations with Benjamin Franklin.
 
-Indian raids on British villages continued well into 1764. Amherst, deemed responsible for the rebellion, was recalled and replaced with Major General Thomas Gage, who ordered two punitive expeditions, one by Bouquet and the other by Colonel John Bradstreet. Meanwhile, Sir William Johnson, British superintendant of the Indian Department, negotiated a treaty at Fort Niagara. Bradstreet did the same at Fort Detroit, against his superior's wishes. By the time Bouquet arrived at the villages he was targeting most of their inhabitants were ready to make peace.
+Indian raids on British villages continued well into 1764. Most infamous was one on July 26 1764, in which four Lenape Indians killed Enoch Brown, a school master, in southwestern Pennsylvania. Despite Brown's pleas, the Lenape killed and scalped ten of his students. Amherst, deemed responsible for the rebellion, was recalled and replaced with Major General Thomas Gage, who ordered two punitive expeditions, one by Bouquet and the other by Colonel John Bradstreet. Meanwhile, Sir William Johnson, British superintendant of the Indian Department, negotiated a treaty at Fort Niagara. Bradstreet did the same at Fort Detroit, against his superior's wishes. By the time Bouquet arrived at the villages he was targeting most of their inhabitants were ready to make peace.
 
 While the war was mostly over by this point, Great Britain had resolved to make peace with all the Indians in the region. Gage sent Pontiac a wampum belt, an essential tool in peace talks with the Indians from that region. Pontiac himself had lessened his aggression after hearing of the treaties the British had made. A final treaty with Pontiac was formalized on July 25, 1766, as a kind of stalemate, the British not being able to conquer the land, but the Indians not being able to drive out the British.
 
@@ -6907,73 +6911,33 @@ Date: 04/28/1763 - 07/25/1766
 Color: 224/0/0
 Category: Conflict with over 1000 deaths
 Alignment: null
-Tags: Pontiac's Rebellion
-Images: none
-end
-
-Title: Siege of Fort Detroit
-Description: The SIege of Fort Detroit was the opening conflict in Pontiac's Rebellion. On May 7, Pontiac and a force of 300 men approached the fort, having captured and killed a small British surveying party the day before. Pontiac's plan was to be invited into the fort under the pretense of diplomacy and take the fort by surprise with concealed weapons. However, Henry Gladwin, the British commander in charge of Fort Detroit, was apparently already aware of this plan, and refused to let the Confederates in. Pontiac tried once again to trick Gladwin into letting his men in two days later, but this, too, failed. Instead, Pontiac laid siege to the fort, as well as killing a number of British settlers in the area, one of which was ritually cannabalized. Shortly after the siege started, Pontiac requested a peace talk with two British officers at a neutral location, whom he immediately took hostage.
-isPeriod: true
-Date: 05/07/1763 - 10/31/1763
-Color: 75/0/130
-Category: Battle/Attack/Siege
-Alignment: null
-Tags: Pontiac's Rebellion
-Images: none
-end
-
-Title: Siege of Fort Pitt
-Description: An infamous battle of Pontiac's Rebellion. Delaware Native American warriors had surrounded Fort Pitt, demanding that they receive the land that had been stolen from them. The colonists refused, claiming that it was now their home. In response, the Delaware laid siege to the fort. Commander-in-Chief, North America Jeffery Amherst was infuriated by this turn of events, who had previously not thought of the Native Americans to be any threat. He sent a large force to defend the fort, but were intercepted by more Native American warriors and defeated. Running out of options and becoming ever angrier, Amherst demanded the colonists use any means necessary to "Extirpate this Execrable Race," including the intentional infection of smallpox. Though the concept of germs had not been developed yet, they understood that people could become infected by the same disease if they came into contact with something a previous victim had touched. Thus, on June 24 the colonists 'gifted' the Delaware with two blankets received from a smallpox hospital. They had the desired effect; the disease quickly spread not only throughout the Delaware, but to nearby Shawnee villages as well. Despite the fact that Native American populations was fairly spread out over the continent, smallpox was infectious enough to have a large impact. Historians suspect this intentional infection occurred more frequently, but were not documented because of the seriousness of the act.
-isPeriod: true
-Date: 06/22/1763 - 08/10/1763
-Color: 75/0/130
-Category: Battle/Attack/Siege
-Alignment: null
-Tags: Pontiac's Rebellion
+Tags: Wars against American Indians, Pontiac's Rebellion, Pennsylvania
 Images: none
 end
 
 Title: Smallpox blankets
-Description: 
+Description: "Smallpox blankets" refers to an infamous incident during Pontiac's Rebellion in which British soldiers knowingly gave Lenape Indians blankets infected with smallpox in order to spread the disease among their population. Lenape warriors had surrounded the British Fort Pitt, demanding that they receive the land that had been stolen from them. The colonists refused, claiming that it was now their home. In response, the Lenape laid siege to the fort. Jeffrey Amherst, Commander-in-Chief of the British Army in North America, was infuriated by this turn of events, who had previously not thought Indians to be of any threat. He sent a large force to defend the fort, but were intercepted by more warriors and defeated. Running out of options and becoming ever angrier, Amherst demanded the colonists use any means necessary to "Extirpate this Execrable Race," including the intentional infection of smallpox. Though the concept of germs had not been developed yet, they understood that people could become infected by the same disease if they came into contact with something a previous victim had touched. So, on June 24 the colonists 'gifted' the Lenape with two blankets received from a smallpox hospital. They had the desired effect; the disease quickly spread not only throughout the Lenape, but to nearby Shawnee villages as well. Despite the fact that Indian populations was fairly spread out over the continent, smallpox was infectious enough to have a large impact. Historians suspect this intentional infection occurred more frequently, but were not documented because of the seriousness of the act.
 isPeriod: false
 Date: 06/24/1763
 Color: 0/0/128
-Category: Natural disaster
+Category: Natural Disaster
 Alignment: Centered
 Tags: Pontiac's Rebellion
 Images: none
 end
 
-Title: Battle of Bloody Run
-Description: 
-isPeriod: false
-Date: 07/31/1763
-Color: 75/0/130
-Category: Battle/Attack/Siege
-Alignment: Centered
-Tags: Pontiac's Rebellion
-Images: none
-end
+Title: Customs Reform Acts
+Description: George Grenville became both Prime Minister and Chancellor of the Exchequer (head of the treasury) in April 1763 after the end of the Seven Years' War. He noticed that the revenue generated from the North American colonies was surprisingly small, and ordered an investigation into customs collection in the region. On July 21, the investigators published their report, which examined merchant trade from 1757 to 1759, during the war. It found that smuggling was extremely common, and that some merchants had even been selling to the French in the West Indies. The report recommended three reforms. First, require customs officers to live in the area they manage. Many lived in comfortable areas of England and relied on corrupt or ineffective proxies to do their job for them. Second, change those officers' pay to be proportionate to the amount collected instead of to the tax rate. This would encourage officers to collect more taxes instead of allowing smuggling to proceed and get paid just the same. Third, lower the tax on foreign molasses set by the Molasses Act of 1733 from six pence per gallon to three. Though this would seem to lower the revenue, the report hoped that a lower tax would lessen the burden so merchants wouldn't feel compelled to smuggle to save their careers. The Grenville Administration would enact the first two of these within the next few months, along with other reforms.
 
-Title: Battle of Bushy Run
-Description: 
-isPeriod: false
-Date: 08/05/1763
-Color: 75/0/130
-Category: Battle/Attack/Siege
-Alignment: Centered
-Tags: Pontiac's Rebellion
-Images: none
-end
+One of these was to authorize the Royal Navy to collect taxes to more effectively catch smugglers. Also, customs collectors could use writs of assistance, which were court orders that enabled collectors to search pepole's property for contraband. Third, Grenville expanded the jurisdiction of admiralty courts to encompass smuggling and customs enforcement. Previously, those had been under that of a jury. Smugglers were popular because they could procure goods at lower rates, so juries tended to be lenient on them. Finally, colonial governors were put under stricter watch for customs enforcement, as several were complicit in allowing the smuggling to go unpunished.
 
-Title: Devil's Hole Massacre
-Description: 
+These acts were passed on October 4, 1763. The Molasses Act revision was passed as the Sugar Act later in 1764. As mentioned, smuggling was quite popular among colonists, so the reforms brought some resentment both from merchants and the general public. These acts were the beginning of dissent over British taxation policy, though the protests would not really take off until the Stamp Act in 1765.
 isPeriod: false
-Date: 09/14/1763
-Color: 75/0/130
-Category: Battle/Attack/Siege
+Date: 10/04/1763
+Color: 255/255/0
+Category: Economy
 Alignment: Centered
-Tags: Pontiac's Rebellion
+Tags: Tax, England/Great Britain/United Kingdom, American Revolution
 Images: none
 end
 
@@ -7015,7 +6979,7 @@ end
 Title: <i>The Rights of Colonies Examined</i>
 Description: The Rights of Colonies Examined was an essay written by Rhode Island governor Stephen Hopkins. In it, he argues that the British Constitution, "the best that ever existed among men," allowed British subjects to be governed only by laws they have consented to in some manner, and prevented forcing their property away from them. The Massachusetts, Connecticut, and Rhode Island charters granted those colonists all the same rights that any British subject was entitled to, a trait shared with every country and its colonies. Ancient Greece and ancient Rome followed this principle, and even contemporary Spain and France, whose subjects Hopkins claims are less free than their British counterparts. Parliament had also passed, with King George II's accession, a law that declared foreign Protestants who had lived in a British colony for seven years to be eligible for naturalization into a fully-fledged British subject. Therefore, colonists were undoubtedly entitled to the rights of British subjects.
 
-Great Britain had always respected these rights as long as the colonists had reMained loyal. But now, though the colonists were no less loyal than before, Parliament, for an unknown reason, had pased the Sugar Act, "limiting, restricting, and burdening the trade of these colonies much more than had ever been done before, as also for greatly enlarging the power and jurisdiction of the courts of admiralty." They had also passed a resolution considering placing a tax on stamps, another worrying prospect.
+Great Britain had always respected these rights as long as the colonists had remained loyal. But now, though the colonists were no less loyal than before, Parliament, for an unknown reason, had pased the Sugar Act, "limiting, restricting, and burdening the trade of these colonies much more than had ever been done before, as also for greatly enlarging the power and jurisdiction of the courts of admiralty." They had also passed a resolution considering placing a tax on stamps, another worrying prospect.
 
 Hopkins concedes that it is necessary for Parliament to control the empire's general commerce, but argues that when these laws are being determined, the colonies "ought to have such notice, that they May appear and be heard by their agents, by counsel, or written representation." Parliament is too far away to know much about what is happening in the colonies, so it is only with this notice that Parliament could be made aware of how negatively this would affect the colonies. "A duty of three pence per gallon on foreign molasses is well known to every man in the least acquainted with it to be much higher than that article can possibly bear, and therefore must operate as an absolute prohibition. This will put a total stop to our exportation of lumber, horses, flour, and fish to the French and Dutch sugar colonies." Entire industries in the colonies would collapse and perhaps be taken over by the French. Rhode Island, "a new colony" which relies heavily on this kind of trade, would suffer more than anyone. The colonies' economic hardships would make Britain suffer in turn. This same act of Parliament banned exporting lumber and timber to anywhere besides Britain, which would damage the Irish linen industry, an injury that would provide Britain with no benefit.
 
@@ -7027,7 +6991,7 @@ Hopkins then asks what right Parliament has to tax them. "And can it possibly be
 
 Hopkins then argues that in an empire like Great Britain, with so many levels of government, "no single part, though greater than another part, is by that superiority entitled to make laws for or to tax such lesser part; but all laws and all taxations which bind the whole must be made by the whole." He uses the contemporary example of the "empire of Germany" (presumably the Holy Roman Empire), where neither the emperor nor the strong states govern or tax the weaker states. Only the diet, with representatives of each state, could do so. In the same way, the people of Britain do not hold sovereignty over the people of America, so have no right to tax them. Only if they receive consent in the form of Parliamentary representation of the colonists could they justly do this.
 
-Hopkins then discusses the argument that the colonies ought to help pay for the war that helped defend them. He notes a lack of precedent. During King George's War of the 1740s, the colonists successfully defended themselves against a large French attack with no help from Britain. They did not get to keep this land; it was under British control, and would become new colonies. Hopkins predicts that "hard will be the fate, yea cruel the destiny, of these unhappy colonies if the reward they are to receive for all this is the loss of their freedom; better for them Canada still reMained French."
+Hopkins then discusses the argument that the colonies ought to help pay for the war that helped defend them. He notes a lack of precedent. During King George's War of the 1740s, the colonists successfully defended themselves against a large French attack with no help from Britain. They did not get to keep this land; it was under British control, and would become new colonies. Hopkins predicts that "hard will be the fate, yea cruel the destiny, of these unhappy colonies if the reward they are to receive for all this is the loss of their freedom; better for them Canada still remained French."
 
 He then asserts that the colonies are still contributing their fair share to the British Empire, even without taxes. They pay for their own local governments, just like the British do. They "cheerfully" raise money for the public good when called upon, being the most "loyal and dutiful subjects as any age or nation ever produced." Why would Parliament want to jeopordize that with "an incidious [sic] and unconstitutional method to compel them to do what they have ever done freely."
 
@@ -7056,19 +7020,8 @@ Tags: American Revolution
 Images: none
 end
 
-Title: Enoch Brown School Massacre
-Description: 
-isPeriod: false
-Date: 07/26/1764
-Color: 75/0/130
-Category: Battle/Attack/Siege
-Alignment: Centered
-Tags: Pontiac's Rebellion
-Images: none
-end
-
 Title: Currency Act
-Description: The Currency Act of 1764 was a law passed by Parliament that prohibited residents of all thirteen colonies from using paper money to pay off any public or private debt. Parliament passed the law because they found regulating printed colonial currency difficult, preferring specie (gold or silver) to be used like back in England. Printed currency was subject to rampant inflation, especially in New England. A particularly bad example was Rhode Island, whose currency in 1740 was worth a mere four percent of its face value. Unfortunately, specie was in short supply in the colonies, and the Currency Act made it even more difficult to pay their debts. Colonists, including Benjamin Franklin, who was in London at the time, would petition Parliament for the next nine years to repeal or amend the law. It was seen as a "major grievance" and many felt as if Great Britain did not understand their struggles. They also didn't appreciate Great Britain limiting their autonomy, something they had been promised and grown used to the the last century.
+Description: The Currency Act of 1764 was a law passed by Parliament that prohibited residents of all thirteen colonies from using paper money to pay off any public or private debt. Parliament passed the law because they found regulating printed colonial currency difficult, preferring specie (gold or silver) to be used like in Great Britain. Unregulated printed currency was subject to rampant inflation. New England saw the worst of it, especially Rhode Island, whose currency in 1740 was worth a mere four percent of its face value. Unfortunately, specie was in short supply in the colonies, and the Currency Act made it even more difficult to pay their debts. Colonists, including Benjamin Franklin, who was in London at the time, petitioned Parliament for the next nine years to repeal or amend the law. It was seen as a major grievance and many felt as if Great Britain did not understand their struggles. They also didn't appreciate Great Britain limiting their autonomy, something they had been promised and grown used to in the last century.
 
 In 1770, the New York legislature informed Parliament that the Currency Act was preventing them from paying for the (also unpopular) Quartering Act, which required the colonies to pay for the presence of British soldiers there. Great Britain, fearing taking on such an expensive duty themselves when they were in deep financial straits, gave in and allowed £120,000 in paper currency to be printed to pay for the soldiers. In 1773 Parliament amended the Currency Act to allow paper currency to be used for public debts, which considerably eased tensions. Nevertheless, it was an early sign for many that Great Britain did not truly understand the colonists and that their local legislatures were better suited to governing them.
 isPeriod: false
@@ -7080,7 +7033,7 @@ Tags: American Revolution
 Images: none
 end
 
-Title: College of Rhode Island founded
+Title: Brown University founded
 Description: The College of Rhode Island and Providence Plantations was founded in the eponymous colony. It is the seventh-oldest college in America, and continues to this day under the name of Brown University.
 isPeriod: false
 Date: 09/15/1764
@@ -7442,7 +7395,7 @@ Tags: Maryland-Pennsylvania-Delaware border dispute
 Images: none
 end
 
-Title: <i>Letters from a Farmer in Pennsylvania</i>
+Title: <b><i>Letters from a Farmer in Pennsylvania</i></b>
 Description: A series of essays written by lawyer John Dickinson in which he argued against the Townshend Acts. He claimed that only the colonial elected assemblies had the right to raise revenue, and that they would set an unwanted precedent for taxation without representation, meaning that the colonists could not back down. The letters provided unity among opponents to the taxes and changed how the colonists thought about the role of government.
 
 The Letters from a Farmer in Pennsylvania were essays written by lawyer John Dickinson. Addressed "to the inhabitants of the British Colonies," he wrote anonymously, claiming to be an educated farmer of modest means on the Delaware River in Pennsylvania. His first letter, published on December 2, 1767, laments the muted reaction to the newly-passed Townshend Acts.
@@ -7770,11 +7723,11 @@ Description: The Intolerable Acts were a series of four laws passed to punish Ma
 
 Parliament, who had named these laws the Coercive Acts, intended for them to gain better control over the rebellious Massachusetts and break its spirit. Each act was meant to damage life in some way: the Boston Port Act ruined the economy and increased unemployment, the Massachusetts Governing Act essentially removed representative government, the Administration of Justice Act removed the right to a fair trial, and the Quartering Act provided a thinly veiled threat if the province didn't comply. The Quebec Act challenged the notion amongst the colonists that the French and Indian War, which saw thousands of colonists' deaths, was fought for Protestantism and popular sovereignty.
 
-It is at this point unsurprising that the colonies, Massachusetts especially, did not react well to these. They called them the Intolerable Acts, and thought that these made  the Stamp Act and Townshend Acts look trivial. They decided to formalize the Committees of Correspondence as the Continental Congress, composed of delegates selected by each colonial legislature. This Congress would meet up in one location, decide a plan of action, and report back to their respective colonies. The Congress resolved to send a petition directly to the king and establish a large-scale boycott of British goods.
+It is at this point unsurprising that the colonies, Massachusetts especially, did not react well to these. They called them the Intolerable Acts, and thought that these made the Stamp Act and Townshend Acts look trivial. They decided to formalize the Committees of Correspondence as the Continental Congress, composed of delegates selected by each colonial legislature. This Congress would meet up in one location, decide a plan of action, and report back to their respective colonies. The Congress resolved to send a petition directly to the king and establish a large-scale boycott of British goods.
 
 The Intolerable Acts caused a dramatic change in the colonies. While few were fans of the tea tax and Tea Act, many of even the most outspoken colonial Whigs, like George Washington, questioned the Boston Tea Party as perhaps going too far. But the Intolerable Acts were seen as a gross overreaction and a direct affront to the liberty of the inhabitants of Massachusetts, and the other colonists feared that Great Britain was willing and able to subject them to the same punishments. 
 
-The show of solidarity was widespread. On May 23, the Sons of Liberty in Chestertown, Maryland claimed it was illegal to buy, sell, or drink English tea, and supposedly conducted their own Tea Party protest. On July 4, Orangetown, New York proclaimed that they would boycott British goods until the acts were repealed.  The Virginia House of Burgesses declared a day of "fasting, humiliation, and prayer" to show support for Massachusetts. When Lord Dunmore dissolved the legislature in retaliation, they met up in Alexandria. There, on July 5, George Washington and others drafted the Fairfax Resolves, covered similar ground to the above, but also condemned the slave trade and urged for it to be ended. Rowan County, North Carolina passed a similar resolve to Fairfax on August 8. In Suffolk County, Massachusetts, committees of correspondence urged people not to pay taxes until their charter was restored, boycott British goods, and raise a militia. This resolve would be delivered by Paul Revere to the Continental Congress, where it was endorsed on September 17. On November 5, soldiers at Fort Gower on the Ohio River endorsed the Congress's statements. They wrote that "we will exert every power within us for the defence of American liberty," the first of these resolves to directly threaten rebellion. On January 20, 1775, Fincastle County, Virginia declared that "we are deliberately and resolutely determined never to surrender [our rights] to any power upon earth, but at the expense of our lives." Harford County, Maryland passed the last of these pre-war declarations on March 22, promising to "mutually pledge to each other our Lives, our Fortunes, and our sacred Honor."  Great Britain had not expected the level of unity and coordination amongst the colonies, even more so than during the Stamp Act protests. Colonists from as far away as Georgia sent supplies to Massachusetts to compensate them for their closed port. But this time, Parliament refused to back down. They were determined to get the colonies under control once and for all.
+The show of solidarity was widespread. On May 23, the Sons of Liberty in Chestertown, Maryland claimed it was illegal to buy, sell, or drink English tea, and supposedly conducted their own Tea Party protest. On July 4, Orangetown, New York proclaimed that they would boycott British goods until the acts were repealed. The Virginia House of Burgesses declared a day of "fasting, humiliation, and prayer" to show support for Massachusetts. When Lord Dunmore dissolved the legislature in retaliation, they met up in Alexandria. There, on July 5, George Washington and others drafted the Fairfax Resolves, covered similar ground to the above, but also condemned the slave trade and urged for it to be ended. Rowan County, North Carolina passed a similar resolve to Fairfax on August 8. In Suffolk County, Massachusetts, committees of correspondence urged people not to pay taxes until their charter was restored, boycott British goods, and raise a militia. This resolve would be delivered by Paul Revere to the Continental Congress, where it was endorsed on September 17. On November 5, soldiers at Fort Gower on the Ohio River endorsed the Congress's statements. They wrote that "we will exert every power within us for the defence of American liberty," the first of these resolves to directly threaten rebellion. On January 20, 1775, Fincastle County, Virginia declared that "we are deliberately and resolutely determined never to surrender [our rights] to any power upon earth, but at the expense of our lives." Harford County, Maryland passed the last of these pre-war declarations on March 22, promising to "mutually pledge to each other our Lives, our Fortunes, and our sacred Honor." Great Britain had not expected the level of unity and coordination amongst the colonies, even more so than during the Stamp Act protests. Colonists from as far away as Georgia sent supplies to Massachusetts to compensate them for their closed port. But this time, Parliament refused to back down. They were determined to get the colonies under control once and for all.
 
 With the passage of these acts, tension between Great Britain and the Thirteen Colonies were at an all-time high. Colonists, feeling threatened by these acts, began stockpiling weapons en masse. Less than a year after the Intolerable Acts were passed, the colonists and British troops would begin skirmishes, which soon turned into a full-blown war.
 isPeriod: true
@@ -7978,7 +7931,7 @@ Images: none
 end
 
 Title: <b>Battles of Lexington and Concord</b>
-Description: Start of the Revolutionary War. British soldiers found out that colonists were stockpiling ammunition for a revolution in Concord, so they came to put it down. Soldiers were intercepted at Lexington, as riders like Paul Revere and Samuel Prescott had forewarned the Patriots of the British arrival. It is unknown which side fired the first shot, but it was nicknamed "the shot heard round the world," and marked the beginning of the American Revolutionary War. The militia was outnumbered at Lexington, forcing them to retreat to Concord, where they received a large number of reinforcements. At Concord, the rebels were the ones with superior numbers, and managed to chase the British troops out of the city. The British retreated to Boston, being harassed by militiamen on they way back. The defeat was humiliating for the British, as they had one of, if not the strongest and best-trained army in the world, and yet they lost to poorly trained militiamen.
+Description: The militia was outnumbered at Lexington, forcing them to retreat to Concord, where they received a large number of reinforcements. At Concord, the rebels were the ones with superior numbers, and managed to chase the British troops out of the city. The British retreated to Boston, being harassed by militiamen on they way back. The defeat was humiliating for the British, as they had one of, if not the strongest and best-trained army in the world, and yet they lost to poorly trained militiamen.
 
 In response, county governments once again began passing resolves declaring their resistance. On May 31, 1775, Mecklenburg County, North Carolina declared all laws passed by the king or Parliament to be void. On June 20, Cumberland County, North Carolina announced that they would be ready to "sacrifice our lives and fortunes to secure [the country's] freedom and safety." On August 14, Tryon County, North Carolina promised similar resistance against British injustice.
 
@@ -7989,7 +7942,7 @@ Gage attempted to keep the order secret, even instructing Smith not to open them
 
 On April 19, at about 3 am, 700 British regulars were ready to leave Boston for Concord, arriving at Lexington by dawn. They found about 80 militiamen there, headed by Captain John Parker, a French and Indian War veteran. Parker and the rest of the Patriots knew that Concord would be safe, as they would already have hidden the munitions. The British had actually visited Concord several times before for the same reason and had found nothing. As such, there was no point in shooting at the much larger British force unless they attacked first. Supposedly, Parker told the militia to "Stand your ground; don't fire unless fired upon, but if they meant to have a war, let it begin here." The British surrounded the militiamen, and Major John Pitcairn ordered them to disperse. The situation was becoming heated, and people all around were yelling. Parker then told his men to leave as well, but a bout with tuberculosis had weakened his voice, and combined with the shouting many did not hear him. Amidst the confusion, someone fired the first shot, later nicknamed the "shot heard 'round the world." The shooter's identity varies across accounts; theories include a militiaman, a soldier, an onlooker, or several simultaneous shots. In any case, the regulars began firing intermittently on the miltia, despite not having orders to do so. Most militiamen fled, being unable to prepare their rifles to shoot back. The regulars then charged with bayonets. In the end, eight Lexington men died, and one regular was wounded in the thigh. Despite being characterized as a battle, the "Battle of Lexington" was really more of a scuffle, though it was the first in the long war to come.
 
-
+The Lexington and Lincoln militias moved to Concord to prepare for the main event of the day. The Concord militia, numbering about 250, saw the approaching 700 regulars and decided to leave the center of town for a hill a mile away to observe them better.
 
 Deaths:
 39 Patriot militiamen
@@ -8179,7 +8132,7 @@ Images: none
 end
 
 Title: <b>Thomas Paine's <i>Common Sense</i></b>
-Description: <i>Common Sense</i> was a pamphlet written by Thomas Paine advocating for independence from Great Britain. Paine wrote about the flaws in a monarchical government, complained that the English constitution was borne out of tyrannies of the king and aristocracy, and affirmed that honesty and good moral character is worth more than "crowned ruffians." Paine assured readers that if they reMained colonies, their economy would be forever tied down by the Navigation Acts, but could flourish on its own. Americans could stay out of the many wars fought by Great Britain against other European powers, and most grandiosely of all, become a haven for freedom, a savior of mankind.
+Description: <i>Common Sense</i> was a pamphlet written by Thomas Paine advocating for independence from Great Britain. Paine wrote about the flaws in a monarchical government, complained that the English constitution was borne out of tyrannies of the king and aristocracy, and affirmed that honesty and good moral character is worth more than "crowned ruffians." Paine assured readers that if they remained colonies, their economy would be forever tied down by the Navigation Acts, but could flourish on its own. Americans could stay out of the many wars fought by Great Britain against other European powers, and most grandiosely of all, become a haven for freedom, a savior of mankind.
 
 It was written in layman's terms, and although not everyone could read, those who could read it to everyone else. <i>Common Sense</i> was directed towards everybody, not just the elite, in an effort to include the number of people thinking about politics. It soon became the most widely read book in America (percentage-wise) and sold more than 150,000 copies. It dramatically changed how Americans saw the war, as, before the book, most hoped to eventually repair relations with Great Britain. Instead, they desired to form a new republic, and less than five months later the Declaration of Independence was ratified.
 
@@ -8592,6 +8545,17 @@ Tags: American Revolution
 Images: none
 end
 
+Title: James Cook lands in Hawaii
+Description: James Cook was a British explorer famous for being the first European to explore much of the Pacific. In 1776, he took two ships, the Resolution and the Discovery, and took to the ocean for the third time. After spending two years in islands he discovered on his previous voyages, like New Zealand and Tahiti, on January 18, 1778, he landed in an archipelago unbeknownst to any European.
+isPeriod: true
+Date: 01/18/1778 - 02/02/1778
+Color: 0/0/255
+Category: Exploration
+Alignment: null
+Tags: Hawaii
+Images: none
+end
+
 Title: <b>French Treaty of Alliance, and of Amity and Commerce</b>
 Description: An alliance between France and the US, with the former agreeing to assist the latter in their fight for independence from Great Britain. France was originally neutral in the conflict. On the one hand, they still resented the British for their recent defeat in the Seven Years' War, and were eager to enact their revenge. However, that same war left them broke, leaving them cautious to engage in another war with the country that they were not sure they could win. The Battle of Saratoga in 1777 tipped the scales in the US' favor, proving to the French that the fledgling nation had a chance at winning. Negotiations were opened between the two countries, with the US using their Model Treaty to draft an agreement. The nations signed two treaties in tandem: the Treaty of Alliance, in which they agreed to defend each other from British aggression, and the Treaty of Amity and Commerce, which was a commercial alliance. The French provided much-needed support to the Americas, helping them to win the War of Independence. It was ratified by the US on May 4, and by France on July 16.
 isPeriod: false
@@ -8963,7 +8927,7 @@ Images: none
 end
 
 Title: New Hampshire's third constitution
-Description: New Hampshire adopted its third and current constitution. Notably, its bill of rights proclaimed that "All men are born equally free and independent" and that "All men have certain natural, essential, and inherent rights - among which are, the enjoying and defending life and liberty." This language would seem to ban slavery in the state, and very similar words in the Massachusetts Constitution was used to successfully ban slavery two years prior. However, no such judicial records for New Hampshire are known, so the legal status of slavery reMained unclear in the state for decades. New Hampshire continued to have a small number of slaves: 158 in 1790,eight in 1800, none in 1810 and 1820, three in 1830, and one in 1840. This was a very small fraction of the state's population, and the state was still known as a free and anti-slavery state.
+Description: New Hampshire adopted its third and current constitution. Notably, its bill of rights proclaimed that "All men are born equally free and independent" and that "All men have certain natural, essential, and inherent rights - among which are, the enjoying and defending life and liberty." This language would seem to ban slavery in the state, and very similar words in the Massachusetts Constitution was used to successfully ban slavery two years prior. However, no such judicial records for New Hampshire are known, so the legal status of slavery remained unclear in the state for decades. New Hampshire continued to have a small number of slaves: 158 in 1790,eight in 1800, none in 1810 and 1820, three in 1830, and one in 1840. This was a very small fraction of the state's population, and the state was still known as a free and anti-slavery state.
 isPeriod: false
 Date: 10/31/1783
 Color: 0/128/128
@@ -9091,7 +9055,7 @@ Images: none
 end
 
 Title: Congress moves to New York City
-Description: After leaving Trenton, NJ, Congress once again left, this time for New York City, NY for 5 years. They convened at City Hall on Wall Street, and it was here that George Washington was inaugurated. New York reMained the capital until the Compromise of 1790 moved it to Washington DC.
+Description: After leaving Trenton, NJ, Congress once again left, this time for New York City, NY for 5 years. They convened at City Hall on Wall Street, and it was here that George Washington was inaugurated. New York remained the capital until the Compromise of 1790 moved it to Washington DC.
 isPeriod: false
 Date: 01/11/1785
 Color: 192/239/69
@@ -9152,7 +9116,7 @@ During the Revolutionary War, the British claimed control over the region, and w
 
 In late 1786, US Generals George Rogers Clark and Benjamin Logan organized the frontier militias to attack. In September, Clark took 1200 men to the Wabash River, but soon turned back because of mutiny and desertion. The next month, Logan took 800 men to Shawnee towns along the Mad River, a tributary of the Great Miami River. Logan either did not know or did not care that most of the Shawnee were civilians. They burned the towns and food, and captured and killed many of their inhabitants. This would be the only conflict for several years.
 
-In July 1787, Arthut St. Clair was made governor of the new Northwest Territory. Among his other duties was breaking the confederacy's power and gaining new land through treaties. St. Clair invited various chiefs in the area to Fort Harmar on the Ohio River in modern-day southeastern Ohio to negotiate new treaties. The confederacy was divided. Those closest to the Americans favored compromise, while those farther away, like Brant, wanted the Americans to stop at the tributaries of the Ohio, greatly limiting their expansion. In the end, only minor chiefs signed the new Treaty of Fort Harmar, which mostly just re-established the borders set several years prior. These proceedings only incensed the confederacy further. They began raiding  frontier towns in Kentucky, prompting American raids on nearby Shawnee towns.
+In July 1787, Arthut St. Clair was made governor of the new Northwest Territory. Among his other duties was breaking the confederacy's power and gaining new land through treaties. St. Clair invited various chiefs in the area to Fort Harmar on the Ohio River in modern-day southeastern Ohio to negotiate new treaties. The confederacy was divided. Those closest to the Americans favored compromise, while those farther away, like Brant, wanted the Americans to stop at the tributaries of the Ohio, greatly limiting their expansion. In the end, only minor chiefs signed the new Treaty of Fort Harmar, which mostly just re-established the borders set several years prior. These proceedings only incensed the confederacy further. They began raiding frontier towns in Kentucky, prompting American raids on nearby Shawnee towns.
 isPeriod: true
 Date: 08/02/1786 - 08/03/1795
 Color: 224/0/0
@@ -9220,7 +9184,7 @@ The Virginia Plan declared that the federal government ought to defend the count
 
 Indeed, when fellow Virginia delegate Edmund Randolph presented the idea to the convention on May 29, most of the delegates were impressed, and it became the template for the rest of the discussion. Even after discovering that they were brought to the convention under false pretenses, most of them warmed up to Madison's insistence that a new government was important. They all recognized the failures of the Confederation, but were divided on what kind of government should replace it. The same day, Charles Pinckney of South Carolina proposed his own plan, which also strengthened the national government. Many of his suggestions made it into the final product, such as naming the two houses the Senate and House of Representatives (though Pinckney originally called it the House of Delegates). The next day, the delegates agreed on creating a three-branch federal government, which would be supreme over the states. In doing this, they had all agreed to creating a new, more powerful government.
 
-On the next day, May 31, the main topic of discussion was how Congress would be organized. They quickly agreed on a bicameral legislature, with one being smaller and more exclusive. Every state legislature except Pennsylvania's was set up like this, as they were in turn based off of British Parliament, composed of the lower House of Commons and the upper House of Lords. Therefore, they had been used to a very similar setup for centuries. They also agreed that the House of Representatives ought to be popularly elected, though there was some dissent from some, including Elbridge Gerry of Massachusetts, Roger Sherman of Connecticut, and Pierce Butler of South Carolina. As for the Senate, the Virginia Plan originally called for the House to appoint its members. However, much of the delegation wanted it to be done by state legislatures to protect their interests.  On June 7, after a week of debating, that idea's support had become unanimous.
+On the next day, May 31, the main topic of discussion was how Congress would be organized. They quickly agreed on a bicameral legislature, with one being smaller and more exclusive. Every state legislature except Pennsylvania's was set up like this, as they were in turn based off of British Parliament, composed of the lower House of Commons and the upper House of Lords. Therefore, they had been used to a very similar setup for centuries. They also agreed that the House of Representatives ought to be popularly elected, though there was some dissent from some, including Elbridge Gerry of Massachusetts, Roger Sherman of Connecticut, and Pierce Butler of South Carolina. As for the Senate, the Virginia Plan originally called for the House to appoint its members. However, much of the delegation wanted it to be done by state legislatures to protect their interests. On June 7, after a week of debating, that idea's support had become unanimous.
 
 The most contentious issue for the delegates was proportional representation in Congress. The Virginia Plan originally called for the number of representatives from each state in both houses to be proportional to that state's population. Just three states, Virginia, Pennsylvania, and Massachusetts, represented over half of the country's population, but were frequently outvoted in the Confederation because each state had equal power. Madison believed proportional representation was more fair, but being from the largest state likely influenced his opinion. Delegates from the smaller states feared that in a government of proportional representation, their power would diminish and their interests and issues would be ignored. On June 11, one such delegate, Roger Sherman of Connecticut, suggested a compromise. The House would have proportional representation, but the Senate would have equal representation for each state. He had suggested a similar arrangement in 1776 to the Continental Congress, but was rejected by the smaller states, who did not want to introduce proportional representation in any form. At the convention, his plan failed again, 6-5.
 
@@ -9822,7 +9786,7 @@ Images: none
 end
 
 Title: North Carolina ratifies the Constitution
-Description: North Carolina was one of the few states that had rejected the Constitution during the ratification debates of 1787-88. The convention at Hillsborough primarily objected to a lack of a bill of rights, a common complaint among Anti-Federalists. The Federalists, outnumbered 2-1 at the convention, decided to record and publish the debate to use to persuade North Carolinians to ratify later. The most outspoken of these Federalists were James Iredell, who would become a Supreme Court Justice in 1790, and William R. Davie, who founded the University of North Carolina.  In 1789, the Constitution came into effect without North Carolina, effectively leaving the state independent. This would only last for a few months, though. In September 1789, the Bill of Rights passed Congress. Seeing that enough states were sure to ratify them, North Carolinians became more confident that their rights would be protected. Also, the wealthy northeastern portion of the state, which was more Federalist, threatened to secede and join the Union if North Carolina did not ratify. A second convention was held at Fayetteville, and this time they voted to ratify, becoming the 12th state to do so.
+Description: North Carolina was one of the few states that had rejected the Constitution during the ratification debates of 1787-88. The convention at Hillsborough primarily objected to a lack of a bill of rights, a common complaint among Anti-Federalists. The Federalists, outnumbered 2-1 at the convention, decided to record and publish the debate to use to persuade North Carolinians to ratify later. The most outspoken of these Federalists were James Iredell, who would become a Supreme Court Justice in 1790, and William R. Davie, who founded the University of North Carolina. In 1789, the Constitution came into effect without North Carolina, effectively leaving the state independent. This would only last for a few months, though. In September 1789, the Bill of Rights passed Congress. Seeing that enough states were sure to ratify them, North Carolinians became more confident that their rights would be protected. Also, the wealthy northeastern portion of the state, which was more Federalist, threatened to secede and join the Union if North Carolina did not ratify. A second convention was held at Fayetteville, and this time they voted to ratify, becoming the 12th state to do so.
 isPeriod: false
 Date: 11/21/1789
 Color: 192/239/69
@@ -10481,17 +10445,6 @@ Tags: none
 Images: none
 end
 
-Title: French Revolutionary Wars
-Description: 
-isPeriod: true
-Date: 04/20/1792 - 03/27/1802
-Color: 160/0/0
-Category: Conflict with over 100,000 deaths
-Alignment: null
-Tags: France, England/Great Britain/United Kingdom
-Images: none
-end
-
 Title: First Militia Act of 1792
 Description: 
 isPeriod: false
@@ -10589,6 +10542,17 @@ Color: 0/0/0
 Category: Individual
 Alignment: Centered
 Tags: France
+Images: none
+end
+
+Title: War between Great Britain and the French Republic
+Description: 
+isPeriod: true
+Date: 02/01/1793 - 03/27/1802
+Color: 160/0/0
+Category: Conflict with over 100,000 deaths
+Alignment: null
+Tags: France, England/Great Britain/United Kingdom
 Images: none
 end
 
@@ -11062,9 +11026,13 @@ Images: none
 end
 
 Title: Quasi-War
-Description: An undeclared war fought almost entirely at sea between the US and France, Caused because the US refused to pay debts to France for assisting in the Revolution, claiming it was owed to a previous regime. France was also upset about Jay's Treaty, claiming that they would rather help an old enemy than an old ally. A two year series of naval skirmishes ensued. Adams, desperate for the conflict not to escalate, rejects his party's anti-French ideals and opened negotiations with the European nation. Crying treason, many Federalists withdrew support for Adams, contributing to his loss at re-election.
+Description: The fact that France provided major assistance to America during the Revolutionary War and was one of the first countries to recognize its independence would seem to indicate a long-lasting friendship between the US and France. France's embrace of republicanism, liberty, and equality in 1789 seemed to seal the deal. But the 1790s would see relations between the two countries strained. In September 1792, the French government massacred over a thousand political prisoners in fear of a conspiracy. On January 21, 1793, King Louis XVI was executed. On May 31, the moderates in the government were arrested, and the radical Jacobins took complete control. Soon after, the radical Legislative Assembly began its Reign of Terror, in which 40,000 people were executed for often trivial charges. To top it all off, France had declared war on half of Europe, including Great Britain. While initially optimistic about the French Revolution, Americans were increasingly concerned about France's epidemic of chaos and violence, though some, like Thomas Jefferson, remained steadfast supporters.
 
-On July 9, 1798, Congress passed the Commerce Protection Act, authorizing the president to use military force during the Quasi-War to protect American commerce.
+Under the 1778 Treaty of Alliance, America was obligated to protect the French West Indies from the British and Dutch. Americans preferred neutrality in the war. Not only would it soothe tensions between pro-British and pro-French Americans, but traders could continue selling to both countries. In 1793, Congress suspended paying off their debts to France during the Revolutionary War. They argued that those debts were made to a government that no longer existed. They also claiemd the Treaty of Alliance obligations only applied to defensive wars, and France was the instigator in this case.
+
+The next year, Congress passed the Neutrality Act, declaring neutrality in the war. In November, Chief Justice John Jay signed a treaty with Great Britain, establishing closer ties with the country at the expense of France. Exports to Britain nearly tripled over the next decade. In response, in October 1796 French privateers began capturing American ships trading with the British. They took advantage of America's nonexistent navy. By June 1797, they had captured 6% of America's merchant ships.
+
+Hoping to resolve the raids diplomatically, President Adams sent Elbridge Gerry, John Marshall, and Charles Pinckney to France. There, they were met by French Foreign Minister Charles Maurice de Talleyrand-Périgord. Talleyrand sent fellow diplomats Baron Jean-Conrad Hottinguer, Pierre Bellamy, and Lucien Hauteval to negotiate informally with the American commission. The three demanded bribes before proceedings could continue. Such demands were commonplace at the time, but the commission was nonetheless outraged and refused to give a cent. They wrote back to Adams of how they were disrespected, and the president consulted his cabinet on their next action. Attorney General Charles Lee and Secretary of State Timothy Pickering wanted a declaration of war, while the others were more reluctant. Congressional Republicans, believing Adams to be exaggerating the claims of disrespect to start a war, demanded he publicly release the ambassadors' report. He complied on March 20, 1798, though censoring the names of Talleyrand's associates with the letters 'X', 'Y', and 'Z'. Thus, the failed negotiations became known as the XYZ Affair. The situation was revealed to be exactly as bad as Adams had told it, and now much of the public called for war as well. Only Congress could declare war, though the president could formally request them to do so. Adams held firm and refused, and so did Congress. Instead, they authorized the construction of twelve more frigates in addition to the six they had finished building in 1797. On July 7, 1798, Congress repealed the Treaty of Alliance with France. On July 9, they passed the Commerce Protection Act, authorizing the president to use military force during the Quasi-War to protect American commerce.
 
 Casualties:
 514 Americans
@@ -11453,7 +11421,7 @@ Images: none
 end
 
 Title: <b>Louisiana Purchase</b>
-Description: In the late 17th century, France claimed the Territory of Louisiana as part of its colonial efforts. It spanned the western part of the Mississippi River drainage basin, a massive territory, though no one at the time knew exactly how large it was. France established the towns of St. Louis and New Orleans along the Mississippi River, but outside of those the territory reMained sparsely populated by Europeans. France lost Louisiana to Spain at the end of the Seven Years' War in 1763. In 1800, France, now under Napoleon, wanted to restore its colonial empire. Napoleon had Spain transfer control of Louisiana back to France.
+Description: In the late 17th century, France claimed the Territory of Louisiana as part of its colonial efforts. It spanned the western part of the Mississippi River drainage basin, a massive territory, though no one at the time knew exactly how large it was. France established the towns of St. Louis and New Orleans along the Mississippi River, but outside of those the territory remained sparsely populated by Europeans. France lost Louisiana to Spain at the end of the Seven Years' War in 1763. In 1800, France, now under Napoleon, wanted to restore its colonial empire. Napoleon had Spain transfer control of Louisiana back to France.
 
 However, by 1803 Louisiana had become a liability. France's most lucrative colony was Saint-Domingue, used for growing sugar. In 1791, the slaves revolted and pushed the French out of the island. Napoleon had hoped to reconquer the island, but by 1803 the effort was going nowhere, and he called it off. Saint-Domingue grew so much sugar that there was not enough land to grow food to feed the colonists or slaves. Louisiana's main purpose was to grow that food and ship it to Saint-Domingue. However, now that Saint-Domingue was lost to France, Louisiana was no longer necessary. It was also underpopulated, which left it vulnerable to a British or American invasion. Napoleon also needed money to fund his upcoming war against the UK.
 
@@ -11463,7 +11431,7 @@ Negotiations apparently stalled for two years. In 1803, Jefferson sent Livingsto
 
 Once a treaty had been signed, it had to be ratified by the Senate to become legitimate. Tthe purchase was officially announced on July 4, and had to be ratified by October. Jefferson was immensely pleased with the deal, but feared it was unconstitutional. He was a strict constructionist, and the Constitution did not explicitly allow the federal government to buy land from foreign nations. 
 
-Both Republicans and Federalists were concerned as well. They feared both the purchase's constitutionality and the effect it would have on the balance of power and the economy. The eastern states, which founded the country and made up the vast majority of states and people, didn't want their influence diminished by even more new western states. Some thought that the new land would be turned into many new slave states, which would divide the country between North and South. Federalists thought that the new states would be Republican, which would diminish their own power even more.  New England ports would have to compete with New Orleans to sell western-grown crops at. Speculators in the North would have to compete with those in the new territory. Republican Majority Leader John Randolph of the House of Representatives motioned to reject the purchase, but it failed by two votes. Senator Timothy Pickering and other Northern Federalists even floated the idea of the North breaking off from the country and forming a confederacy, but the idea didn't get far.
+Both Republicans and Federalists were concerned as well. They feared both the purchase's constitutionality and the effect it would have on the balance of power and the economy. The eastern states, which founded the country and made up the vast majority of states and people, didn't want their influence diminished by even more new western states. Some thought that the new land would be turned into many new slave states, which would divide the country between North and South. Federalists thought that the new states would be Republican, which would diminish their own power even more. New England ports would have to compete with New Orleans to sell western-grown crops at. Speculators in the North would have to compete with those in the new territory. Republican Majority Leader John Randolph of the House of Representatives motioned to reject the purchase, but it failed by two votes. Senator Timothy Pickering and other Northern Federalists even floated the idea of the North breaking off from the country and forming a confederacy, but the idea didn't get far.
 
 There was also the matter of the territory's residents. Its non-Indian population was about 60,000, around half of which were slaves, and the rest a mix of Europeans. France, not wanting to relegate its former subjects to second-class citizenry, required the US give all of Louisiana's inhabitants full citizenship as part of the purchase. Some Americans were concerned that these foreigners would not understand or support democracy or other American ideals. Louisiana's citizens themselves were not consulted, though they were generally unhappy with the transfer. Americans were more likely to settle in large numbers than the Spanish and French had. They were afraid the Americans would sour relations with the Indians, who would take it out on them. Nevertheless, their opinions were ignored and the debate continued.
 
@@ -11471,7 +11439,7 @@ Public reactions to the purchase were mostly positive. One newspaper wrote, "we 
 
 Despite his constitutional misgivings, Jefferson thought that the purchase was the right thing for the country. Gaining Louisiana would protect American safety and promote commerce. More than that, Jefferson dreamed of an "empire of liberty." In his vision, the life of freedom was that of a yeoman farmer working his own land and not having to answer to a master. With so much empty land (not counting Indians), every American family could have its own farm. Unfortunately for Jefferson's vision, the Louisiana Purchase would end up providing more territory for slavery to expand into, ruining his "empire of liberty." Jefferson suggested a constitutional amendment to allow the purchase, but his cabinet assured him it was unnecessary. Secretary of State James Madison, who also authored much of the Constitution, said it was constitutional any way you look at it. Treasury Secretary Albert Gallatin noted that the president was explicitly granted the power to negotiate treaties, of which land exchanges were a common part. Jefferson, now comforted, enthusiastically supported the purchase. As for Congress, despite the many misgivings listed above, it was ratified easily.
 
-The US did not actually have the money to pay for the land. They made a down payment of $3 million in gold and bonds  They funded the rest by borrowing money from British bankers. Because France used that money to fund its war against the UK, in a sense the British funded their own enemy. Nevertheless, the British government allowed the deal to go through because they preferred the neutral Americans to control Louisiana over the French.
+The US did not actually have the money to pay for the land. They made a down payment of $3 million in gold and bonds. They funded the rest by borrowing money from British bankers. Because France used that money to fund its war against the UK, in a sense the British funded their own enemy. Nevertheless, the British government allowed the deal to go through because they preferred the neutral Americans to control Louisiana over the French.
 
 Louisiana was formally transferred on December 20 in New Orleans. The Louisiana area was initially organized under a government similar to the one already in place from the French and Spanish. On October 1, 1804, the area was organized into the Territory of Orleans in the south, and the District of Louisiana (later the Territory of Louisiana) for the rest of the area.
 
@@ -11510,7 +11478,7 @@ Images: none
 end
 
 Title: New Jersey abolishes slavery
-Description: New Jersey passed the 1804 Act of Gradual Abolition, which does exactly as it says. However, there reMained a few (16) slaves in New Jersey all the way up to 1865, when the practice was abolished altogether. New Jersey became the 9th free state, making 8 slave states.
+Description: New Jersey passed the 1804 Act of Gradual Abolition, which does exactly as it says. However, there remained a few (16) slaves in New Jersey all the way up to 1865, when the practice was abolished altogether. New Jersey became the 9th free state, making 8 slave states.
 isPeriod: false
 Date: 02/15/1804
 Color: 0/0/0
@@ -11782,17 +11750,17 @@ Images: none
 end
 
 Title: <b>Transatlantic slave trade abolished</b>
-Description: Though slavery is widely abhorred in any form today, people in the late 18th and early 19th centuries felt differently. People who were willing to tolerate or even support slavery found the slave trade disgusting, and slave traders to be terrible people. Even worse was the transAtlantic slave trade. To them, it was one thing to be born into slavery, but quite another to be born free, then kidnapped and shipped overseas in a horribly-accomodated slave ship. Nevertheless, this practice had been continued for quite some time. In 1775, one in five people in the Thirteen Colonies were African, free or enslaved. During the Revolutionary War, the rebelling colonies all pledged to end their involvement in the transAtlantic slave trade. Most of them did. North Carolina, South Carolina, and Georgia reopened the trade after the war, but reclosed it in the 1790s. In 1803, South Carolina re-reopened the trade, and by 1807 was the only state that allowed it.
+Description: Though slavery is widely abhorred in any form today, people in the late 18th and early 19th centuries felt differently. People who were willing to tolerate or even support slavery found the slave trade disgusting, and slave traders to be terrible people. Even worse was the transatlantic slave trade. To them, it was one thing to be born into slavery, but quite another to be born free, then kidnapped and shipped overseas in a horribly-accomodated slave ship. Nevertheless, this practice had been continued for quite some time. In 1775, one in five people in the Thirteen Colonies were African, free or enslaved. During the Revolutionary War, the rebelling colonies all pledged to end their involvement in the transatlantic slave trade. Most of them did. North Carolina, South Carolina, and Georgia reopened the trade after the war, but reclosed it in the 1790s. In 1803, South Carolina re-reopened the trade, and by 1807 was the only state that allowed it.
 
-Article I, Section 9, Clause 1 of the Constitution denied Congress the power to ban the transAtlantic slave trade before the year 1808. However, Congress had already been passing laws restricting the transAtlantic slave trade or punishing those who participated in it. When it created the Mississippi Territory, it banned the transAtlantic slave trade there, as it was not a state. In 1800, Congress banned US citizens from participating or investing in the trade, meaning it had to be run exclusively through foreigners.
+Article I, Section 9, Clause 1 of the Constitution denied Congress the power to ban the transatlantic slave trade before the year 1808. However, Congress had already been passing laws restricting the transatlantic slave trade or punishing those who participated in it. When it created the Mississippi Territory, it banned the transatlantic slave trade there. As a territory, it was under the jurisdiction of the federal government, so did not enjoy such protections offered to states by the Constitution. In 1800, Congress banned US citizens from participating or investing in the trade, meaning it had to be run exclusively through foreigners.
 
-Their actions reflected a widely-shared opposition among Americans of the trade, for both moral and practical grounds. Northerners disliked the increase in Southern states' power in Congress  because of the Three-Fifths Clause. The Upper South states, like Virginia and Maryland, opposed it as well. Widespread farming of tobacco, a land-intensive crop, had depleted the nutrients in the soil. Agriculture in the area was declining, producing a surplus of slaves. Upper South slave-owners planned on selling their slaves to the Lower South, where the soil was still fertile, so demand for slaves was still high. TransAtlantically imported slaves would be competition in that market.
+Their actions reflected a widely-shared opposition among Americans of the trade, for both moral and practical grounds. Northerners disliked the increase in Southern states' power in Congress because of the Three-Fifths Clause. The Upper South states, like Virginia and Maryland, opposed it as well. Widespread farming of tobacco, a land-intensive crop, had depleted the nutrients in the soil. Agriculture in the area was declining, producing a surplus of slaves. Upper South slave-owners planned on selling their slaves to the Lower South, where the soil was still fertile, so demand for slaves was still high. Transatlantically imported slaves would be competition in that market.
 
-The desire to ban the trade was also influenced by international events. Great Britain was planning on banning the trade around the same time, and policing the Atlantic ocean to enforce it. America wanted to join Great Britain in one of the world's first international humanitarian efforts. The Haitian Revolution had also spooked Southerners, who began fearing that large numbers of African slaves May revolt and kill them as well. The Louisiana Purchase of 1803 also provided what was seen as an opportunity to extinguish slavery itself in America. A prevailing theory in the late 18th and early 19th centuries was that of "dispersal." It was thought that ending the transAtlantic slave trade and dispersing the slave population across a wide area would cause the black population to dwindle. Eventually, there would be none left, and slavery and (most) black people would be gone. Doubling the country's land seemed a prime opportunity to put the theory to test.
+The desire to ban the trade was also influenced by international events. Great Britain was planning on banning the trade around the same time, and policing the Atlantic ocean to enforce it. America wanted to join Great Britain in one of the world's first international humanitarian efforts. The Haitian Revolution had also spooked Southerners, who began fearing that large numbers of African slaves May revolt and kill them as well. The Louisiana Purchase of 1803 also provided what was seen as an opportunity to extinguish slavery itself in America. A prevailing theory in the late 18th and early 19th centuries was that of "dispersal." It was thought that ending the transatlantic slave trade and dispersing the slave population across a wide area would cause the black population to dwindle. Eventually, there would be none left, and slavery and (most) black people would be gone. Doubling the country's land seemed a prime opportunity to put the theory to test.
 
-Efforts to ban the trade soon manifested in Congress. On March 3, 1805, Massachusetts Representative Joseph Bradley Varnum suggested a constitutional amendment to allow Congress to ban the trade. This was ignored, though, since Article V specifically bans amending Article I, Section 9, Clause 1. They would have to wait until the deadline to end it. On December 2, 1806, President Jefferson denounced the practice in his State of the Union address and congratulated the country on its enthusiasm to ban it. On March 2, the bill abolishing the transAtlantic slave trade, to take effect on January 1, 1808, the earliest day constitutionally allowed, passed both houses and was signed, all on the same day. There was some objection from Southern Congressmen. Virginia Representative John Randolph warned that this law might become the "pretext of universal emancipation" and that it would "blow up the Constitution." He predicted that any future disunion would be between free and slave states.
+Efforts to ban the trade soon manifested in Congress. On March 3, 1805, Massachusetts Representative Joseph Bradley Varnum suggested a constitutional amendment to allow Congress to ban the trade. This was ignored, though, since Article V specifically bans amending Article I, Section 9, Clause 1. They would have to wait until the deadline to end it. On December 2, 1806, President Jefferson denounced the practice in his State of the Union address and praised the country's enthusiasm to ban it. On March 2, the bill abolishing the transatlantic slave trade, to take effect on January 1, 1808, the earliest day constitutionally allowed, passed both houses and was signed, all on the same day. There was some objection from Southern Congressmen. Virginia Representative John Randolph warned that this law might become the "pretext of universal emancipation" and that it would "blow up the Constitution." He predicted that any future disunion would be between free and slave states.
 
-Of course, banning something does not make it go away. Slaves continued to be illegally imported, all the way until 1860. Most came into Spanish Florida and Texas before they joined the Union. Nevertheless, at this point the transAtlantic slave trade in the US was essentially dead. Imported slaves dropped from 14,000 a year to 1000. However, this promoted the growth of the domestic slave trade. A new status quo began to develop: states in the Upper South that relied less on slavery would sell slaves to the Lower South.
+Of course, banning something does not make it go away. Slaves continued to be illegally imported, all the way until 1860. Most came into Spanish Florida and Texas before they joined the Union. Nevertheless, at this point the transatlantic slave trade in the US was essentially dead. Imported slaves dropped from 14,000 a year to 1000. However, this promoted the growth of the domestic slave trade. A new status quo began to develop: states in the Upper South that relied less on slavery would sell slaves to the Lower South.
 isPeriod: false
 Date: 03/04/1807
 Color: 0/128/0
@@ -11839,7 +11807,11 @@ Images: none
 end
 
 Title: Embargo Act of 1807
-Description: An embargo on Great Britain and France enacted to punish the two for violation of US neutrality during the Napoleonic Wars, such as British impressment. However, the embargo failed to affect the two countries significantly, and seriously harmed the US economy. It was eventually repealed on March 1, 1809.
+Description: The early 1800s saw a renewal of war between the UK and France. The US wished to remain neutral, but frequently found that neutrality being violated by both countries. They announced that neutral ships caught trading with the enemy country could be seized. The UK began impressing British sailors on American ships into the Royal Navy, sometimes inadvertantly taking Americans instead. The spark that enraged Americans was an incident in mid-1807, in which the USS Chesapeake was boarded by the HMS Leopard, took four deserters, and hanged or heavily lashed them. Americans demanded action, some even wanting war. President Jefferson and Congress recognized that the US was in no shape to win a war with either the UK or France, and decided upon an embargo instead. The Embargo Act of 1807 passed the Senate 22-6 on December 18, the House 82-44 on December 21, and was signed by Jefferson on December 22. It banned American ships from exporting to or importing from any country, to be enforced by the navy.
+
+The Embargo Act was an abject failure. The national economy relied heavily on foreign trade, and was damaged as a result. New England, the mid-Atlantic, and the South all suffered. It turned out to be enormously unpopular, and smuggling became rampant. This smuggling turned into open defiance of the embargo. With so much of the country against it, Treasury Secretary Albert Gallatin recognized the futility of enforcing it. Several supplement acts passed and signed over the next few months attempting to ease enforcement all failed. The UK and France barely noticed, as they had plenty of other countries to trade with.
+
+The embargo was a blow to Republican popularity. Jefferson, a proponent of limited government, was criticized for such a large display of federal power. Federalists took back the Rhode Island state legislature. In the 1808 presidential election, Republican James Madison won by a smaller margin than Jefferson did in 1804, showing the decline in the party's popularity. Jefferson recognized that the embargo would have to be repealed. He did so in early March of 1809, just before he left office. Several days later, it was replaced by the Non-Intercourse Act.
 isPeriod: false
 Date: 12/22/1807
 Color: 255/255/0
@@ -12254,7 +12226,7 @@ A third motivation centered around American Indians. Most Indians in and around 
 
 Much of the war was over honor. Simply put, America did not feel that the British respected them as a sovereign nation. The way they saw it, Great Britain was a powerful empire whose reach spanned the seas, and they were used to interfering in foreign affairs and bullying weaker countries. Indians were raiding American settlements with British weaponry. In 1807, British ship the Leopard approached American vessel the Chesapeake, fired at it without provocation, boarded it and demanded the surrender of British subjects to be impressed. The Chesapeake, caught off-guard and outgunned, quickly surrendered. Americans saw this as a humiliation and a violation of sovereignty. Four years later, American ship the President shot at British sloop the Little Belt and heavily damaged it, possibly unprovoked. Much of the anti-British rhetoric that went into declaring war centered around a lack of respect for their new country. Many in Congress called it "the second war of independence," a conflict that would truly break America free from British shackles.
 
-Finally, there was some motivation around US expansion. The US hoped to break Indian power in the northwest and allow settlers to move in there. They wanted British influence out of the region. They also hoped to invade and annex Canada, then multiple British colonies. Canada comprised an upper and lower part, with Upper Canada ironically being south of Lower Canada. Upper Canada was the Great Lakes region, and Lower Canada was the St. Lawrence River area. Not only would conquering Canada remove the British from North America, they would acquire tens of thousands of people who shared a similar background to America. America would gain complete control over all of the Great Lakes and the St. Lawrence River. They believed annexation would be popular among Canadians themselves, but this was a miscalculation. The vast majority of Canadians were Loyalists, British colonists who fled America during the Revolution. As such, they wanted nothing to do with America. Not every American was on board with this idea, either. Many Southerners opposed adding many new free states, which would upset the free-slave state balance. However, other Southerners saw it as necessary to preserve the balance, as they thought many new slaves states would be added in southeast Louisiana. Many Canadians spoke French and practiced Catholicism, which many in the US saw as antithetical to American culture and ideals.  Federalists were staunchly opposed to both war and annexation, but in Congress and the country they were in the minority. Historians generally agree that expansion was not a true cause of the war, but rather an enticing consequence.
+Finally, there was some motivation around US expansion. The US hoped to break Indian power in the northwest and allow settlers to move in there. They wanted British influence out of the region. They also hoped to invade and annex Canada, then multiple British colonies. Canada comprised an upper and lower part, with Upper Canada ironically being south of Lower Canada. Upper Canada was the Great Lakes region, and Lower Canada was the St. Lawrence River area. Not only would conquering Canada remove the British from North America, they would acquire tens of thousands of people who shared a similar background to America. America would gain complete control over all of the Great Lakes and the St. Lawrence River. They believed annexation would be popular among Canadians themselves, but this was a miscalculation. The vast majority of Canadians were Loyalists, British colonists who fled America during the Revolution. As such, they wanted nothing to do with America. Not every American was on board with this idea, either. Many Southerners opposed adding many new free states, which would upset the free-slave state balance. However, other Southerners saw it as necessary to preserve the balance, as they thought many new slaves states would be added in southeast Louisiana. Many Canadians spoke French and practiced Catholicism, which many in the US saw as antithetical to American culture and ideals. Federalists were staunchly opposed to both war and annexation, but in Congress and the country they were in the minority. Historians generally agree that expansion was not a true cause of the war, but rather an enticing consequence.
 
 As for the British, their primary motivations were to defend Canada, defeat Napoleon more easily, and create the aforementioned Indian buffer state. They were not going to stand idly by while their subjects were invaded and conquered by another country. But their primary goal was to defeat Napoleon, whom the Britsh viewed as an existential threat. Napoleon was a formidible adversary, and American sales of supplies to the French were not helping. The British wanted the US to get out of the way so they could defeat France. They did not wish to recolonize the US, as at this point Americans were too far removed from the British.
 
@@ -12357,6 +12329,17 @@ Tags: none
 Images: none
 end
 
+Title: First travel through the Continental Divide's South Pass
+Description: The Continental Divide is a great mountain range that extends from the northern tip of Alaska to the Strait of Magellan in South America. The main part of the divide in the US is the Rocky Mountains in the West, running from northern New Mexico, through Colorado, Wyoming, Montana, and terminating in Canada. The South Pass is a 35-mile wide pass in the mountain range in modern-day southern Wyoming. Indians native to the area had known about it for a long time, but the first non-Indians did not cross it until 1812. That year, seven men from the Pacific Fur Company, founded in 1810 to collect furs in the Pacific Northwest to sell, learned of a shorter way through the mountains from a Shoshone, allowing them to avoid attacks from hostile Crows. This path would later be used by over half a million American emigrants traveling to the West as part of one of the main migration trails.
+isPeriod: false
+Date: 10/22/1812
+Color: 0/0/255
+Category: Exploration
+Alignment: Centered
+Tags: Wyoming
+Images: none
+end
+
 Title: Election of 1812
 Description: An election in which incumbent Democratic-Republican James Madison was re-elected, defeating Federalist DeWitt Clinton. Northern Republicans wanted someone other than a Virginian to be their nominee, so they rallied first behind Vice President George Clinton, then his nephew DeWitt. The schism grew when the New York caucus nearly unanimously voted for Clinton for nominee, as it was filled with Republicans opposed to the new War of 1812 started by Madison. Nevertheless, Madison was elected the nominee, though not by the landslide expected from incumbents. The Federalists originally planned on running John Marshall, but with so much support for Clinton in New York they could not count on a victory there, which could result in a 3-way tie. This would put the election in the hands of the Republican-controlled House of Representatives, who would surely vote in Madison. Eventually, Clinton was voted in as nominee, though there was much bitter debate and disagreement from various states, such as Virginia, who voted for Rufus King in the primaries instead. Less emphasis was put on the campaigns in this election, with the war taking the spotlight. Madison swept the South, while Clinton took New England (except for Vermont). The election came down to New York and Pennsylvania, both of which Clinton needed to win. He won in his home state of New York, but lost Pennsylvania and the presidency to Madison.
 
@@ -12384,6 +12367,17 @@ Date: 01/01/1813 - 08/01/1814
 Color: 255/0/0
 Category: Conflict with under 1000 deaths
 Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Francis Cabot Lowell founds the Boston Manufacturing Company
+Description: Lowell mills
+isPeriod: false
+Date: 01/01/1813
+Color: 255/128/128
+Category: Organization/Company
+Alignment: Centered
 Tags: none
 Images: none
 end
@@ -12532,7 +12526,7 @@ Images: none
 end
 
 Title: Burning of Washington
-Description: A British invasion of Washington DC, the US capital, as part of the War of 1812. British General Robert Ross led troops into the city and occupied it, burning down the White House and other government buildings. They reMained there for just over a day (26 hours) before a sudden hurricane-level storm set in and put out the fires, as well as generating a tornado that forced the British to retreat. This marks the only time Washington DC was occupied by a foreign nation (the British had also occupied Philadelphia, then the US capital, during the American Revolutionary War).
+Description: A British invasion of Washington DC, the US capital, as part of the War of 1812. British General Robert Ross led troops into the city and occupied it, burning down the White House and other government buildings. They remained there for just over a day (26 hours) before a sudden hurricane-level storm set in and put out the fires, as well as generating a tornado that forced the British to retreat. This marks the only time Washington DC was occupied by a foreign nation (the British had also occupied Philadelphia, then the US capital, during the American Revolutionary War).
 isPeriod: false
 Date: 08/24/1814
 Color: 75/0/130
@@ -13127,17 +13121,6 @@ isPeriod: false
 Date: 08/07/1820
 Color: 0/192/0
 Category: Census/Statistic
-Alignment: Centered
-Tags: none
-Images: none
-end
-
-Title: Robbert Gibbon Johnson publicly eats tomatoes
-Description: 
-isPeriod: false
-Date: 09/28/1820
-Color: 128/128/128
-Category: <category>
 Alignment: Centered
 Tags: none
 Images: none
@@ -14473,12 +14456,12 @@ Tags: none
 Images: none
 end
 
-Title: Manifest Destiny
+Title: John O'Sullivan coins the term "manifest destiny"
 Description: The first mention of manifest destiny, the widely-held American belief that the country was destined to spread their "empire of liberty" from one side of the continent to the other. The phrase was mentioned in John O'Sullivan's newspaper "The New York Morning News." This ideology was accepted by many an American and served as a primary reason for westward expansion.
 isPeriod: false
 Date: 12/27/1845
-Color: 0/0/0
-Category: null
+Color: 128/128/128
+Category: <category>
 Alignment: Centered
 Tags: none
 Images: none
@@ -14815,7 +14798,7 @@ Description: The Compromise of 1850 was a bundle of legislations authored by Sen
 
 3) Texas would drop some of its land claims (setting its present-day borders) in exchange for $10 million to pay off the debt it had accumulated during its war with Mexico. Texas' land claims were quickly becoming an issue for the US. Some of the state's claims were above the Missouri Compromise line, which should be free of slavery, yet Texas was a slave state and therefore all of its land should be open to the practice. Texas also claimed a much larger area of land than they were actually able to control. Included in this claim was much of modern-day New Mexico, who had been at odds with Texas since the 1841 Santa Fe Expedition. New Mexico was opposed to slavery, while Texas was strongly in favor of it. Austin, the Texan capital, lay hundreds of miles away from Santa Fe, the prominent city in New Mexico, and so the New Mexicans felt that they were distinctly separate from their eastern neighbor. The debate on the Senate floor was so heated, at one point Mississippian Henry S. Foote drew a pistol on Missourian Thomas Hart Benton. Though many Southerners strongly advocated against the Texan cession, as they wanted as much land to be open to slavery as possible, President Millard Fillmore shut them down, proclaiming that the US had promised to protect New Mexico in the 1848 Treaty of Guadalupe Hidalgo. Fearing defeat, Texas' senators accepted Stephen Douglas' compromise, in which the state gave up its claims north of the Missouri Compromise line, as well as land west of the 103rd meridian and north of the 32nd parallel in exchange for its war debt being paid off by Congress.
 
-4) The Utah and Mexico Territories (larger than the modern-day states) would be allowed to determine the legality of slavery within their borders through popular sovereignty. There was debate over whether or not to allow slavery in these territories. On the one hand, they were geographically southern and were below the Missouri Compromise line, which indicated future slave states. However, like California the area was not good for anything that slavery was profitable for (like growing cotton), and anyway the Missouri Compromise line did not actually extend that far west. Stephen Douglas, a Democratic senator from Illinois, was a strong proponent of popular sovereignty, or the ability for the people to govern themselves. He proposed that the residents of the territory vote on the legality of slavery once there were enough of them. However, the territories reMained sparsely populated for several decades, and only Nevada would be admitted to the Union as a (free) state before the abolition of slavery at the federal level.
+4) The Utah and Mexico Territories (larger than the modern-day states) would be allowed to determine the legality of slavery within their borders through popular sovereignty. There was debate over whether or not to allow slavery in these territories. On the one hand, they were geographically southern and were below the Missouri Compromise line, which indicated future slave states. However, like California the area was not good for anything that slavery was profitable for (like growing cotton), and anyway the Missouri Compromise line did not actually extend that far west. Stephen Douglas, a Democratic senator from Illinois, was a strong proponent of popular sovereignty, or the ability for the people to govern themselves. He proposed that the residents of the territory vote on the legality of slavery once there were enough of them. However, the territories remained sparsely populated for several decades, and only Nevada would be admitted to the Union as a (free) state before the abolition of slavery at the federal level.
 
 5) The passage of the Fugitive Slave Act of 1850, an upgraded form of the one from 1793. The most hated part of the Compromise of 1850 by the North, it required citizens and officials of Northern states to return escaped slaves to their masters in the South. The original act had been weakened by the Prigg v. Pennsylvania Supreme Court decision, which ruled that states did not have to help in hunting down fugitive slaves. The 1850 law strengthened the original by imposing a fine on those harboring fugitive slaves and requiring officials to return slaves to any Southerner who claims ownership over them. The North instantly refused to comply with the law once it was passed. Wisconsin attempted to nullify the law, but was overruled by the Supreme Court, convincing Northerners that the judicial branch had been taken control of by "slave powers." Vermont passed a law requiring officials to help fugitive slaves, causing uproar among pro-slavery Americans. Virginia governor John B. Floyd warned that the law May convince the South to secede, and President Fillmore threatened to send the military into Vermont to force compliance with the act. It inspired Harriet Beecher Stowe to write the famous abolitionist novel Uncle Tom's Cabin, and galvanized many Northerners previously indifferent towards slavery to take action by smuggling slaves into Canada through the Underground Railroad.
 
@@ -15306,7 +15289,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: images/maps/elections/1860_Electoral_Map.png;test          
+Images: USA/images/maps/elections/1860_Electoral_Map.png;test                  
 end
 
 Title: Crittenden Compromise
@@ -17604,7 +17587,7 @@ Images: none
 end
 
 Title: Sherman Silver Purchase Act
-Description: A federal law passed in response to the growing demand for free silver from farmers and miners. Many farmers at the time were poor and wanted silver to influence the value of the dollar in order to generate inflation, allowing them to pay off their large debts. At the same time, mining companies had discovered large quantities of silver, which drove down the prices to the point at which silver could be extracted profitably. The Sherman Silver Purchase Act did not create free silver, but it did expand the amount of silver the federal government was required to purchase every month to 4.5 million ounces. The government became the second largest buyer of silver in the world, after only the British Crown, as the Indian rupee (the currency of a British colony) was based off of silver rather than gold. However, investors found out that they could manipulate the low market prices and government exchange rates for gold and silver to make a profit by purchasing silver, exchanging it for gold at the Treasury, then selling the gold back to the market for a profit. This put a heavy drain on US gold reserves, and the act was repealed in 1893 by President Cleveland to protect what reMained.
+Description: A federal law passed in response to the growing demand for free silver from farmers and miners. Many farmers at the time were poor and wanted silver to influence the value of the dollar in order to generate inflation, allowing them to pay off their large debts. At the same time, mining companies had discovered large quantities of silver, which drove down the prices to the point at which silver could be extracted profitably. The Sherman Silver Purchase Act did not create free silver, but it did expand the amount of silver the federal government was required to purchase every month to 4.5 million ounces. The government became the second largest buyer of silver in the world, after only the British Crown, as the Indian rupee (the currency of a British colony) was based off of silver rather than gold. However, investors found out that they could manipulate the low market prices and government exchange rates for gold and silver to make a profit by purchasing silver, exchanging it for gold at the Treasury, then selling the gold back to the market for a profit. This put a heavy drain on US gold reserves, and the act was repealed in 1893 by President Cleveland to protect what remained.
 isPeriod: false
 Date: 07/14/1890
 Color: 255/255/0
@@ -17631,7 +17614,7 @@ Tags: none
 Images: none
 end
 
-Title: Pyotr Ilyich Tchaikovsky conducts the first performance at New Ork's Carngegie Hall
+Title: Pyotr Ilyich Tchaikovsky conducts the first performance at New Ork's Carnegie Hall
 Description: 
 isPeriod: false
 Date: 05/05/1891
@@ -18107,7 +18090,17 @@ Images: none
 end
 
 Title: Spanish-American War
-Description: A conflict between the United States and Spain. The war stemmed from the Cuban Revolution, in which Cubans seeked to overthrow their Spanish overlords and establish an independent republic. Spain violently repressed such rebellions, which US media used to shock the country into anger against Spain. Americans began thinking about intervening in Cuba to help them establish independence. Then, on February 15, the USS Maine, docked in the Cuban Havana Harbor, mysteriously exploded. The sensationalist "yellow press" in the US "blamed the Maine on Spain," creating the catchphrase "Remember the Maine! To hell with Spain!" Congress used both of these reasons to declare war on Spain on April 21.
+Description: By the late 19th century, the United States was a rising regional power. With that power came a desire to expand its sphere of influence. It had expressed this as far back as 1823, with the issuing of the Monroe Doctrine, in which it insisted that European attempts to influence the Western Hemisphere would be considered a threat to American national security. However, at the time America did not actually have the strength to follow up on their threat. But 1898 was a different time. At the same time America was rising, the once-powerful Spanish Empire was on the decline. It had already lost the vast majority of its colonies, including all of its holdings on the North, Central, and South American mainland. It still possessed the Philippines, Puerto Rico, and most importantly to it, Cuba.
+
+For several decades leading up to the Civil War, Southerners expressed an interest in annexing Cuba as a slave state. The US requested to purchase the island several times, each of which was flatly denied. In 1854, American ambassadors wrote the Ostend Manifesto, urging the US to expel the Spanish from Cuba and take over by force. Such an idea was too extreme, both for the North and for Europe, pressuring the Pierce Administration to ignore the ambassadors' advice. Interest in Cuba diminished afterward, especially after the Civil War and the abolition of slavery removed the primary reason for annexation. Interest resumed in the 1890s, when American businesses began investing heavily into the collapsing Cuban sugar industry. Cuba became heavily economically dependent on the US; in 1894, the US was the source of 40% of Cuban imports, and the destination for 90% of its exports.
+
+Spain saw its colonization as benevolent, seeing itself as spreading civilization and Christianity. But judging by the number of revolts and successful independence wars throughout the 19th century, its colonies did not agree. Cuba, which had already failed a ten-year independence war in the 1870s, tried once again in 1895. Spain fought back hard, refusing to let its most valuable remaining colony slip away. When the war broke out, America sent the USS Maine, an armored cruiser, to Havana Harbor to protect US interests, like those in the sugar industry. As the war progressed, the American public became dismayed at the reported atrocities Spanish forces committed during the war, which were exaggerated by so-called "yellow journalists." Calls to help the Cubans became louder. Americans began thinking about intervening in Cuba to help them establish independence. In 1897, the US secretly offered to purchase the island once again, this time for $300 million, but was turned down.
+
+On February 15, 1898, the USS Maine mysteriously exploded, killing 258 of the 355 men aboard. There were competing theories as to the cause. Some believed it to be an accident. Others thought Spain, angry at the US interfering with the rebellion, exploded it intentionally. A third theory was that an American or Cuban rebel blew it up to draw the US into the war against Spain. The "yellow journalists" quickly subscribed to the second theory. Several writers threw around the call, "Remember the Maine, To Hell with Spain!" The most prominent of these were the New York Journal and the New York World. The first was owned by William Randolph Hearst, a media magnate whose influence would only grow throughout the late 19th and early 20th centuries. The second was owned by Joseph Pulitzer, who would later lend his name to the Pulitzer Prize. The two papers were fierce rivals, and took the opportunity to outcompete each other with biased, exaggerated, or even false stories of the sinking. The week following the explosion, the Journal dedicated an average of eight and a half pages to coverage of the Maine. Privately, Pulitzer admitted that he did not believe Spain blew it up for one second, and thought that anyone who did was crazy. Though the American public of this time is often characterized as whipped into an irrational hawkish fervor by the yellow press, most in fact waited for the results of an investigation before drawing any conclusions. Yellow journalism was widespread in New York, but little elsewhere.
+
+Much of the higher-ups in the US government believed it to be an accident, but nevertheless began investigating the source of the explosion. The Spanish, claiming too to be unaware of the explosion's cause, started their own investigation. The Spanish concluded that the USS Maine was the victim of a spontaneous explosion of its coal supply that ignited its gunpowder, but the American commission determined the explosion to have been from a torpedo fired at the ship. The inconsistency of the reports led many Americans to believe that Spain had destroyed the Maine and were now trying to cover it up. Many Americans were still anti-war, but they were now the minority.
+
+On March 17, Senator Redfield Proctor (R-VT) delivered a comprehensive analysis of the situation and concluded war was a necessity. President McKinley, though often portrayed after the fact as a hawk and imperialist, was actually one of the last holdouts for war. But by April he found himself isolated from prominent American politicians, businessmen, and religious authorities. On April 11, he requested Congress to declare war, which they did ten days later.
 
 The actual war was short and uncontested - Spain's military power was waning rapidly while the US's was on the rise. The first battle was on May 1 at Manila Bay in the Philippines. The US squadron was led by Commodore George Dewey, who destroyed the Spanish armada there in just a few hours with under 10 people wounded. A dozen US ships attacked Puerto Rico's capital of San Juan on May 12.
 

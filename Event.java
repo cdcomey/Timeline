@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Event extends GenericEvent{
 	
 	private String alignment;
+	private boolean isImageEvent;
 	
 	//blank event/period
 	public Event(){
@@ -16,10 +17,12 @@ public class Event extends GenericEvent{
 		category = "<category>";
 		tags = new ArrayList<String>();
 		images = new ArrayList<MyImage>();
+		isImageEvent = false;
 	}
 	
 	//standard event with separate dates and a defined color
-	public Event(String title, String description, int month, int day, int year, int red, int green, int blue, String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images){
+	public Event(String title, String description, int month, int day, int year, int red, int green, int blue, 
+	String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images, boolean isImageEvent){
 		this.title = title;
 		this.description = capitalize(description);
 		date = new Date(month, day, year);
@@ -34,6 +37,7 @@ public class Event extends GenericEvent{
 		this.images = new ArrayList<MyImage>();
 		for (int i = 0; i < images.size(); i++)
 			this.images.add(images.get(i));
+		this.isImageEvent = isImageEvent;
 	}
 
 	public String getAlignment(){ return alignment; }
@@ -68,6 +72,7 @@ public class Event extends GenericEvent{
 			description = description.substring(0, description.length()-1);
 		s += "Title: " + title + "\n";
 		s += "Description: " + description + "\n";
+		s += "Type: " + (isImageEvent ? "ImageEvent" : "Event") + "\n";
 		s += "Date: " + date.shortForm() + "\n";
 		s += "Color: " + color.getRed() + "/" + color.getGreen() + "/" + color.getBlue() + "\n";
 		s += "Category: " + category + "\n";

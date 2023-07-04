@@ -84,6 +84,7 @@ public class Period extends GenericEvent{
 			description = description.substring(0, description.length()-1);
 		s += "Title: " + title + "\n";
 		s += "Description: " + description + "\n";
+		s += "Type: Period\n";
 		s += "Date: " + date.shortForm();
         s += " - " + (present ? "present\n" : (date2.shortForm() + "\n"));
 		s += "Color: " + color.getRed() + "/" + color.getGreen() + "/" + color.getBlue() + "\n";
