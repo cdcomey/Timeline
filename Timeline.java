@@ -31,7 +31,7 @@ public class Timeline{
 	private Date leftDate, rightDate;
 	
 	private Iterator<GenericEvent> it;
-	private ArrayList<Rectangle> drawnEventCoordinates, drawnImageEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
+	private ArrayList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
 	
 	public Timeline(int screenWidth, int screenHeight){
 		this.screenWidth = screenWidth;
@@ -95,6 +95,53 @@ public class Timeline{
 			g.setFont(GenericEvent.boldFont());
 			g.drawString(yearString, notchX - g.getFontMetrics().stringWidth(yearString) / 2, notchY - g.getFontMetrics().getHeight());
 	}
+
+	private boolean shouldSkipEventFromTag(ArrayList<String> eventTags, String[] tags, byte taggedEventsVisibility){	
+		boolean skipEvent = false;
+		
+		// this block of code hides any event with a tag the user has said they wanted to hide
+		if (taggedEventsVisibility == -1){
+			System.out.println("attempting to hide tagged events");
+			for (String each : tags){
+				for (int j = 0; j < eventTags.size(); j++){
+					System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
+					if (each.equals(eventTags.get(j))){
+						System.out.println("\t\tmatch found");
+						skipEvent = true;
+						break;
+					}
+				}
+				
+				if (skipEvent)
+					break;
+			}
+
+			return skipEvent;
+		}
+		
+		// similarly, this block of code hides any event that does not have a tag the user has said they want to see
+		else if (taggedEventsVisibility == 1){
+			skipEvent = true;
+			// System.out.println("running tag checks for " + currentPeriod.getTitle());
+			for (String each : tags){
+				for (int j = 0; j < eventTags.size(); j++){
+					// System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
+					if (each.equals(eventTags.get(j))){
+						// System.out.println("\tmatch found");
+						skipEvent = false;
+						break;
+					}
+				}
+				
+				if (!skipEvent)
+					break;
+			}
+
+			return !skipEvent;
+		}
+
+		return false;
+	}
 	
 	private void findPeriodCoords(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility){
 		it = eventSet.iterator();
@@ -126,52 +173,13 @@ public class Timeline{
 			// if (currentPeriod.getTags().size() > 0)
 				// System.out.println(currentPeriod.getTitle());
 			
-			boolean skipPeriod = false;
-			
-			// this block of code hides any event with a tag the user has said they wanted to hide
-			if (taggedEventsVisibility == -1){
-				System.out.println("attempting to hide tagged events");
-				for (String each : tags){
-					for (int j = 0; j < currentPeriod.getTags().size(); j++){
-						System.out.println("\tcomparing '" + each + "' against '" + currentPeriod.getTags().get(j) + "'");
-						if (each.equals(currentPeriod.getTags().get(j))){
-							System.out.println("\t\tmatch found");
-							skipPeriod = true;
-							break;
-						}
-					}
-					
-					if (skipPeriod)
-						break;
-				}
-			}
-			
-			// similarly, this block of code hides any event that does not have a tag the user has said they want to see
-			else if (taggedEventsVisibility == 1){
-				skipPeriod = true;
-				// System.out.println("running tag checks for " + currentPeriod.getTitle());
-				for (String each : tags){
-					for (int j = 0; j < currentPeriod.getTags().size(); j++){
-						// System.out.println("\tcomparing '" + each + "' against '" + currentPeriod.getTags().get(j) + "'");
-						if (each.equals(currentPeriod.getTags().get(j))){
-							// System.out.println("\tmatch found");
-							skipPeriod = false;
-							break;
-						}
-					}
-					
-					if (!skipPeriod)
-						break;
-				}
-			}
-			
-			if (skipPeriod)
+			// do not display if it has the incorrect tag
+			if (shouldSkipEventFromTag(currentPeriod.getTags(), tags, taggedEventsVisibility))
 				continue;
 			
 			// at this point, we have gone through (mostly) every reason we have to not draw a period, so will will now begin actually drawing it`
 			// the bulk of the work from here will be figuring out where the period will be drawn
 			// the periods are drawn as rectangles, so we will need to know two x values and two y values
-			g.setColor(currentPeriod.getColor());
 			periodY1 = connectingLineY + connectingLineHeight + notchWidth;	// coordinate of the top edge
 			
 			if (periodDate.compareTo(leftDate) < 0)	// if the period started before the leftmost visible date, we will snap its left side to a set point, otherwise it may overlap with the triangle at the edge of the timeline
@@ -254,6 +262,7 @@ public class Timeline{
 		int eventX2 = -1;
 		int eventY1 = -1;
 		int eventHeight = 30;
+		int imageEventHeight = 130;
 		int lineX = -1;
 		
 		if (GenericEvent.today().getYear() == currentYear){
@@ -267,51 +276,16 @@ public class Timeline{
 				continue;
 
 			Event currentEvent = (Event)ge;
-			
-			boolean skipEvent = false;
-				
-				if (taggedEventsVisibility == -1){
-					// System.out.println("attempting to hide tagged '" + currentEvent.getTitle() + "'");
-					for (String each : tags){
-						for (int j = 0; j < currentEvent.getTags().size(); j++){
-							// System.out.println("\tcomparing '" + each.getText() + "' against '" + currentEvent.getTags().get(j) + "'");
-							if (each.equals(currentEvent.getTags().get(j))){
-								// System.out.println("\t\tmatch found");
-								skipEvent = true;
-								break;
-							}
-						}
-						
-						if (skipEvent)
-							break;
-					}
-				}
-				
-				else if (taggedEventsVisibility == 1){
-					skipEvent = true;
-					for (String each : tags){
-						for (int j = 0; j < currentEvent.getTags().size(); j++){
-							// System.out.println("\tcomparing '" + each.getText() + "' against '" + currentEvent.getTags().get(j) + "'");
-							if (each.equals(currentEvent.getTags().get(j))){
-								// System.out.println("\tmatch found");
-								skipEvent = false;
-								break;
-							}
-						}
-						
-						if (!skipEvent)
-							break;
-					}
-				}
-				
-				if (skipEvent)
-					continue;
+
+			int height = currentEvent.getIsImageEvent() ? imageEventHeight : eventHeight;
+
+			if (shouldSkipEventFromTag(currentEvent.getTags(), tags, taggedEventsVisibility))
+				continue;
 			
 			if (currentEvent.getDate().compareTo(rightDate) > 0)
 				break;
 			
 			if (currentEvent.getYear() == currentYear){
-				g.setColor(currentEvent.getColor());
 				// System.out.println(currentYear + " is " + currentYearLength + " days");
 				// System.out.println(currentYear + ": " + currentEvent.getTitle());
 				// System.out.print("(" + currentYear + " - " + leftDate.getYear() + ") * (" + space + " + " + notchWidth + ")");
@@ -343,7 +317,7 @@ public class Timeline{
 				
 				// System.out.println("eventX1: " + eventX1);
 				eventX2 = eventX1 + width;
-				eventY1 = connectingLineY - eventHeight - 40;
+				eventY1 = connectingLineY - height - 40;
 				
 				//find starting y
 				for (int j = 0; j < drawnEventCoordinates.size(); j++){
@@ -352,18 +326,18 @@ public class Timeline{
 						/* System.out.println("checking '" + currentEvent.getTitle() + "' against '" + rect.getEvent().getTitle() + "'");
 						System.out.println("\t" + eventX2 + " >= " + rect.getX() + " : " + (eventX2 >= rect.getX()));
 						System.out.println("\t" + eventX1 + " <= " + (rect.getX()+rect.getWidth()) + " : " + (eventX1 <= rect.getX() + rect.getWidth()));
-						System.out.println("\t" + (eventY1+eventHeight) + " >= " + rect.getY() + " : " + (eventY1 + eventHeight >= rect.getY()));
+						System.out.println("\t" + (eventY1+height) + " >= " + rect.getY() + " : " + (eventY1 + height >= rect.getY()));
 						System.out.println("\t" + eventY1 + " <= " + (rect.getY()+rect.getHeight()) + " : " + (eventY1 <= rect.getY() + rect.getHeight())); */
-						if (eventX2 >= rect.getX() && eventX1 <= rect.getX() + rect.getWidth() && eventY1 + eventHeight >= rect.getY() && eventY1 <= rect.getY() + rect.getHeight()){
-							eventY1 = rect.getY() - rect.getHeight() - 5;
+						if (eventX2 >= rect.getX() && eventX1 <= rect.getX() + rect.getWidth() && eventY1 + height >= rect.getY() && eventY1 <= rect.getY() + rect.getHeight()){
+							eventY1 = rect.getY() - height - 5;
 							j = 0;
-							// System.out.println("\tmoving event '" + currentEvent.getTitle() + "' up : new coords (" + eventX1 + ", " + eventY1 + ", " + eventX2 + ", " + (eventY1+eventHeight) + ")");
+							// System.out.println("\tmoving event '" + currentEvent.getTitle() + "' up : new coords (" + eventX1 + ", " + eventY1 + ", " + eventX2 + ", " + (eventY1+height) + ")");
 						}
 					}
 				}
 				
-				drawnEventCoordinates.add(new Rectangle(eventX1, eventY1, eventX2-eventX1, eventHeight, currentEvent, false, currentEvent.getColor()));
-				drawnLineCoordinates.add(new Rectangle(lineX, eventY1+eventHeight, notchWidth, connectingLineY - (eventY1+eventHeight), currentEvent.getColor()));
+				drawnEventCoordinates.add(new Rectangle(eventX1, eventY1, eventX2-eventX1, height, currentEvent, false, currentEvent.getColor()));
+				drawnLineCoordinates.add(new Rectangle(lineX, eventY1+height, notchWidth, connectingLineY - (eventY1+height), currentEvent.getColor()));
 				
 				// System.out.println(notchX  + " + " + currentEvent.getDayOfYear() + " * " + ((space+notchWidth) / currentYearLength));
 				// System.out.println("(" + eventX1 + ", " + eventY1 + ", " + (eventX2-eventX1) + ", " + eventHeight + ")");
@@ -372,13 +346,14 @@ public class Timeline{
 				// System.out.println("\t\t(" + eventX1 + ", " + eventY1 + ", " + eventX2 + ", " + (eventY1 + eventHeight) + ")");
 				// System.out.println(currentEvent.toStringVerbose());
 			}
-		}	
+		}
 	}
 	
 	public void drawTimeline(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility, boolean modernDating, boolean darkMode){
 		timelineColor = darkMode ? Color.white : Color.black;
 		
 		drawBasicLine(g);
+		drawnEventCoordinates = new ArrayList<Rectangle>();
 		
 		
 		// notch position is based on the one at the center of the timeline, out of the ones currently on screen
@@ -387,8 +362,6 @@ public class Timeline{
 		for (int i = 0; i < numberOfNotches; i++, notchPosition++){
 			drawNotchAndYear(g, i, modernDating);
 			
-			drawnEventCoordinates = new ArrayList<Rectangle>();
-			drawnImageEventCoordinates = new ArrayList<Rectangle>();
 			drawnPeriodCoordinates = new ArrayList<Rectangle>();
 			drawnLineCoordinates = new ArrayList<Rectangle>();
 			
@@ -430,15 +403,6 @@ public class Timeline{
 			}
 
 			// System.out.println("finished drawing events for " + currentYear);
-
-			for (int j = 0; j < drawnImageEventCoordinates.size(); j++){
-				Rectangle rect = drawnImageEventCoordinates.get(j);
-				rect.drawMe(g);
-				g.setColor(setTextColor(rect.getColor()));
-				rect.getEvent().drawString(g, rect.getX() + 5, rect.getY() + g.getFontMetrics().getHeight() + 3);
-			}
-
-			// System.out.println("finished drawing image events for " + currentYear);
 		}
 		// System.out.println("//////////////////////////////////////////////////////////////////////////////");
 	}

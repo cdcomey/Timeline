@@ -998,6 +998,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		int mouseX = e.getX();
 		int mouseY = e.getY();
 		// System.out.println("(" + mouseX + ", " + mouseY + ")");
+		// print(timeline.getDrawnEventCoordinates().size() + " + " + timeline.getDrawnPeriodCoordinates().size());
 		
 		boolean clickedOnEvent = false;
 		for (int i = 0; i < timeline.getDrawnEventCoordinates().size() + timeline.getDrawnPeriodCoordinates().size(); i++){
@@ -1007,7 +1008,13 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			else
 				rect = timeline.getDrawnPeriodCoordinates().get(i - timeline.getDrawnEventCoordinates().size());
 			
+			// System.out.println(rect.getEvent().getTitle() + " : " + rect.getCoords());
+			// print(mouseX >= rect.getX());
+			// print(mouseX <= rect.getX2());
+			// print(mouseY >= rect.getY());
+			// print(mouseY <= rect.getY2());
 			if (mouseX >= rect.getX() && mouseX <= rect.getX2() && mouseY >= rect.getY() && mouseY <= rect.getY2() && selectedEvent == null){
+				// System.out.println("clicked on " + rect.getEvent().getTitle());
 				selectedEvent = rect.getEvent();
 				initializeFieldText();
 				clickedOnEvent = true;
@@ -1020,6 +1027,14 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		updateComponentVisibility(selectedEvent == null ? true : selectedEvent instanceof Period);
 		repaint();
+	}
+
+	private void print(String s){
+		System.out.println(s);
+	}
+
+	private void print(boolean b){
+		System.out.println("" + b);
 	}
 	
 	private void updateComponentVisibility(boolean isPeriod){

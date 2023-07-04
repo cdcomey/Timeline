@@ -22,7 +22,8 @@ public class Event extends GenericEvent{
 	
 	//standard event with separate dates and a defined color
 	public Event(String title, String description, int month, int day, int year, int red, int green, int blue, 
-	String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images, boolean isImageEvent){
+		String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images, boolean isImageEvent){
+			
 		this.title = title;
 		this.description = capitalize(description);
 		date = new Date(month, day, year);

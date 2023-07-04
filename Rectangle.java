@@ -46,6 +46,7 @@ public class Rectangle{
 	public int getY2(){ return y2; }
 	public int getWidth(){ return width; }
 	public int getHeight(){ return height; }
+	public String getCoords(){ return "(" + x + ", " + y + ", " + width + ", " + height + ")"; }
 	public GenericEvent getEvent(){ return event; }
 	public boolean isDetached(){ return detached; }
 	public Color getColor(){ return color; }
