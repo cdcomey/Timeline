@@ -255,6 +255,15 @@ public class Timeline{
 			}
 		}
 	}
+
+	private int findImageEventHeight(Event currentEvent, int x1, int x2){
+		if (currentEvent.getImages().size() == 0){
+			return 0;
+		}
+
+		int dims[] = currentEvent.getImages().get(0).findDims(x2-x1, screenHeight);
+		return dims[1];
+	}
 	
 	private void findEventCoords(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility){
 		it = eventSet.iterator();
@@ -262,7 +271,6 @@ public class Timeline{
 		int eventX2 = -1;
 		int eventY1 = -1;
 		int eventHeight = 30;
-		int imageEventHeight = 130;
 		int lineX = -1;
 		
 		if (GenericEvent.today().getYear() == currentYear){
@@ -276,8 +284,6 @@ public class Timeline{
 				continue;
 
 			Event currentEvent = (Event)ge;
-
-			int height = currentEvent.getIsImageEvent() ? imageEventHeight : eventHeight;
 
 			if (shouldSkipEventFromTag(currentEvent.getTags(), tags, taggedEventsVisibility))
 				continue;
@@ -317,6 +323,8 @@ public class Timeline{
 				
 				// System.out.println("eventX1: " + eventX1);
 				eventX2 = eventX1 + width;
+
+				int height = currentEvent.getIsImageEvent() ? (findImageEventHeight(currentEvent, eventX1, eventX2) + eventHeight + 5) : eventHeight;
 				eventY1 = connectingLineY - height - 40;
 				
 				//find starting y

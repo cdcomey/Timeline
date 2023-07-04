@@ -28,6 +28,51 @@ public class MyImage{
 	
 	public String getImageName(){ return imageName; }
 	public String getCaption(){ return caption; }
+
+	private int[] findDimsWithImage(BufferedImage img, int maxWidth, int maxHeight){
+		int width = img.getWidth();
+		int height = img.getHeight();
+		
+		if (width > maxWidth && height <= maxHeight){
+			// System.out.println("case 1");
+			height = (int)((double)(maxWidth)/width * height);
+			width = maxWidth;
+		} else if (width <= maxWidth && height > maxHeight){
+			// System.out.println("case 2");
+			width = (int)((double)(maxHeight)/height * width);
+			height = maxHeight;
+		} else if (width > maxWidth && height > maxHeight){
+			if (height - maxHeight >= width - maxWidth){
+				// System.out.println("case 3a");
+				width = (int)((double)(maxHeight)/height * width);
+				height = maxHeight;
+			} else {
+				// System.out.println("case 3b");
+				height = (int)((double)(maxWidth)/width * height);
+				width = maxWidth;
+			}
+		}
+
+		int dims[] = {width, height};
+		return dims;
+	}
+
+	public int[] findDims(int maxWidth, int maxHeight){
+		BufferedImage img = null;
+		int dims[] = {0, 0};
+		// print("image name = " + imageName);
+        try {
+
+			File file = new File(imageName);
+            img = ImageIO.read(file);
+			return findDimsWithImage(img, maxWidth, maxHeight);
+			
+        } catch (IOException e) {
+			System.err.println("IOException in MyImage.findDims()\n" + e);
+		}
+
+		return dims;
+	}
 	
 	public void drawFromFile(Graphics g, int x, int y, int maxWidth, int maxHeight, boolean xCentered, boolean yCentered){
 		BufferedImage img = null;
@@ -36,40 +81,15 @@ public class MyImage{
 
 			File file = new File(imageName);
             img = ImageIO.read(file);
-			
-			int width = img.getWidth();
-			int height = img.getHeight();
-			
-			// System.out.println(width + ", " + height + ", " + maxWidth + ", " + maxHeight);
-			// g.setColor(Color.white);
-			// g.drawRect(x - maxWidth/2, y - maxHeight/2, maxWidth, maxHeight);
-			
-			if (width > maxWidth && height <= maxHeight){
-				// System.out.println("case 1");
-				height = (int)((double)(maxWidth)/width * height);
-				width = maxWidth;
-			} else if (width <= maxWidth && height > maxHeight){
-				// System.out.println("case 2");
-				width = (int)((double)(maxHeight)/height * width);
-				height = maxHeight;
-			} else if (width > maxWidth && height > maxHeight){
-				if (height - maxHeight >= width - maxWidth){
-					// System.out.println("case 3a");
-					width = (int)((double)(maxHeight)/height * width);
-					height = maxHeight;
-				} else {
-					// System.out.println("case 3b");
-					height = (int)((double)(maxWidth)/width * height);
-					width = maxWidth;
-				}
-			}
-			// print(y + " - " + (height/2));
-			// print("" + yCentered);
+
+			int dims[] = findDimsWithImage(img, maxWidth, maxHeight);
+			int width = dims[0];
+			int height = dims[1];
+			// print(width + " " + height);
 			if (xCentered)
 				x -= width/2;
 			if (yCentered)
 				y -= height/2;
-			// print("y after: " + y);
 			g.drawImage(img, x, y, width, height, null);
         } catch (IOException e) {
 			System.err.println("IOException in MyImage.drawFromFile()\n" + e);
@@ -82,24 +102,9 @@ public class MyImage{
 			URL link = new URL(imageName);
             img = ImageIO.read(link);
 			
-			int width = img.getWidth();
-			int height = img.getHeight();
-			
-			if (width > maxWidth && height <= maxHeight){
-				height = (int)((double)(maxWidth)/width * height);
-				width = maxWidth;
-			} else if (width <= maxWidth && height > maxHeight){
-				width = (int)((double)(maxHeight)/height * width);
-				height = maxHeight;
-			} else if (width > maxWidth && height > maxHeight){
-				if (height - maxHeight >= width - maxWidth){
-					width = (int)((double)(maxHeight)/height * width);
-					height = maxHeight;
-				} else {
-					height = (int)((double)(maxWidth)/width * height);
-					width = maxWidth;
-				}
-			}
+			int dims[] = findDimsWithImage(img, maxWidth, maxHeight);
+			int width = dims[0];
+			int height = dims[1];
 			
 			g.drawImage(img, x - width/2, y - height/2, width, height, null);
         } catch (IOException e) {

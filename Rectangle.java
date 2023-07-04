@@ -76,7 +76,7 @@ public class Rectangle{
 		if (event instanceof Event){
 			Event e = (Event)event;
 			if (e.getIsImageEvent() && e.getImages().size() > 0){
-				e.getImages().get(0).drawFromFile(g, x + width/2, y + (height-2*spacing)/2, width-2*spacing, height-2*spacing, true, true);
+				e.getImages().get(0).drawFromFile(g, x + width/2, y + 30, width-2*spacing, height-2*spacing, true, false);
 			}
 		}
 	}
