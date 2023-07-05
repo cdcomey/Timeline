@@ -387,8 +387,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				
 				if (selectedEvent.getImages().size() >= imageIndex+1){
 					selectedEvent.getImages().get(imageIndex).drawFromFile(g, xCenter, yCenter, width, height, true, true);
-					g.setColor(Color.white);
-					g.drawRect(tagPane.getX(), prevImageButton.getY(), width, height);
+					// g.setColor(Color.white);
+					// g.drawRect(tagPane.getX(), prevImageButton.getY(), width, height);
 				} else if (!imagePath.equals("")){
 					MyImage img = new MyImage(imagePath);
 					img.drawFromFile(g, xCenter, yCenter, width, height, true, true);
@@ -402,12 +402,12 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						prevImageButtonY1 + prevImageButton.getHeight() + 5 + (screenHeight*2/3 * 1/2), 
 						screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
 						screenHeight*2/3, true, true);
-					g.setColor(Color.white);
-					g.drawRect(
-						descriptionPaneX1 + descriptionPaneW1 + 5,
-						prevImageButtonY1 + prevImageButton.getHeight() + 5, 
-						screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
-						screenHeight*2/3);
+					// g.setColor(Color.white);
+					// g.drawRect(
+					// 	descriptionPaneX1 + descriptionPaneW1 + 5,
+					// 	prevImageButtonY1 + prevImageButton.getHeight() + 5, 
+					// 	screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
+					// 	screenHeight*2/3);
 				}
 			}
 			
