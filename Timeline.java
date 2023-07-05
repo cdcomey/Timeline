@@ -96,7 +96,11 @@ public class Timeline{
 			g.drawString(yearString, notchX - g.getFontMetrics().stringWidth(yearString) / 2, notchY - g.getFontMetrics().getHeight());
 	}
 
-	private boolean shouldSkipEventFromTag(ArrayList<String> eventTags, String[] tags, byte taggedEventsVisibility){	
+	private boolean shouldSkipEventFromTag(ArrayList<String> eventTags, String[] tags, byte taggedEventsVisibility){
+		if (tags == null || tags.length == 0){
+			return false;
+		}
+
 		boolean skipEvent = false;
 		
 		// this block of code hides any event with a tag the user has said they wanted to hide
@@ -122,7 +126,6 @@ public class Timeline{
 		// similarly, this block of code hides any event that does not have a tag the user has said they want to see
 		else if (taggedEventsVisibility == 1){
 			skipEvent = true;
-			// System.out.println("running tag checks for " + currentPeriod.getTitle());
 			for (String each : tags){
 				for (int j = 0; j < eventTags.size(); j++){
 					// System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
@@ -133,11 +136,11 @@ public class Timeline{
 					}
 				}
 				
-				if (!skipEvent)
+				if (skipEvent)
 					break;
 			}
 
-			return !skipEvent;
+			return skipEvent;
 		}
 
 		return false;

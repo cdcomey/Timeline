@@ -454,6 +454,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			
 			if (!tagTextArea.getText().equals("none"))
 				tagList = tagTextArea.getText().split(", ");
+			
+			updateComponentVisibility(true);
 		} else if (e.getSource() == hideTaggedEventsButton){
 			showTagHider = false;
 			if (tagTextArea.getText().equals("none"))
@@ -462,6 +464,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				taggedEventsVisibility = -1;
 				tagList = tagTextArea.getText().split(", ");
 			}
+
+			updateComponentVisibility(true);
 		} else if (e.getSource() == addTagButton){
 			String tag = (String)tagComboBox.getSelectedItem();
 			if (showTagHider){
@@ -1038,6 +1042,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void updateComponentVisibility(boolean isPeriod){
+		// print("update component visibility");
+		// print("showtaghider = " + showTagHider);
 		boolean showEditTools1 = editMode && selectedEvent == null;
 		boolean showEditTools2 = editMode && selectedEvent != null;
 		
