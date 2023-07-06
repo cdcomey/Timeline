@@ -105,12 +105,12 @@ public class Timeline{
 		
 		// this block of code hides any event with a tag the user has said they wanted to hide
 		if (taggedEventsVisibility == -1){
-			System.out.println("attempting to hide tagged events");
+			// System.out.println("attempting to hide tagged events");
 			for (String each : tags){
 				for (int j = 0; j < eventTags.size(); j++){
-					System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
+					// System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
 					if (each.equals(eventTags.get(j))){
-						System.out.println("\t\tmatch found");
+						// System.out.println("\t\tmatch found");
 						return true;
 					}
 				}
