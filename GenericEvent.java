@@ -259,7 +259,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	}
 	
 	public void addImage(String imageName, String caption){
-		images.add(new MyImage(dir + "/" + imageName, caption));
+		imageName = truncatePath(imageName);
+		images.add(new MyImage(imageName, caption));
 	}
 	
 	public void deleteImage(int index){
@@ -267,7 +268,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	}
 	
 	public void setImage(int index, String imageName, String caption){
-		images.set(index, new MyImage(dir + "/" + imageName, caption));
+		imageName = truncatePath(imageName);
+		images.set(index, new MyImage(imageName, caption));
 	}
 
 	// sets the path for the directory
@@ -278,5 +280,10 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		}
 
 		dir = path;
+	}
+
+	private String truncatePath(String imageName){
+		String delim = "Timeline/";
+		return imageName.substring(imageName.indexOf(delim) + delim.length());
 	}
 }

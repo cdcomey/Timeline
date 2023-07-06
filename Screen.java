@@ -100,7 +100,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		taggedEventsVisibility = 0;
 		imageIndex = 0;
 		
-		chooser = new JFileChooser("images");
+		chooser = new JFileChooser(timelineType + "/images");
 		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif", "webp");
 		chooser.setFileFilter(filter);
 		
@@ -511,7 +511,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			}
 			imageIndex++;
 		} else if (e.getSource() == saveImageButton){
-			System.out.println(imageIndex + " >= " + selectedEvent.getImages().size());
+			// System.out.println(imageIndex + " >= " + selectedEvent.getImages().size());
+			print(imagePath);
 			if (imageIndex >= selectedEvent.getImages().size())
 				selectedEvent.addImage(imagePath, captionTextArea.getText());
 			else
