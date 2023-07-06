@@ -111,16 +111,12 @@ public class Timeline{
 					System.out.println("\tcomparing '" + each + "' against '" + eventTags.get(j) + "'");
 					if (each.equals(eventTags.get(j))){
 						System.out.println("\t\tmatch found");
-						skipEvent = true;
-						break;
+						return true;
 					}
 				}
-				
-				if (skipEvent)
-					break;
 			}
 
-			return skipEvent;
+			return false;
 		}
 		
 		// similarly, this block of code hides any event that does not have a tag the user has said they want to see
