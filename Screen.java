@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -66,14 +67,14 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private final String timelineType;
 	
 	// both the descriptionPane and captionTextArea will change bounds depending on whether editMode is on
-	private final int descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1;
-	private final int descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2;
-	private final int captionX1, captionY1, captionW1, captionH1;
-	private final int captionX2, captionY2, captionW2, captionH2;
+	private int descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1;
+	private int descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2;
+	private int captionX1, captionY1, captionW1, captionH1;
+	private int captionX2, captionY2, captionW2, captionH2;
 	
 	// prevImageButton and nextImageButton will change location for the same reason, but not size
-	private final int prevImageButtonX1, prevImageButtonY1, prevImageButtonX2, prevImageButtonY2;
-	private final int nextImageButtonX1, nextImageButtonY1, nextImageButtonX2, nextImageButtonY2;
+	private int prevImageButtonX1, prevImageButtonY1, prevImageButtonX2, prevImageButtonY2;
+	private int nextImageButtonX1, nextImageButtonY1, nextImageButtonX2, nextImageButtonY2;
 	
 	//constructor
 	public Screen(String timelineType){
@@ -86,7 +87,31 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		this.timelineType = timelineType;
 		GenericEvent.setCapListPath(timelineType);
 		readFromFile(timelineType);
+
+		initializeJComponents();
 		
+		timeline = new Timeline(screenWidth, screenHeight);
+		editMode = false;
+		modernDating = false;
+		controlKeyDown = false;
+		shiftKeyDown = false;
+		showTagHider = false;
+		darkMode = true;
+		taggedEventsVisibility = 0;
+		imageIndex = 0;
+		
+		chooser = new JFileChooser("images");
+		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif", "webp");
+		chooser.setFileFilter(filter);
+		
+		lightModeColor = new Color(230, 230, 230);
+		darkModeColor = new Color(40, 40, 40);
+		backgroundColor = darkModeColor;
+		
+		updateComponentVisibility(true);
+	}
+
+	private void initializeJComponents(){
 		titleField = new JTextField("Event Title");
 		titleField.setBounds(30, 30, screenWidth/2, 30);
 		add(titleField);
@@ -284,12 +309,12 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		removeTagButton.addActionListener(this);
 		
 		showTaggedEventsButton = new JButton("Show tagged events");
-		showTaggedEventsButton.setBounds(tagPane.getX() + tagPane.getWidth()/2 - 200 - 30, addTagButton.getY() + addTagButton.getHeight() + 15, 200, buttonHeight);
+		showTaggedEventsButton.setBounds(tagPane.getX(), addTagButton.getY() + addTagButton.getHeight() + 15, 200, buttonHeight);
 		add(showTaggedEventsButton);
 		showTaggedEventsButton.addActionListener(this);
 		
 		hideTaggedEventsButton = new JButton("Hide tagged events");
-		hideTaggedEventsButton.setBounds(removeTagButton.getX(), removeTagButton.getY() + removeTagButton.getHeight() + 15, showTaggedEventsButton.getWidth(), buttonHeight);
+		hideTaggedEventsButton.setBounds(tagPane.getX() + tagPane.getWidth() - showTaggedEventsButton.getWidth(), removeTagButton.getY() + removeTagButton.getHeight() + 15, showTaggedEventsButton.getWidth(), buttonHeight);
 		add(hideTaggedEventsButton);
 		hideTaggedEventsButton.addActionListener(this);
 		
@@ -341,26 +366,6 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		captionTextArea.setLineWrap(true);
 		captionTextArea.setWrapStyleWord(true);
 		add(captionTextArea);
-		
-		timeline = new Timeline(screenWidth, screenHeight);
-		editMode = false;
-		modernDating = false;
-		controlKeyDown = false;
-		shiftKeyDown = false;
-		showTagHider = false;
-		darkMode = true;
-		taggedEventsVisibility = 0;
-		imageIndex = 0;
-		
-		chooser = new JFileChooser("images");
-		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif", "webp");
-		chooser.setFileFilter(filter);
-		
-		lightModeColor = new Color(230, 230, 230);
-		darkModeColor = new Color(40, 40, 40);
-		backgroundColor = darkModeColor;
-		
-		updateComponentVisibility(true);
 	}
 	
 	//methods
@@ -1057,7 +1062,6 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		addNewPeriodButton.setVisible(showEditTools1);
 		titleField.setVisible(showEditTools2);
 		descriptionPane.setVisible(selectedEvent != null);
-		descriptionTextArea.setCaretPosition(0);
 		monthField.setVisible(showEditTools2);
 		dayField.setVisible(showEditTools2);
 		yearField.setVisible(showEditTools2);
@@ -1087,17 +1091,20 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			prevImageButton.setBounds(prevImageButtonX2, prevImageButtonY2, prevImageButton.getWidth(), prevImageButton.getHeight());
 			nextImageButton.setBounds(nextImageButtonX2, nextImageButtonY2, nextImageButton.getWidth(), nextImageButton.getHeight());
 			captionTextArea.setBounds(captionX2, captionY2, captionW2, captionH2);
+			captionTextArea.setEditable(true);
 		} else if (!editMode && selectedEvent != null){
 			descriptionTextArea.setEditable(false);
 			descriptionTextArea.setFont(new Font("Helvetica", Font.PLAIN, 30));
 			descriptionTextArea.setText(selectedEvent.toString(GenericEvent.today().getYear(), modernDating));
 			descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
+			descriptionTextArea.setCaretPosition(0);
 			prevImageButton.setVisible(imageIndex > 0);
 			nextImageButton.setVisible(imageIndex < selectedEvent.getImages().size() - 1);
 			prevImageButton.setBounds(prevImageButtonX1, prevImageButtonY1, prevImageButton.getWidth(), prevImageButton.getHeight());
 			nextImageButton.setBounds(nextImageButtonX1, nextImageButtonY1, nextImageButton.getWidth(), nextImageButton.getHeight());
 			captionTextArea.setVisible(imageIndex > 0);
 			captionTextArea.setBounds(captionX1, captionY1, captionW1, captionH1);
+			captionTextArea.setEditable(false);
 		}
 		
 		if (isPeriod){
@@ -1129,6 +1136,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private void initializeFieldText(){
 		titleField.setText(selectedEvent.getTitle());
 		descriptionTextArea.setText(selectedEvent.getDescription());
+		descriptionTextArea.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);
 		
 		redField.setText(Date.numFormat(selectedEvent.getColor().getRed(), 3));
