@@ -284,6 +284,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 
 	private String truncatePath(String imageName){
 		String delim = "Timeline/";
-		return imageName.substring(imageName.indexOf(delim) + delim.length());
+		int loc = Math.max(0, imageName.indexOf(delim) + delim.length());
+		return imageName.substring(loc);
 	}
 }

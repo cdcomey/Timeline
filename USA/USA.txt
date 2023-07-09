@@ -335,7 +335,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                      
+Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                        
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -499,7 +499,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                         
+Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                           
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -614,7 +614,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/universalis_cosmographia.jpg;Caption                         
+Images: USA/images/maps/universalis_cosmographia.jpg;Caption                           
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -1051,7 +1051,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/munster_map.JPG;Caption                         
+Images: USA/images/maps/munster_map.JPG;Caption                           
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -13243,6 +13243,17 @@ Tags: none
 Images: none
 end
 
+Title: Tariff of 1824
+Description: 
+Type: Event
+Date: 05/22/1824
+Color: 255/255/0
+Category: Economy
+Alignment: Centered
+Tags: Tariff
+Images: none
+end
+
 Title: Republic of LIberia founded
 Description: 
 Type: Event
@@ -13254,10 +13265,32 @@ Tags: none
 Images: none
 end
 
-Title: Election of 1824
-Description: This election placed Democratic-Republican John Quincy Adams as the 6th president over his opponents, Andrew Jackson, William H. Crawford, and Henry Clay. John C. Calhoun also ran early in the election, but dropped out to successfully run for vice president. Crawford was the official Republican nominee, but it was disregarded by the other candidates. Monroe's vice president, Daniel D. Tompkins, declined to run based on his lack of popularity and health issues. When all the ballots were cast, Jackson was determined to have won a plurality of both the popular and electoral vote, but no one won a majority. Under those circumstances, it was up to the House of Representatives to decide the new president between the top three candidates. This discounted Clay, even though he would have had a strong chance of being elected in Congress if he was eligible. Before the vote, Clay was invited to Adams' house for a private meeting, raising suspicion as to what they May have discussed, especially among Jackson. After that, the House voted, determining Adams to be the winner, receiving 13 votes to Jackson's 7 and Crawford's 4. The president-elect then proceeded to appoint Clay to be Secretary of State, often considered a stepping stone for the presidency. Jackson was furious, claiming that Adams and Clay had conspired in their secret meeting to strike a "corrupt bargain" to win the presidency. He said that Clay lent his support to Adams to secure him the presidency, who would then give Clay a powerful position that he could use to attain the office later. Jackson believed he was the rightful winner of the election, as he had received more popular and electoral votes than any other candidate. He resigned his Senate seat in protest and formed his own political party, the Democrats. He would use this "corrupt bargain" theory in the 1828 election to discredit Adams and bolster his own support immensely.
+Title: Mexico's General Colonization Law of 1824
+Description: 
+Type: Event
+Date: 08/18/1824
+Color: 0/128/0
+Category: Legislation/Policy
+Alignment: Centered
+Tags: Texas, Mexico
+Images: none
+end
 
-Main issues: Monroe Doctrine
+Title: Election of 1824
+Description: This election placed Republican John Quincy Adams as the 6th president over his opponents, Andrew Jackson, William H. Crawford, and Henry Clay. 
+
+By the end of the War of 1812, the Federalist Party had all but dissolved, leaving only the Republicans. The party's already dominant presence in national politics was now uncontested. However, a one-party system does not last in a nation that does not force it. Many Republicans had little in common with each other, and before long, some of them would develop intraparty factions. Incumbent president James Monroe declined to run for a third term, wishing to follow the two-term convention followed by Washington, Jefferson, and Madison before him. His vice president, Daniel D. Tompkins, was in financial trouble and in poor health, and so ruled himself out as a candidate. The Republican Congressional nominating caucus met to decide their candidate, but the party no longer had the sway over its members it once did, and most Congressmen did not even attend the caucus. Instead, other influential Republicans ran separately and organized their own campaigns.
+
+One such candidate was John Quincy Adams of Massachusetts, Secretary of State and son of Founding Father and former president John Adams. He was well-respected among the political elite, especially in New England. Initially, he wanted war hero and Tennessee Senator Andrew Jackson as his vice president. Jackson had planned on retiring after his term as senator ended, but the president of the Tennessee legislature, William Blount, endorsed him to run for president, which Jackson accepted. As the commander in the then-legendary Battle of New Orleans, Jackson was quite popular. The third challenger was Speaker of the House Henry Clay, who had commanded a large influence in national politics since his first year in Congress in 1813. The fourth candidate was Treasury Secretary William Crawford, the one who had been endorsed by the Congressional nominating caucus.
+
+Secretary of War John C. Calhoun also ran early in the election, but dropped out when he saw he was not gaining enough traction. Instead, both Adams' and Jackson's campaigns backed him for vice president, despite the fact that Calhoun didn't like or agree with any of the other candidates on almost any issue, especially Adams. Nevertheless, he was essentially unopposed and so easily won the vice presidency.
+
+The fate of the presidency was less certain. Not only did no candidate have a majority, but none even broke 40%. Jackson had a plurality of both the electoral and popular vote (this was the first presidential election in which the popular vote was counted), winning Pennsylvania and much of the South. Adams came in second, taking all of New England and most of New York. Crawford came in third, winning Virginia and Georgia, and Clay came in last, winning Ohio, Missouri, and Kentucky. If no candidate received a majority of votes, the top three candidates would be voted on in the House of Representatives. At this point in the election, Crawford had fallen ill and so was not considered by the House. As Speaker of the House, Clay could have easily secured the presidency for himself this way, but he had not made the top three. However, he still had great influence over the House, and could effectively choose between Adams and Jackson. Sometime in January 1825, before the House was set to vote, Adams and Clay met in private. On February 9, the House voted 13-7-4 for Adams, Jackson, and Crawford, respectively (as a quirk of this contingent election, representatives voted collectively as a state instead of individually like normal).
+
+Jackson and his supporters were furious. He had won more votes than anyone else, and yet the presidency was denied to him. Clearly, Adams and Clay must have struck some kind of "corrupt bargain" to elevate themselves into power while keeping Jackson out. When Adams took office, he appointed Clay to be his secretary of state, which to Jackson and his supporters, only confirmed their suspicions. At that point, four of the five presidents had previously been secretaries of state, so not only was the position itself powerful, but it was seen as a stepping stone to the White House. Jackson asserted that Adams and Clay had conspired in that secret meeting. Clay backed Adams in the contingent election, and Adams rewarded him by giving him an influential position and effectively making him his heir. To Jackson and his supporters, this was the culmination of the elitism that had run the country since its inception. Adams, though far from the richest politician, was the son of a Founding Father, and was well-respected by the rest of the political elite. Jackson, while not poor, was not particularly wealthy and was seen as an outsider by the elites, coming from a no-name family. They saw him as a "military man" unfit for the highest public office. Clay had said that "I cannot believe that killing 2,500 Englishmen at New Orleans qualifies for the various, difficult, and complicated duties of the Chief Magistracy." Aristocrats generally did little to hide their contempt of the poor and worked to keep them out of power. Many states had required owning property to vote, and some even considered outright banning all but the rich from voting. Now they were denying victory to the man who had more votes than anyone else, an affront to democracy. While Jackson was not a peasant, he championed popular sentiment and called out what he saw as elitist conspiracy.
+
+The truth of these claims is questionable. While it is true that Clay backed Adams for president and Adams then appointed Clay as secretary of state, it is unlikely that this resulted from a bargain made during their secret meeting. Clay did not like Jackson and did not trust him with the presidency, and Adams' economic policy aligned with his own. Likewise, Clay was an influential politician and gifted speaker, so was a natural choice for secretary of state. Nevertheless, Jackson and his supporters believed it, and the "corrupt bargain" would become a major point of contention in the next election in 1828. Jackson, having been reluctant to run in 1824, threw himself into the next campaign. He resigned his Senate seat in protest and organized his own political party, the Democrats.
+
 Voter turnout: 26.9%
 Significance: First election to record the popular vote
 First election in which there were four major candidates in the running
@@ -13269,8 +13302,8 @@ Date: 11/02/1824
 Color: 0/255/255
 Category: Election
 Alignment: Centered
-Tags: none
-Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption 
+Tags: John C. Calhoun, Henry Clay, Firsts, Andrew Jackson
+Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption   
 end
 
 Title: National Republican Party founded
@@ -13382,6 +13415,17 @@ Color: 255/128/128
 Category: Organization/Company
 Alignment: Centered
 Tags: none
+Images: none
+end
+
+Title: <i>Freedom's Journal</i> begins publication
+Description: The Freedom's Journal was the first black-run newspaper in the US. As such, it was mainly concerned with black issues, especially slavery. It dedicated much of its space to moral and practical arguments against it. It advocated for equal rights and education, reported on local and national events concerning black Americans, and covered international events relating to Africans and Haitians. Each issue was four pages and was published on Fridays. They were edited by John Russwurm and Samuel Cornish. They saw the Freedom's Journal as a counter to contemporary newspapers that antagonized black people. They covered violent crimes committed by white people to dissociate blacks from criminality. It also published fiction, such as "Theresa - A Haytian Tale", the first published fiction by an African-American. It was based out of New York City, but circulated in 11 states, Washington, DC, Haiti, Europe, and Canada. The paper lasted only until March 28, 1829, just two years.
+Type: Event
+Date: 03/16/1827
+Color: 255/128/128
+Category: Organization/Company
+Alignment: Centered
+Tags: Slavery/Servitude, New York, Firsts
 Images: none
 end
 
@@ -15293,7 +15337,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/elections/1860_Electoral_Map.png;test                         
+Images: USA/images/maps/elections/1860_Electoral_Map.png;test                           
 end
 
 Title: Crittenden Compromise
