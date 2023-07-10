@@ -39,6 +39,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private final int screenWidth = 1920;
 	private final int screenHeight = 960;
 	
+	// JComponents
 	private JButton saveChangesButton, addNewEventButton, addNewPeriodButton, removeEventButton;
 	private JButton showTaggedEventsButton, hideTaggedEventsButton, addTagButton, removeTagButton;
 	private JButton prevImageButton, nextImageButton, findImageButton, saveImageButton, deleteImageButton;
@@ -51,8 +52,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private JComboBox<Tag> categoryComboBox;
 	private JCheckBox eventPositionCheckBox, BCCheckBox, BCCheckBox2, presentCheckBox, isImageEventCheckBox;
 	
-	private JFileChooser chooser;
-	private FileNameExtensionFilter filter;
+	private JFileChooser chooser;	// used to find images to add to events
+	private FileNameExtensionFilter filter;	// used to only display image files in the file explorer
 	
 	private Timeline timeline;
 	private GenericEvent selectedEvent;
@@ -76,13 +77,14 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private int prevImageButtonX1, prevImageButtonY1, prevImageButtonX2, prevImageButtonY2;
 	private int nextImageButtonX1, nextImageButtonY1, nextImageButtonX2, nextImageButtonY2;
 	
-	//constructor
 	public Screen(String timelineType){
 		setLayout(null);
 		setFocusable(true);
 		addKeyListener(this);
 		addMouseListener(this);
 		
+		// timelineType is the name of the timeline
+		// loads folder with that name into the Timeline class
 		eventTree = new TreeSet<GenericEvent>();
 		this.timelineType = timelineType;
 		GenericEvent.setCapListPath(timelineType);
@@ -111,6 +113,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		updateComponentVisibility(true);
 	}
 
+	// helper function for constructor
+	// only run once, used to keep the constructor readable
 	private void initializeJComponents(){
 		titleField = new JTextField("Event Title");
 		titleField.setBounds(30, 30, screenWidth/2, 30);
@@ -373,15 +377,20 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		return new Dimension(screenWidth, screenHeight);
 	}
 	
+	// draws all objects on screen
+	// is called many times, unpredictably, so should be lightweight
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
+		// draw the background
 		g.setColor(backgroundColor);
 		g.fillRect(0, 0, screenWidth, screenHeight);
 		
+		// draw the timeline
 		if (selectedEvent == null && !showTagHider)
 			timeline.drawTimeline(g, eventTree, tagList, taggedEventsVisibility, modernDating, darkMode);
 		
+		// draw the fields for the selected event
 		if (selectedEvent != null){
 			if (editMode){
 				// dimensions for drawn image in edit mode
@@ -416,6 +425,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				}
 			}
 			
+			// draw colored squares around the RGB fields as a kind of label
 			if (editMode){
 				g.setColor(Color.red);
 				g.fillRect(redField.getX() - 10, redField.getY() - 10, redField.getWidth() + 20, redField.getHeight() + 20);
