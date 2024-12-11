@@ -88,12 +88,12 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		// loads folder with that name into the Timeline class
 		eventTree = new TreeSet<GenericEvent>();
 		this.timelineType = timelineType;
-		GenericEvent.setCapListPath(timelineType);
+		GenericEvent.setCapListPath("Timelines/" + timelineType);
 		readFromFile(timelineType);
 
 		initializeJComponents();
 		
-		timeline = new Timeline(screenWidth, screenHeight);
+		timeline = new Timeline(screenWidth, screenHeight, timelineType);
 		editMode = false;
 		modernDating = false;
 		controlKeyDown = false;
@@ -208,7 +208,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		ArrayList<Tag> categoriesList = new ArrayList<Tag>();
 		try{
-			File file = new File(timelineType + "/categories.txt");
+			File file = new File("Timelines/" + timelineType + "/categories.txt");
 			FileReader reader = new FileReader(file);
 			char[] text = new char[1500];
 			reader.read(text);
@@ -259,7 +259,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		ArrayList<String> tagStrings = new ArrayList<String>();
 		try{
-			File file = new File(timelineType + "/tags.txt");
+			File file = new File("Timelines/" + timelineType + "/tags.txt");
 			FileReader reader = new FileReader(file);
 			char[] text = new char[10000];
 			reader.read(text);
@@ -669,7 +669,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			readFromTimelineFile();
 		} */
 		
-		File file = new File(timelineType + "/" + timelineType + ".txt");
+		File file = new File("Timelines/" + timelineType + "/" + timelineType + ".txt");
+		// print(file.getName());
 		String eventString = "";
          
         try (FileInputStream fis = new FileInputStream(file);

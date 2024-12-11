@@ -1,0 +1,2 @@
+centerYear:1950
+zoomLevel:5

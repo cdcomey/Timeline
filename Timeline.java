@@ -6,6 +6,10 @@ import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.ArrayList;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /*
 TIMELINE STRUCTURE
 the first part is the center line, the "line" part of the timeline
@@ -24,6 +28,7 @@ public class Timeline{
 	private final int lineLength, connectingLineHeight, connectingLineWidth, notchWidth, notchHeight;
 	private final int[] T1xCoords, T1yCoords, T2xCoords;
 	private Color timelineColor;
+	private final String name;
 	
 	private int centerYear, zoomLevel, lineCenter, connectingLineY;
 	private int numberOfNotches, newLineWidth, space, notchPosition, notchX, notchY;
@@ -33,12 +38,12 @@ public class Timeline{
 	private Iterator<GenericEvent> it;
 	private ArrayList<Rectangle> drawnEventCoordinates, drawnPeriodCoordinates, drawnLineCoordinates;
 	
-	public Timeline(int screenWidth, int screenHeight){
-		this.screenWidth = screenWidth;
-		this.screenHeight = screenHeight;
+	public Timeline(int sw, int sh, String n){
+		screenWidth = sw;
+		screenHeight = sh;
+		name = n;
 		
-		centerYear = 1860;	// the initial year at the center of the screen, can (and likely will) be changed by the user
-		zoomLevel = 4;	// determines how many years are shown on-screen at one time, can be changed by the user
+		readConfigFile();
 		lineCenter = screenHeight*1/2;	// y-coordinate of the top-left corner of the center line
 		lineLength = 25;	// used for determining dimensions of the triangles on the ends of the line
 		notchWidth = 3;	// how wide each notch is
@@ -68,6 +73,22 @@ public class Timeline{
 		newLineWidth = connectingLineWidth - notchWidth * numberOfNotches;
 		space = newLineWidth / (numberOfNotches-1);
 		initializeNotchData();
+	}
+
+	private void readConfigFile(){
+		try (BufferedReader br = new BufferedReader(new FileReader("Timelines/" + name + "/config.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+				// the initial year at the center of the screen, can (and likely will) be changed by the user
+				if (line.startsWith("centerYear"))
+                	centerYear = Integer.parseInt(line.substring(line.indexOf(":")+1));
+				// determines how many years are shown on-screen at one time, can be changed by the user
+				else if (line.startsWith("zoomLevel"))
+					zoomLevel = Integer.parseInt(line.substring(line.indexOf(":")+1));
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
 	}
 	
 	private void drawBasicLine(Graphics g){
@@ -293,7 +314,7 @@ public class Timeline{
 			if (currentEvent.getYear() == currentYear){
 				// System.out.println(currentYear + " is " + currentYearLength + " days");
 				// System.out.println(currentYear + ": " + currentEvent.getTitle());
-				// System.out.print("(" + currentYear + " - " + leftDate.getYear() + ") * (" + space + " + " + notchWidth + ")");
+				// System.out.prInteger.parseInt("(" + currentYear + " - " + leftDate.getYear() + ") * (" + space + " + " + notchWidth + ")");
 				// System.out.println(" + " + T1xCoords[2] + " + " + currentEvent.getDate().getDayOfYear() + " * (" + space + " + " + notchWidth + ") / " + currentYearLength);
 				lineX = (int)((currentYear - leftDate.getYear())*(space+notchWidth) + T1xCoords[2] + currentEvent.getDate().getDayOfYear() * ((space+notchWidth) / (double)currentYearLength));
 				// System.out.println("lineX : " + lineX);
