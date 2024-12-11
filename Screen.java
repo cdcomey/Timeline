@@ -12,7 +12,6 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -76,6 +75,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	// prevImageButton and nextImageButton will change location for the same reason, but not size
 	private int prevImageButtonX1, prevImageButtonY1, prevImageButtonX2, prevImageButtonY2;
 	private int nextImageButtonX1, nextImageButtonY1, nextImageButtonX2, nextImageButtonY2;
+
+	
 	
 	public Screen(String timelineType){
 		setLayout(null);

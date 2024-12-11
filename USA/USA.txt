@@ -335,7 +335,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                        
+Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                           
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -499,7 +499,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                           
+Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                              
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -614,7 +614,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/universalis_cosmographia.jpg;Caption                           
+Images: USA/images/maps/universalis_cosmographia.jpg;Caption                              
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -1051,7 +1051,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/munster_map.JPG;Caption                           
+Images: USA/images/maps/munster_map.JPG;Caption                              
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -3901,7 +3901,11 @@ Images: none
 end
 
 Title: Maryland-Pennsylvania-Delaware border dispute
-Description: There had been a dispute between the borders of the colonies of Maryland and Pennsylvania ever since the latter's charter had been issued. Maryland's northern border was defined in its 1632 charter as the 40th parallel. Pennsylvania's charter, written in 1682, described its colony's southern border similarly: "a Circle drawne at twelve miles distance from New Castle Northward and Westward unto the beginning of the fortieth degree of Northern Latitude, and then by a streight Line Westward to the Limitt of Longitude above-mentioned." In plain English, the border was to be the 40th parallel, except when that overlapped with the area around New Castle, which the border was to go around. This Twelve Mile Circle around New Castle, a town in modern-day Delaware, belonged to James, the Duke of York. King Charles II, who wrote the charter, apparently thought that New Castle laid near the 40th parallel, and was trying to make sure Pennsylvania's land did not overlap with that of the Duke of York, who was his brother. There would be no other reason to specify this Twelve Mile Circle. However, his map must have been inaccurate, because New Castle in fact lies 25 miles south of the 40th parallel. This meant that even if the Twelve Mile Circle ran all the way north, it could never intercept the 40th parallel, so the two segments of Pennsylvania's southern border would not line up, which became a primary cause of the dispute.
+Description: September 16, 1681 (342 years ago) - January 11, 1769 (254 years ago) : 87 years, 4 months long
+Tags: Maryland-Pennsylvania-Delaware border dispute
+Maryland-Pennsylvania-Delaware border dispute
+
+There had been a dispute between the borders of the colonies of Maryland and Pennsylvania ever since the latter's charter had been issued. Maryland's northern border was defined in its 1632 charter as the 40th parallel. Pennsylvania's charter, written in 1682, described its colony's southern border similarly: "a Circle drawne at twelve miles distance from New Castle Northward and Westward unto the beginning of the fortieth degree of Northern Latitude, and then by a streight Line Westward to the Limitt of Longitude above-mentioned." In plain English, the border was to be the 40th parallel, except when that overlapped with the area around New Castle, which the border was to go around. This Twelve Mile Circle around New Castle, a town in modern-day Delaware, belonged to James, the Duke of York. King Charles II, who wrote the charter, apparently thought that New Castle laid near the 40th parallel, and was trying to make sure Pennsylvania's land did not overlap with that of the Duke of York, who was his brother. There would be no other reason to specify this Twelve Mile Circle. However, his map must have been inaccurate, because New Castle in fact lies 25 miles south of the 40th parallel. This meant that even if the Twelve Mile Circle ran all the way north, it could never intercept the 40th parallel, so the two segments of Pennsylvania's southern border would not line up, which became a primary cause of the dispute.
 
 The first problem arose on September 16, 1681, when William Penn, proprietor of Pennsylvania, sent letters to the residents of Baltimore and Cecil Counties explaining that they would not have to pay taxes to Maryland, under the (incorrect) impression that these areas were within his territory. Therefore, when Cecil Calvert, 3rd Lord of Baltimore and proprietor of Maryland, sent tax collectors to the region, they were met with strong resistance by those who thought they didn't have to pay. Calvert, desperate to resolve the issue, called for a meeting with William Markham, the lieutenant governor of Pennsylvania. After postponing several times, Markham met with Calvert in Upland, just north of New Castle, in September. Both parties brought surveyors, who eventually agreed that the latitude of the site was 39 degrees, 47 minutes, and 5 seconds. They arranged to meet at New Castle the following day to find the 40th parallel, but Markham never showed. He sent a letter to Calvert explaining that he would not accept the 40th parallel as a boundary because it laid more than 12 miles north of New Castle, which would violate the Pennsylvanian charter. It would seem this resolve was not going to come to the speedy end Calvert wanted.
 
@@ -3913,7 +3917,7 @@ Seeing as their negotiations were going nowhere, they brought the issue to the C
 
 It is at this point that something important should be disclosed: that of surveying. As you can probably tell, colonial charters were not the most specific or accurate when it came to border definitions. In order to establish legitimate ownership of a region, that region was supposed to be surveyed and monuments were supposed to be placed marking the boundary. However, Calvert had continued to neglect having Maryland's northern boundary surveyed, which was part of the reason why this whole dispute was a dispute in the first place. Even in the 1680s, after King James' decree, Calvert still would not have the land surveyed, even though it would have ended the dispute in his favor. The other way to establish legitimacy over a land claim was to settle loyal families in the region, but Calvert did not do this until it was too late, even though his colony had a fifty year head start on Penn's.
 
-The border dispute would rear its head again thirteen years later. On July 20, 1701, the Lower Counties petitioned the Pennsylvania Assembly for a separate legislature and administrative officers. This was a long time coming; New Castle and Philadelphia often conflicted commercially, and the residents of the Lower Counties and Pennsylvanians were ethnically and religiously distinct. Pennsylvanians also disliked how the Lower Counties disrupted the government. Penn wanted to balance the representation of the Upper Counties (Chester, Philadelphia, and Bucks) aka Pennsylvania Proper, with that of the Lower Counties. Therefore, assent from both the Upper and Lower Counties was required before laws could be passed, and the meeting place of the legislature itself was to alternate between Philadelphia and New Castle. Upper County residents, who vastly outnumbered their southern neighbors, resented the Lower Counties having an undue influence on their legislation, so they were more than willing to grant the petition. The Lower Counties, later renamed to Delaware, would be self-governing evermore.
+The border dispute would rear its head again thirteen years later. On July 20, 1701, the Lower Counties petitioned the Pennsylvania Assembly for a separate legislature and administrative officers. This was a long time coming; New Castle and Philadelphia often conflicted commercially, and the residents of the Lower Counties and Pennsylvanians were ethnically and religiously distinct. Pennsylvanians also disliked how the Lower Counties disrupted the government. Penn wanted to balance the representation of the Upper Counties (Chester, Philadelphia, and Bucks), the main part of Pennsylvania, with that of the Lower Counties. Therefore, assent from both the Upper and Lower Counties was required before laws could be passed, and the meeting place of the legislature itself was to alternate between Philadelphia and New Castle. Upper County residents, who vastly outnumbered their southern neighbors, resented the Lower Counties having an undue influence on their legislation, so they were more than willing to grant the petition. The Lower Counties, later renamed to Delaware, would be self-governing evermore.
 
 Although Delaware's borders had been officially defined in Pennsylvania's 1688 charter, they had not been surveyed (much like every other border in this saga). Previously, this was not much of an issue, as there were no major settlements in that area anyway. Now that the area had become its own colony, however, there was a more pressing need for definitive boundaries so settlers would know where they could go. To this end, on August 28 Penn commissioned a survey of the border between New Castle and Chester Counties. This boundary was to be an arc of a circle with a twelve-mile radius centered around New Castle and extending from the Delaware River westward 120 degrees, finally defining the Twelve-Mile Circle. The surveyors, Isaac Taylor of Chester County and Thomas Piersons of New Castle County, began on September 24 heading out twelve miles from New Castle (though it was later found that they went 2000 feet too far out). They then measured a series of four circular arcs, each separated by a natural boundary like a creek, which resulted in not quite a circle, but a decent approximation. They finished on October 4. However, it took until 1715 for the Pennsylvania Assembly to approve the survey as the boundary between Chester and New Castle Counties, and 1719 for the Delaware Assembly to do the same. The matter of the Twelve Mile Circle seemed settled for the moment, but the rest of the Maryland-Pennsylvania border had yet to be surveyed.
 
@@ -3925,7 +3929,7 @@ It was only a matter of time before the tension erupted into violence. In late O
 
 This conflict had been going on for so long that both Charles Calvert and William Penn had died by this point. Penn's three children had inherited their father's land, and the new proprietor of Maryland was Charles Calvert, 5th Lord Baltimore (not to be confused with the previous Charles Calvert, who was 3rd Lord Baltimore). This new generation would continue the fight over the Twelve Mile Circle, the 40th parallel, and the Chesapeake Peninsula. In 1731, Calvert petitioned the Committee for Trade and Plantations to force the Penns into settling the dispute. The Committee held many meetings discussing the borders. Calvert, like his father, insisted that the border laid at the 40th parallel. The Penns had given up on their father's idea of badly measuring the 40th parallel, instead claiming that the true colonial border laid fifteen miles south of Philadelphia. During the border dispute, it had been discovered that Philadelphia, Pennsylvania’s primary city, actually lay south of the 40th parallel. It had been built in 1682, before the border dispute had really began and had been operating under Pennsylvania’s borders as defined by the colony's charter. If the 40th parallel were to become the border, it would leave Pennsylvania in an awkward situation where its main city, population, and source of revenue and prestige would no longer be in Pennsylvania. It may seem like Penn had brought this upon himself by not waiting until this conflict's resolution before building Philadelphia. However, in those days when an incident like this could not be resolved in a timely manner (and we can see here it certainly hasn't), building towns and settling residents is a good way of establishing legitimacy over a region. Philadelphia therefore strengthened the Penns' claim to the region. Even Calvert conceded this point, primarily pressing his land claims west of the city. He likely expected the Committee to rule the border as the 40th parallel, with some kind of exception for Philadelphia. The Penns wanted to take this implicit concession even further by supposing that this exception for Philadelphia extended all the way west. Plus, this line intersected the Twelve Mile Circle, so this assertion had some legitimacy through the Pennsylvania charter. After much deliberation, the Committee drafted Articles of Agreement, their final decision. The official demarcation line was to run west from Cape Henlopen to the middle of the Chesapeake Peninsula, then north to a point tangent to the Twelve Mile Circle, then around the circle until it was north of the tangent point, then north until it intersected an east-west line 15 miles south of Philadelphia. This decision was a huge gain for Pennsylvania. Maryland was officially ceding its claim to the Lower Counties on the Delaware, although they had not held any legitimate claim to it since 1701 anyway. More importantly, Maryland had suddenly found its 40th parallel claim, which had been validated in 1685, cast aside. Yet both colonies agreed to sign the ruling on May 10, 1732 even though the new line resulted in the loss of 3700 square miles for Maryland. It is unknown why Calvert agreed to such an unfavorable decision, but agree he did.
 
-The agreement also called for a Commission of seven for each party to demarcate the border, either with natural objects or stones. The first meeting was not held until 1734, a full two years after the agreement was signed. The Commissioners were selected, which included both colonial governors. They were meant to settle the center and size of the Twelve Mile Circle. You may recall the matter was supposedly settled in 1701, but only Pennsylvania and Delaware had ratified the survey, not Maryland. Their Commissioners had recycled the 3rd Lord Baltimore's claim that the "twelve miles" referred to the circle's circumference, while the Pennsylvanians maintained that it was the radius, like how it was surveyed in 1701 (each of which “coincidentally” gave their side more land). Also, the center was to be New Castle, but where in New Castle, exactly? Was it to be the physical center, the town square, the church, or some other point of interest? Eventually, they gave up and went home, leaving only a joint statement saying they couldn’t agree on anything.
+The agreement also called for a Commission of seven for each party to demarcate the border, either with natural objects or stones. The first meeting was not held until 1734, a full two years after the agreement was signed. The Commissioners were selected, which included both colonial governors. They were meant to settle the center and size of the Twelve Mile Circle. You may recall the matter was supposedly settled in 1701, but only Pennsylvania and Delaware had ratified the survey, not Maryland. Their Commissioners had recycled the 3rd Lord Baltimore's claim that the "twelve miles" referred to the circle's circumference, while the Pennsylvanians maintained that it was the radius, like how it was surveyed in 1701. Also, the center was to be New Castle, but where in New Castle, exactly? Was it to be the physical center, the town square, the church, or some other point of interest? Eventually, they gave up and went home, leaving only a joint statement saying they couldn’t agree on anything.
 
 To make matters worse, Calvert suddenly claimed that the Articles of Agreement he had signed contained geographical inaccuracies, and refused to enact it. He was not wrong; the map the agreement used located Cape Henlopen incorrectly. The false map, which ironically had been presented by Calvert in the first place, placed Cape Henlopen where modern-day Fenwick Island actually is. The error was costing Maryland 800 square miles more than Calvert had signed up for. The Penns pressed the advantage, saying that even if the map was inaccurate, they had all agreed to it, Calvert included. Not to be deterred, in 1735, the 5th Lord Baltimore opened a chancery suit over the issue, a chancery suit being one to be resolved using fairness and equity as a guide instead of common law. This suit would go on for 15 years.
 
@@ -12746,13 +12750,43 @@ Images: none
 end
 
 Title: First Seminole War
-Description: A conflict between the Seminole and the US in Florida. In 1814, while Great Britain was still fighting the US, they recruited some Native American tribes and gave them forts. The Seminole were uninterested in the fort, so it was given to rebel slaves, giving the fort the name "Negro Fort." Colonel Clinch sailed over and blew up the fort, killing around 300. In November 1817, Americans drove the Mikasuki out of Fowltown. A week later, Seminole attacked a ship of 50 vulnerable Americans in the Scott Massacre. In March 1818, General Jackson invaded Florida and attacked a lot of Seminole villages. He also executed a Scottish trader that was dealing arms to the Seminole and a British agent. The British considered retaliating, but the US was too valuable to their economy. The Spanish could not maintain Florida very well, so they decided to continue negotiations to sell it, leading to the Adams-Onís Treaty of 1819. Congress tried to reprimand Jackson for the executions, but it didn't really work.
+Description: July 1, 1816 (207 years ago) - May 28, 1818 (205 years ago) : 1 year, 10 months, 27 days long
+First Seminole War
+
+The Seminole were unlike any other Indian tribe in North America. They originated as refugees from various tribes to the north of Spanish Florida, fleeing wars with European settlers. Disease had wiped out most of the indigenous population of Florida, and almost no Europeans lived there. The peninsula was too hot and swampy to live in and develop, and the north was too far away from the rest of New Spain. The Spanish were mainly in the Americas for gold and silver, of which there was little in Florida. The swampy climate promoted diseases that kept both European and Indian populations down. Many Indians, mostly Creeks from the South Atlantic coast, like South Carolina, fled to Florida as a refuge from expansionist wars with British settlers. As time went on, the various cultures and ethnicities blended to form a unique people. They called themselves the Seminole, derived from the Creek word for "runaway". Many Seminole were not even Indian, but rather runaway slaves from nearby areas. At that time, there was no infrastructure for tracking down escaped slaves aside from masters hiring bounty hunters, and Florida was a good place for slaves in the Southern British colonies to hide. Many of those slaves joined the Seminole, contributing their culture to the nation as well. They were called Black Seminoles, and constituted perhaps 10% of total Seminoles, though estimates vary. They largely lived in the north, where the Florida Panhandle is today, as its climate was much more hospitable than the peninsula.
+
+By the early 19th century, US Southerners regarded Florida both as an opportunity and an object of resentment. The north of Florida was fertile, and would make a good extension of the agricultural economy that sustained the South. As was common sentiment at the time, Southerners feared that the hostile Seminoles would raid frontier farms and villages. Again, it was also a place where slaves could escape from the South. Spain encouraged this, as they hoped it would weaken Britain in colonial times, and the US after the Revolution. Some Black Seminoles even controlled a fort built and abandoned by the British in 1814, which Americans called Negro Fort. It sat by the Apalachicola River, about the center of the Panhandle. It was a beacon for runaway slaves to flee to, and was even planned to be the base for an attack on the Southern states. To Southerners, Negro Fort was an existential threat. They demanded the US invade Florida to subdue the Seminole, with some wanting outright annexation to stop the threat permanently. In April 1816, the US built Fort Crawford on the Flint River, a tributary of the Apalachicola in Georgia, as a counter to Negro Fort. The fort was named after War Secretary William Crawford. This fort was difficult to supply by land, since it was in the middle of undeveloped territory. Instead, they sent boats across the Apalachicola, which was a violation of Spanish territory, but one that the Spanish lacked the manpower to punish. While passing by Negro Fort on April 27, the Black Seminole fired at the boats, which gave the US a justification for destroying it.
+
+Leading the attack was General Andrew Jackson, hero of the Battle of New Orleans the year before. He sent a request to attack the fort, but ordered the attack before he received confirmation. He sent Brigadier General Edmund P. Gaines, commander of Fort Scott, on an expedition, containing both US regulars and Creek Indians who were promised loot from the fort, 267 men total. They arrived at Negro Fort on July 27. The fort was led by Garçon, a former Colonial Marine (part of the British military), and joined by several dozen Seminole and Choctaw, including a Choctaw chief. Garçon refused Gaines' request that they surrender. The expedition's two gunboats began firing on the fort. Negro Fort responded with their own cannons, but they had not been trained in handling artillery, so were unable to pose much of a threat. Soon after the fight began, one of the gunboats fired a "hot shot", a cannon round heated prior to firing, which sets fire to its target. The shot hit Negro Fort's powder magazine, igniting it and blowing up the entire fort, killing most of the 334 people inside. Reportedly, the explosion was heard in Pensacola, over 100 miles away. The US and Creek men closed in and captured the remaining defenenders. Garçon and the Choctaw chief, among the few survivors, were respectively shot and scalped by the Creeks. The Creeks retrieved hundreds of weapons and were brought closer in alliance with the US. As expected, Spain was able to do little to retaliate.
+
+The threat of Negro Fort had been neutralized, but there was still the matter of the Seminole. On November 21, 1817, over a year after the destruction of Negro Fort, Gaines was sent to Fowltown, a village on the Flint River 15 miles east of Fort Crawford. The village was inhabited by Mikasuki, a branch of Creek, and led by Chief Neamathla, who had fought Jackson in the Creek War. That war ended with the Upper Creek ceding their land in Alabama and Georgia, but Neamathla did not consider the Mikasuki to be Creek and so did not give up their land. Gaines's orders were to destroy Fowltown and capture Neamathla to assert the US's border claims. The 250-man expedition drove the Mikasuki out of Fowltown on November 22, and burned the village, though Neamathla escaped.
+
+The next week, several hundred Creeks led by Homathlimico attacked an American boat captained by Lieutenant Richard Scott, which was sailing up the Apalachicola to resupply Fort Crawford. The boat carried twenty armed soldiers, twenty sick soldiers, seven women, and four children. The Creeks killed all but a handful that managed to escape. The Creek scalped those they killed and retreated into Florida. The Scott Massacre outraged Americans and convinced many more that the Seminole were a threat. Fort Crawford was renamed Fort Scott in Lieutenant Scott's honor. In the meantime, Gaines had moved east to deal with pirates, so the issue had been delegated to Andrew Jackson. John C. Calhoun, who had replaced Crawford as War Secretary in 1817, Gaines ordered Jackson to invade Florida and attack those responsible, but avoid any Spanish outposts. Jackson left enthusiastically on March 15, 1818, with 800 regulars, 1000 Tennessee volunteers, 1000 Georgia militiamen, and about 1400 Creeks led by Brigadier General William McIntosh.
+
+Jackson and his men soon arrived at the ruins of Negro Fort, which they reconstructed as Fort Gadsden. They moved to the east of the Panhandle where Tallahassee is today. They burned the Indian twons of Anhaica and Miccosukee, then moved south to the Spanish Fort St. Marks. Jackson first tried to persuade the fort's commandant, Don Francisco Caso y Luengo, to surrender the fort by convincing him that they were on the same side against the Seminole. When this failed, Jackson captured the fort. Inside were two Indian leaders, Josiah Francis and Homathlemico, the latter of whom led the Scott Massacre. Jackson promptly had the two hanged without trial. Jackson headed to the Suwannee River, which formed the eastern border of the Panhandle, where several Black Seminole villages were. Jackson destroyed any he found, though most of the Black Seminoles in the area had fled south. The largest village they found was on the Econfina River and was inhabited by Red Sticks. They killed around forty and captured around a hundred women and children, and even rescued a woman who had been captured in the Scott Massacre. Having accomplished their main goal of eliminating the Black Seminole threat, Jackson sent the Georgia militiamen and the Lower Creeks home. The rest of the army headed to Fort St. Marks.
+
+There they dealt with two British men they had captured earlier in April. One was Alexander Arbuthnot, a Scottish trader, was accused of selling weapons to the Semioles, and the other was Robert Ambrister, a former Royal Marine, was accused of acting as an intermediary for the Seminole and encouraging hostilities against the US. Jackson had them court-martialed. Ambrister pled guilty and begged the court for mercy, while Arbuthnot insisted his trade was legal. The court found them both guilty and sentenced them to death. This was controversial both in the US and especially in Britain. Some supported Jackson's actions, while others criticized him for treating them as criminals instead of prisoners of war. Congress investigated Jackson for improper conduct, which they found, but decided not to punish him due to his popularity.
+
+Jackson declared the campaign to be a success, left a garrison at Fort St. Marks and left for Fort Gadsden. Before he returned to Tennessee, he received word that the Spanish were supplying more aggressive Indians at Pensacola in the west. He left on May 7 with 1000 men. The governor of West Florida insisted that there was no such arming going on, and that most of the Indians there were women and children, but Jackson maintained his position. Jackson captured both Pensacola and the nearby Fort Barrancas on May 28. He left Colonel William King as military governor of West Florida and left for Nashville.
+
+Despite all the above text, the First Seminole War was fairly low-scale and did not change much. Negro Fort was destroyed and the threat of organized Black Seminole attacks were eliminated, but this would not be the end of Seminole resistance. Spain was upset that the US had invaded West Florida and captured its territory, which the US government apologized for and returned. But those captures did strengthen the US's negotiating position for purchasing Florida, which they had started before the war. The US was able to acquire both West and East Florida, allowing them to settle the land and remove it as a place for lawlessness and escaped slaves. Britain was especially upset that the US had executed Arbuthnot, a British subject, without a civilian trial, but ultimately little came of this. The executions did earn Jackson strong criticism for the rest of his career, though he still remained broadly popular.
+
+Timeline:
+April 1816 - Fort Crawford built
+April 27, 1816 - Negro Fort fires on US supply boat
+July 27, 1816 - Negro Fort destroyed
+November 22, 1816 - Fowltown burned
+November 30, 1816 - Scott Massacre
+March 27, 1817 - Jackson arrives in Florida
+April 7, 1817 - Jackson captures Fort St. Marks
+April 29, 1818 - Arbuthnot and Ambrister executed
+May 28, 1818 - Jackson captures Pensacola
 Type: Period
 Date: 07/01/1816 - 05/28/1818
 Color: 255/0/0
 Category: Conflict with under 1000 deaths
 Alignment: null
-Tags: none
+Tags: Tennessee, Spain, Georgia, Florida, England/Great Britain/United Kingdom, Andrew Jackson, American Indians, Alabama
 Images: none
 end
 
@@ -13303,7 +13337,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: John C. Calhoun, Henry Clay, Firsts, Andrew Jackson
-Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption   
+Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption      
 end
 
 Title: National Republican Party founded
@@ -13923,7 +13957,7 @@ Tags: none
 Images: none
 end
 
-Title: Samuel Holt's revolver
+Title: Samuel Colt's revolver
 Description: 
 Type: Event
 Date: 02/25/1836
@@ -14819,7 +14853,7 @@ Title: President Taylor dies
 Description: President Zachary Taylor reportedly perished from a stomach-related illness at 65 years old. His doctor diagnosed the illness as cholera. Though rumors circulated about a poisoning committed by Southerners, it was later debunked. He was succeeded by Millard Fillmore.
 Type: Event
 Date: 07/09/1850
-Color: 170/255/195
+Color: 0/0/0
 Category: Individual
 Alignment: Centered
 Tags: none
@@ -14871,8 +14905,8 @@ Tags: none
 Images: none
 end
 
-Title: Uncle Tom's Cabin
-Description: The book Uncle Tom's Cabin was published, an antislavery novel based on the real world experiences of slaves. It was written by Harriet Beecher Stowe, and was one of the leading causes of the Civil War.
+Title: <b>Harriet Beecher Stowe's <i>Uncle Tom's Cabin</i></b>
+Description: 
 Type: Event
 Date: 03/20/1852
 Color: 255/255/255
@@ -15337,7 +15371,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/elections/1860_Electoral_Map.png;test                           
+Images: USA/images/maps/elections/1860_Electoral_Map.png;test                              
 end
 
 Title: Crittenden Compromise
