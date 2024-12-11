@@ -1,2 +1,2 @@
-centerYear:1950
+centerYear:1980
 zoomLevel:5

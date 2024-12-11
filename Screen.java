@@ -35,8 +35,8 @@ import java.util.ArrayList;
 
 public class Screen extends JPanel implements ActionListener, KeyListener, MouseListener{
 	
-	private final int screenWidth = 1920;
-	private final int screenHeight = 960;
+	private final int screenWidth = 1700;
+	private final int screenHeight = 950;
 	
 	// JComponents
 	private JButton saveChangesButton, addNewEventButton, addNewPeriodButton, removeEventButton;

@@ -1,1 +1,33 @@
+Title: Dummy Event
+Description: 
+Type: Event
+Date: 01/01/1980
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: Dummy Period
+Description: 
+Type: Period
+Date: 01/01/1981 - 01/01/1982
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Dummy Event 2
+Description: 
+Type: Event
+Date: 01/01/1981
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
 

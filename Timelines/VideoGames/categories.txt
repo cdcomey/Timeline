@@ -1,1 +1,1 @@
-category name;R;G;B;color name
+<category>;0;0;0;Black
