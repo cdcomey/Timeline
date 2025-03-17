@@ -335,7 +335,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                           
+Images: USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                            
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -499,7 +499,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                              
+Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                               
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -614,7 +614,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/universalis_cosmographia.jpg;Caption                              
+Images: USA/images/maps/universalis_cosmographia.jpg;Caption                               
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -1051,7 +1051,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/munster_map.JPG;Caption                              
+Images: USA/images/maps/munster_map.JPG;Caption                               
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -13337,7 +13337,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: John C. Calhoun, Henry Clay, Firsts, Andrew Jackson
-Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption      
+Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption       
 end
 
 Title: National Republican Party founded
@@ -15371,7 +15371,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/elections/1860_Electoral_Map.png;test                              
+Images: USA/images/maps/elections/1860_Electoral_Map.png;test                               
 end
 
 Title: Crittenden Compromise

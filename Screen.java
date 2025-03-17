@@ -1025,7 +1025,6 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		// System.out.println("(" + mouseX + ", " + mouseY + ")");
 		// print(timeline.getDrawnEventCoordinates().size() + " + " + timeline.getDrawnPeriodCoordinates().size());
 		
-		boolean clickedOnEvent = false;
 		for (int i = 0; i < timeline.getDrawnEventCoordinates().size() + timeline.getDrawnPeriodCoordinates().size(); i++){
 			Rectangle rect = null;
 			if (i < timeline.getDrawnEventCoordinates().size())
@@ -1042,12 +1041,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				// System.out.println("clicked on " + rect.getEvent().getTitle());
 				selectedEvent = rect.getEvent();
 				initializeFieldText();
-				clickedOnEvent = true;
 			}
-		}
-		
-		if (!clickedOnEvent){
-			selectedEvent = null;
 		}
 		
 		updateComponentVisibility(selectedEvent == null ? true : selectedEvent instanceof Period);
