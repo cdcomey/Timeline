@@ -62,12 +62,13 @@ public class EmptyTimelineScreen extends JPanel implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource() == createButton){
-            String timeline_dir_str = "Timelines/" + titleField.getText();
+            String title = titleField.getText();
+            String timeline_dir_str = "Timelines/" + title;
             File timeline_dir = new File(timeline_dir_str);
             timeline_dir.mkdirs();
             timeline_dir_str += "/";
 
-            File timeline_file = new File(timeline_dir_str + titleField.getText() + ".txt");
+            File timeline_file = new File(timeline_dir_str + title + ".txt");
             try (FileWriter writer = new FileWriter(timeline_file)) {
                 writer.write("\n");
             } catch (IOException ex) {
@@ -95,6 +96,17 @@ public class EmptyTimelineScreen extends JPanel implements ActionListener{
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+
+            Runner.switchToMainScreen(title);
         }
     }
 }
+
+/*
+create ETS in Runner
+create title in ETS
+in ETS, run Runner.switchscreens(title)
+    {
+        layout.show(panel, "Screen2",)
+    }
+*/

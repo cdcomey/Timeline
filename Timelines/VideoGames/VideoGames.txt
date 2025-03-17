@@ -1,7 +1,7 @@
-Title: Dummy Event
-Description: 
+Title: Computer Space released
+Description: Computer Space was the first commercial video game, and the first game to run on an arcade cabinet. All earlier games were designed to run on supercomputers. It is based on 1962's Spacewar!, though it is single-player. The player controls a rocket and flies around the screen, shooting at two flying saucers. It was technically a commercial success but was not seen as more than a novelty. The game's developers, Nolan Bushnell and Ted Dabney, formed Atari to continue making video games. Computer Space fell into obscurity, though it is notable for being the first commercial video game. It was also the first to be featured in a movie, appearing in 1973's Soylent Green.
 Type: Event
-Date: 01/01/1980
+Date: 11/01/1971
 Color: 0/0/0
 Category: <category>
 Alignment: Centered
@@ -9,10 +9,10 @@ Tags: none
 Images: none
 end
 
-Title: Dummy Period
+Title: Magnavox Odyssey
 Description: 
 Type: Period
-Date: 01/01/1981 - 01/01/1982
+Date: 09/01/1972 - 01/01/1975
 Color: 0/0/0
 Category: <category>
 Alignment: null
@@ -20,13 +20,239 @@ Tags: none
 Images: none
 end
 
-Title: Dummy Event 2
-Description: 
+Title: Magnavox Odyssey released
+Description: The Odyssey, created by American electronic company Magnavox, is generally considered to be the first video game console. Originally conceived as early as 1966, the device spent five years in development. The team was mainly concerned with balancing what games would be fun to play with how affordable the necessary technology would be. The final product was the seventh iteration of the design, which was released for sale in 1972 for about $100.
+
+Though the console used cartridges to load games, they did not contain ROMs as later console cartridges would. Instead, they were circuit boards that changed the functionality of the console. All 28 games are graphically similar, containing only three dots and a vertical line. Every game was two-player, and each player controlled one dot using a knob on their controllers. Besides the dots and line, the game's 'graphics' came in the form of a plastic overlay to be placed on the TV, depicting such scenes as a tennis court or maze.
+
+Most Odyssey games were based off of sports like hockey and football, which would become a staple of the video game industry. Of particular note was the Odyssey's tennis game. The two player-controlled dots functioned as tennis rackets, and the third as the ball. The game was quite rudimentary; players could freely move anywhere on screen, and the game did not keep score for the players. Nevertheless, it would inspire American company Atari to try their hand at a tennis game of their own. The Odyssey even used a light gun as a peripheral, which was compatible with four games. It was developed by Japanese toy company Nintendo, and was their first interaction with the video game industry.
+
+The Odyssey saw modest success, selling 89,000 units by the end of 1973, and about 350,000 by the end of 1975, the year it was discontinued. The light gun sold about 20,000 units. Despite consistent customer demand, the rampant inflation of the 1970s in the US prevented Magnavox from selling the Odyssey at a reasonable price. After unsuccessfully creating cheaper versions of the Odyssey that could only play a handful of games, particularly tennis, Magnavox discontinued the console. It fell into obscurity and is mainly known for being the first video game console, and for inspiring Atari's Pong.
 Type: Event
-Date: 01/01/1981
+Date: 09/01/1972
 Color: 0/0/0
 Category: <category>
 Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: Pong released
+Description: In May 1972, Atari co-founder Nolan Bushnell played a demo of the tennis game on Magnavox's Odyssey console. He was unimpressed by its simplicity but thought the concept of a tennis video game had potential. He assigned one of his employees, Allan Alcorn, with the task of building such a game for an arcade console. Pong included numerous improvements over the Odyssey tennis game. The paddles could only travel up and down, and so could not cross over into the other player's side. The game kept track of the score. The paddles were divided into eight segments that affected the angle of the ball's return. The game generally controlled and performed better. And because it was designed for use in arcades, players would pay a quarter per play, instead of needing to buy a console for $200.
+
+The prototype was debuted in a local pub in August. A few days later, the pub called Atari about the console being broken. When Alcorn was sent to fix it, he discovered the problem was caused by the console's coin receptor being jammed by too many quarters. Satisfied with the prototype's success, Atari decided to manufacture Pong consoles itself. They debuted on November 29 and were a massive commercial success. They made over $3.5 million in just one month, and over $50 million by the end of 1974. It was the first commercially successful video game and widely known as the first video game, and led to dozens of sequels, spinoffs, and copycats, particularly as conversions to home consoles.
+Type: Event
+Date: 11/29/1972
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: Atari 2600
+Description: Contemporeries:
+-Arcades
+-DOS
+-Intellivision (1979)
+-PC-88 (1981)
+-ColecoVision (1982)
+-PC-98 (1982)
+-Famicom/NES (1983)
+Type: Period
+Date: 09/01/1977 - 01/01/1992
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Mattel Intellivision
+Description: 
+Type: Period
+Date: 01/01/1979 - 01/01/1990
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: NEC PC-88
+Description: First notable games: Namco's Dig Dug, Galaxian, Pac-Man (12/??/83)
+Last notable game: Nihon Falcom's Dragon Slayer: The Legend of Heroes II (3/19/92)
+Last known game: Koei's Genghis Khan II: Clan of the Gray Wolf (7/30/1992)
+Type: Period
+Date: 11/01/1981 - 07/30/1992
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Fujitsu FM-7 released
+Description: 
+Type: Event
+Date: 04/01/1982
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: ZX Spectrum released
+Description: 
+Type: Event
+Date: 04/23/1982
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: ColecoVision
+Description: 
+Type: Period
+Date: 08/01/1982 - 01/01/1985
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Commodore 64
+Description: First notable games: M.U.L.E., Lode Runner, Centipede, Defender, Dig Dug, Pac-Man, Ultima II, Frogger, Q*bert, Donkey Kong (1983)
+Last notable games: Turrican II (1991), Ultima VI (1991), Welltris (1991), Hudson Hawk (1991), Street Fighter II (1992), Lemmings (1992)
+Type: Period
+Date: 08/01/1982 - 01/01/1992
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Commodore 64 released
+Description: 
+Type: Event
+Date: 08/01/1982
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: NEC PC-98
+Description: Last notable game: ZUN's Touhou MS (12/30/98)
+Type: Period
+Date: 11/01/1982 - 12/30/1998
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Sharp X1
+Description: First notable games: Dig Dug, Pac-Man, Thunder Force (1983)
+Last notable games: M.U.L.E., Might and Magic, Sorcerian, Space Harrier, Super Hydlide, Tetris, Ultima, Ys II (1988), Ultima III, Might and Magic II, Nobunaga's Ambition II (1989), Romance of the three Kingdoms II (1990)
+Type: Period
+Date: 01/01/1983 - 01/01/1990
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: MSX
+Description: First notable games: Antarctic Adventure (1983)
+Last notable games: Metal Gear 2 (1990)
+Type: Period
+Date: 06/16/1983 - 01/01/1990
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: MSX released
+Description: 
+Type: Event
+Date: 06/16/1983
+Color: 0/0/0
+Category: <category>
+Alignment: Centered
+Tags: none
+Images: none
+end
+
+Title: Nintendo Famicom/NES
+Description: Launch games (FC): Donkey Kong, Donkey Kong Jr., Popeye
+Launch games (NES): 10-Yard Fight, Baseball, Clu Clu Land, Duck Hunt, Excitebike, Golf, Gyromite, Hogan's Alley, Ice Climber, Kung Fu, Pinball, Soccer, Stack-Up, Super Mario Bros., Tennis, Wild Gunman, Wrecking Crew
+Last first-party game: Zoda's Revenge: Star Tropics II (3/??/1994)
+Last official game: Virgin Interactive's The Lion King (5/25/1995)
+Type: Period
+Date: 07/15/1983 - 08/14/1995
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Atari ST
+Description: First notable games: King's Quest II, Ultima II (1985)
+Last notable games: Populous II (1992), Sid Meier's Civilization (1993)
+Type: Period
+Date: 06/01/1985 - 01/01/1993
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Master System
+Description: First notable games: Hang-On (10/20/1985), Fantasy Zone (6/15/1986), Alex Kidd in Miracle World (11/01/1986)
+Last notable games: R-Type (10/04/1988), Ys I (10/15/1988)
+Last official game: Bomber Raid (02/04/1989)
+Type: Period
+Date: 10/20/1985 - 10/15/1989
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Amiga
+Description: First notable games: Marble Madness, King's Quest, Ultima III (1986)
+Last notable games: Worms, Myst (1997), Quake (1998), WipEout XL (1999)
+Type: Period
+Date: 01/01/1986 - 01/01/1999
+Color: 0/0/0
+Category: <category>
+Alignment: null
+Tags: none
+Images: none
+end
+
+Title: Famicom Disk System
+Description: Launch games: Baseball, Golf, The Legend of Zelda, Mahjong, Soccer, Super Mario Bros., Tennis
+Last notable games: Puyo Puyo (10/25/1991), Clu Clu Land: Welcome to New Clu Clu Land (04/28/1992)
+Type: Period
+Date: 02/21/1986 - 04/28/1992
+Color: 0/0/0
+Category: <category>
+Alignment: null
 Tags: none
 Images: none
 end
