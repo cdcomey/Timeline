@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.CardLayout;
 
 public class Runner{
     private static JFrame frame;
@@ -15,6 +14,7 @@ public class Runner{
     }
 
     public static void main(String args[]){
+        // load in timeline from files
         if (args.length > 0){
             Screen sc = new Screen(args[0]);
             frame = new JFrame(args[0]);
@@ -24,7 +24,10 @@ public class Runner{
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
-        } else{
+        } 
+        
+        // load timeline creator
+        else {
             EmptyTimelineScreen emptyScreen = new EmptyTimelineScreen();
             frame = new JFrame("Timeline");
             
