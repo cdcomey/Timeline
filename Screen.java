@@ -677,7 +677,10 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
                 BufferedInputStream bis = new BufferedInputStream(fis)) {
             //read all bytes from buffered input stream and create string out of it
             String s = new String(bis.readAllBytes());
-			String[] eventArr = s.split("\nend\n\n");
+			String[] eventArr = {};
+			String regex = "\nend\n\n";
+			if (s.indexOf(regex) > -1)
+				eventArr = s.split(regex);
 			eventTree = new TreeSet<GenericEvent>();
 			
 			for (int i = 0; i < eventArr.length; i++){
@@ -898,7 +901,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void writeToFile(){
-		File file = new File(timelineType + "/" + timelineType + ".txt");
+		File file = new File("Timelines/" + timelineType + "/" + timelineType + ".txt");
 		String s = "";
 		for (GenericEvent e : eventTree){
 			s += e.toStringVerbose() + "\nend\n\n";
