@@ -103,7 +103,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		taggedEventsVisibility = 0;
 		imageIndex = 0;
 		
-		chooser = new JFileChooser(timelineType + "/images");
+		imagePath = "Timelines/" + timelineType + "/Images";
+		chooser = new JFileChooser(imagePath);
 		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif", "webp");
 		chooser.setFileFilter(filter);
 		

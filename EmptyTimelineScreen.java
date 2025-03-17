@@ -97,6 +97,9 @@ public class EmptyTimelineScreen extends JPanel implements ActionListener{
                 ex.printStackTrace();
             }
 
+            File images_dir = new File(timeline_dir_str + "Images");
+            images_dir.mkdirs();
+
             Runner.switchToMainScreen(title);
         }
     }
