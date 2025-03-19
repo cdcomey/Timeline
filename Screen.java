@@ -63,8 +63,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private byte imageIndex;
 	private Color backgroundColor;
 	private final Color lightModeColor, darkModeColor;
+	private final String imagePathPrefix;
 	private String imagePath = "";
-	private final String timelineType;
+	private final String timelineTitle;
 	
 	// both the descriptionPane and captionTextArea will change bounds depending on whether editMode is on
 	private int descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1;
@@ -78,22 +79,22 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 
 	
 	
-	public Screen(String timelineType){
+	public Screen(String timelineTitle){
 		setLayout(null);
 		setFocusable(true);
 		addKeyListener(this);
 		addMouseListener(this);
 		
-		// timelineType is the name of the timeline
+		// timelineTitle is the name of the timeline
 		// loads folder with that name into the Timeline class
 		eventTree = new TreeSet<GenericEvent>();
-		this.timelineType = timelineType;
-		GenericEvent.setCapListPath("Timelines/" + timelineType);
-		readFromFile(timelineType);
+		this.timelineTitle = timelineTitle;
+		GenericEvent.setCapListPath("Timelines/" + timelineTitle);
+		readFromFile(timelineTitle);
 
 		initializeJComponents();
 		
-		timeline = new Timeline(screenWidth, screenHeight, timelineType);
+		timeline = new Timeline(screenWidth, screenHeight, timelineTitle);
 		editMode = false;
 		modernDating = false;
 		controlKeyDown = false;
@@ -103,14 +104,14 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		taggedEventsVisibility = 0;
 		imageIndex = 0;
 		
-		imagePath = "Timelines/" + timelineType + "/Images";
-		chooser = new JFileChooser(imagePath);
-		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif", "webp");
+		imagePathPrefix = "Timelines/" + timelineTitle + "/Images";
+		chooser = new JFileChooser(imagePathPrefix);
+		filter = new FileNameExtensionFilter("image types", "jpg", "jpeg", "png", "svg", "gif");
 		chooser.setFileFilter(filter);
 		
 		lightModeColor = new Color(230, 230, 230);
 		darkModeColor = new Color(40, 40, 40);
-		backgroundColor = darkModeColor;
+		backgroundColor = lightModeColor;
 		
 		updateComponentVisibility(true);
 	}
@@ -209,7 +210,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		ArrayList<Tag> categoriesList = new ArrayList<Tag>();
 		try{
-			File file = new File("Timelines/" + timelineType + "/categories.txt");
+			File file = new File("Timelines/" + timelineTitle + "/categories.txt");
 			FileReader reader = new FileReader(file);
 			char[] text = new char[1500];
 			reader.read(text);
@@ -260,7 +261,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		
 		ArrayList<String> tagStrings = new ArrayList<String>();
 		try{
-			File file = new File("Timelines/" + timelineType + "/tags.txt");
+			File file = new File("Timelines/" + timelineTitle + "/tags.txt");
 			FileReader reader = new FileReader(file);
 			char[] text = new char[10000];
 			reader.read(text);
@@ -401,11 +402,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				int width = tagPane.getWidth();
 				int height = saveChangesButton.getY() - prevImageButton.getY() - prevImageButton.getHeight();
 				
-				if (selectedEvent.getImages().size() >= imageIndex+1){
+				if (selectedEvent.getImages().size() > imageIndex){
 					selectedEvent.getImages().get(imageIndex).drawFromFile(g, xCenter, yCenter, width, height, true, true);
-					// g.setColor(Color.white);
-					// g.drawRect(tagPane.getX(), prevImageButton.getY(), width, height);
-				} else if (!imagePath.equals("")){
+				} else if (!imagePath.isEmpty()){
 					MyImage img = new MyImage(imagePath);
 					img.drawFromFile(g, xCenter, yCenter, width, height, true, true);
 				}
@@ -526,9 +525,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			// System.out.println(imageIndex + " >= " + selectedEvent.getImages().size());
 			print(imagePath);
 			if (imageIndex >= selectedEvent.getImages().size())
-				selectedEvent.addImage(imagePath, captionTextArea.getText());
+				selectedEvent.addImage(imagePathPrefix+imagePath, captionTextArea.getText());
 			else
-				selectedEvent.setImage(imageIndex, imagePath, captionTextArea.getText());
+				selectedEvent.setImage(imageIndex, imagePathPrefix+imagePath, captionTextArea.getText());
 			imagePath = "";
 			System.out.println(selectedEvent.getImages().size());
 		} else if (e.getSource() == deleteImageButton){
@@ -659,7 +658,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		}
 	}
 	
-	private void readFromFile(String timelineType){
+	private void readFromFile(String timelineTitle){
 		/* try {
 			FileInputStream fis = new FileInputStream("events.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
@@ -670,7 +669,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			readFromTimelineFile();
 		} */
 		
-		File file = new File("Timelines/" + timelineType + "/" + timelineType + ".txt");
+		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".txt");
 		// print(file.getName());
 		String eventString = "";
          
@@ -902,7 +901,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void writeToFile(){
-		File file = new File("Timelines/" + timelineType + "/" + timelineType + ".txt");
+		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".txt");
 		String s = "";
 		for (GenericEvent e : eventTree){
 			s += e.toStringVerbose() + "\nend\n\n";
@@ -1023,7 +1022,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	public void mouseClicked(MouseEvent e){
 		int mouseX = e.getX();
 		int mouseY = e.getY();
-		// System.out.println("(" + mouseX + ", " + mouseY + ")");
+		System.out.println("(" + mouseX + ", " + mouseY + ")");
 		// print(timeline.getDrawnEventCoordinates().size() + " + " + timeline.getDrawnPeriodCoordinates().size());
 		
 		for (int i = 0; i < timeline.getDrawnEventCoordinates().size() + timeline.getDrawnPeriodCoordinates().size(); i++){

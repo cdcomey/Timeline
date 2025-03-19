@@ -318,7 +318,7 @@ Description: August 3, 1492 (531 years ago) - March 4, 1493 (530 years ago) : 7 
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
 Christopher Columbus' first voyage
 
-Genoese explorer Christopher Columbus had the idea that instead of sailing around Africa to reach India, traders could sail west instead. It was common knowledge among the educated at that point in time that the Earth was round, and that you could travel either east or west and arrive at the same point if you went far enough. Columbus wanted to use that to find a new and hopefully faster route to India than sailing around an entire continent. He received a map from Paolo dal Pozzo Toscanelli, a renowned Italian cartographer who shared Columbus' enthusiasm for a westward route to Asia. However, Toscenelli's map was significantly out of touch with reality, depicting Asia as 5000 miles longer than it was. Toscanelli also suggested to Columbus that there were inhabited islands east of Japan, so the Genoan would likely not even have to travel the full distance before resupplying. Columbus was also influenced by Marco Polo, who centuries ago wrote of the location of Cipangu (Japan) was much farther east than it actually is. Finally, Columbus' own calculations of the Earth relied on measurements made by medieval Persian geographer Alfraganus, who used the Arabic mile. Columbus confused this with the smaller Roman mile he was more used to. All of this together meant that Columbus wildly underestimated the distance he would have to travel. Had the Americas and Caribbean not existed like nearly everyone in the Old World believed, Columbus would have had to traveled four times the distance he calculated.
+Genoese explorer Christopher Columbus had the idea that instead of sailing around Africa to reach India, traders could sail west instead. It was common knowledge among the educated at that point in time that the Earth was round, and that you could travel either east or west and arrive at the same point if you went far enough. Columbus wanted to use that to find a new and hopefully faster route to India than sailing around an entire continent. He received a map from Paolo dal Pozzo Toscanelli, a renowned Italian cartographer who shared Columbus' enthusiasm for a westward route to Asia. However, Toscenelli's map was significantly out of touch with reality, depicting Asia as 5000 miles longer than it was. Toscanelli also suggested to Columbus that there were inhabited islands east of Japan, so the Genoan would likely not even have to travel the full distance before resupplying. Columbus was also influenced by Marco Polo, who centuries ago wrote of the location of Cipangu (Japan) as much farther east than it actually is. Finally, Columbus' own calculations of the Earth relied on measurements made by medieval Persian geographer Alfraganus, who used the Arabic mile. Columbus confused this with the smaller Roman mile he was more used to. All of this together meant that Columbus wildly underestimated the distance he would have to travel. Had the Americas and Caribbean not existed like nearly everyone in the Old World believed, Columbus would have had to have traveled four times the distance he calculated.
 
 Nevertheless, he approached several European monarchs with his idea, hoping they would fund his expedition. He first came to King John II of Portugal, who turned him down, correctly thinking that Columbus had misjudged the distance to travel. Columbus approached John II again 3 years later, but was turned down again, this time because Bartolomeu Dias had just returned with news of reaching the Cape of Good Hope. John II saw that his country was on the verge of reaching India from the east, and saw no reason to fund an expedition to the west. Columbus tried in Genoa and Venice, and his brother Bartholomew tried England, but to no avail. He then approached King Ferdinand II and Queen Isabella I of Spain, who initially turned him down for the same reasons as Portugal. He lobbied the Spanish court for 2 years until the king and queen agreed to fund his voyage, granting him the title "Admiral of the Ocean Sea," allowing him to be governor of any new land he could claim for Spain, and letting him keep 1/10 of the revenue from his expedition.
 
@@ -335,7 +335,7 @@ Color: 0/0/255
 Category: Exploration
 Alignment: null
 Tags: Firsts, Spain, Dominican Republic, Haiti, Cuba, Christopher Columbus, American Indians
-Images: Timelines/USA/images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | USA/images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                            
+Images: Timelines/USA/Images/maps/columbus_first_voyage.jpg;"Columbus' first voyage" | Timelines/USA/Images/maps/toscanelli_asia_map.jpg;"Toscanelli's map of Asia"                                                               
 end
 
 Title: Christopher Columbus' governorship of the West Indies
@@ -499,7 +499,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                               
+Images: Timelines/USA/Images/maps/juan_de_la_cosa_map.jpg;Juan de la Cosa places west at the top of the map.                                  
 end
 
 Title: Pedro Cabral's accidental voyage to Brazil
@@ -614,7 +614,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: Firsts
-Images: USA/images/maps/universalis_cosmographia.jpg;Caption                               
+Images: Timelines/USA/Images/maps/universalis_cosmographia.jpg;Caption                                  
 end
 
 Title: Sebastian Cabot searches for the Northwest Passage
@@ -1051,7 +1051,7 @@ Color: 255/255/255
 Category: Literature/Speech
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/munster_map.JPG;Caption                               
+Images: Timelines/USA/Images/maps/munster_map.JPG;Caption                                  
 end
 
 Title: Pedro de Tovar explores Arizona
@@ -13337,7 +13337,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: John C. Calhoun, Henry Clay, Firsts, Andrew Jackson
-Images: USA/images/maps/elections/1824_Electoral_Map.png;Caption       
+Images: Timelines/USA/Images/maps/elections/1824_Electoral_Map.png;Caption          
 end
 
 Title: National Republican Party founded
@@ -15371,7 +15371,7 @@ Color: 0/255/255
 Category: Election
 Alignment: Centered
 Tags: none
-Images: USA/images/maps/elections/1860_Electoral_Map.png;test                               
+Images: Timelines/USA/Images/maps/elections/1860_Electoral_Map.png;test                                  
 end
 
 Title: Crittenden Compromise
