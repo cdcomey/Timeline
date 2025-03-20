@@ -75,7 +75,7 @@ public class MyImage{
 	
 	public void drawFromFile(Graphics g, int x, int y, int maxWidth, int maxHeight, boolean xCentered, boolean yCentered){
 		BufferedImage img = null;
-		print("image name = " + imageName);
+		// print("image name = " + imageName);
         try {
 
 			File file = new File(imageName);

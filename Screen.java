@@ -3,10 +3,15 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.text.Document;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.rtf.RTFEditorKit;
 
 import java.awt.Graphics;
 import java.awt.Color;
@@ -25,10 +30,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 
 import java.util.TreeSet;
 import java.util.ArrayList;
@@ -43,7 +52,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private JButton showTaggedEventsButton, hideTaggedEventsButton, addTagButton, removeTagButton;
 	private JButton prevImageButton, nextImageButton, findImageButton, saveImageButton, deleteImageButton;
 	
-	private JTextArea descriptionTextArea, tagTextArea, captionTextArea;
+	private JTextArea tagTextArea, captionTextArea;
+	private JTextPane descriptionTextPane;
 	private JScrollPane descriptionPane, tagPane;
 	private JTextField titleField, monthField, dayField, yearField, month2Field, day2Field, year2Field;
 	private JTextField redField, greenField, blueField, hexField;
@@ -123,9 +133,14 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		titleField.setBounds(30, 30, screenWidth/2, 30);
 		add(titleField);
 		
-		descriptionTextArea = new JTextArea();
-		descriptionTextArea.setLineWrap(true);
-		descriptionTextArea.setWrapStyleWord(true);
+		// descriptionTextPane = new JTextArea();
+		// descriptionTextPane.setLineWrap(true);
+		// descriptionTextPane.setWrapStyleWord(true);
+
+		descriptionTextPane = new JTextPane();
+		descriptionTextPane.setEditorKit(new RTFEditorKit());
+		descriptionTextPane.setContentType("text/rtf");
+		add(descriptionTextPane);
 		
 		// set 1 is when editMode is false
 		descriptionPaneX1 = screenWidth*1/20;
@@ -139,7 +154,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		descriptionPaneW2 = titleField.getWidth();
 		descriptionPaneH2 = screenHeight - 30 - (titleField.getY() + titleField.getHeight() + 30);
 		
-		descriptionPane = new JScrollPane(descriptionTextArea); 
+		descriptionPane = new JScrollPane(descriptionTextPane); 
         descriptionPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         descriptionPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
@@ -523,13 +538,13 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			imageIndex++;
 		} else if (e.getSource() == saveImageButton){
 			// System.out.println(imageIndex + " >= " + selectedEvent.getImages().size());
-			print(imagePath);
+			// print(imagePath);
 			if (imageIndex >= selectedEvent.getImages().size())
 				selectedEvent.addImage(imagePathPrefix+imagePath, captionTextArea.getText());
 			else
 				selectedEvent.setImage(imageIndex, imagePathPrefix+imagePath, captionTextArea.getText());
 			imagePath = "";
-			System.out.println(selectedEvent.getImages().size());
+			// System.out.println(selectedEvent.getImages().size());
 		} else if (e.getSource() == deleteImageButton){
 			selectedEvent.deleteImage(imageIndex);
 			imageIndex--;
@@ -544,7 +559,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		try{
 			// title and description
 			String title = titleField.getText();
-			String description = descriptionTextArea.getText();
+			String description = descriptionTextPane.getText();
 			
 			// date
 			String monthString = monthField.getText();
@@ -659,36 +674,32 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void readFromFile(String timelineTitle){
-		/* try {
-			FileInputStream fis = new FileInputStream("events.txt");
-			ObjectInputStream in = new ObjectInputStream(fis);
-			eventTree = (TreeSet<GenericEvent>)(in.readObject());
-			in.close();
-		} catch (Exception ex){
-			System.err.println(ex);
-			readFromTimelineFile();
-		} */
-		
-		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".txt");
+		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf");
 		// print(file.getName());
 		String eventString = "";
          
-        try (FileInputStream fis = new FileInputStream(file);
-                BufferedInputStream bis = new BufferedInputStream(fis)) {
-            //read all bytes from buffered input stream and create string out of it
-            String s = new String(bis.readAllBytes());
+        try (FileInputStream fis = new FileInputStream(file)) {
+			
+            RTFEditorKit rtfKit = new RTFEditorKit();
+            StyledDocument doc = new DefaultStyledDocument();
+			String s = new String(Files.readAllBytes(Paths.get("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf")));
+			s = s.substring(s.indexOf("Title: "), s.length());
+
 			String[] eventArr = {};
-			String regex = "\nend\n\n";
-			if (s.indexOf(regex) > -1)
-				eventArr = s.split(regex);
+			String regex = "\\nend\\\\\\n\\\\\\n";
+			eventArr = s.split(regex);
+			// for (int i = 0; i < eventArr.length; i++){
+			// 	print(i + " " + eventArr[i]);
+			// }
 			eventTree = new TreeSet<GenericEvent>();
 			
-			for (int i = 0; i < eventArr.length; i++){
+			// we skip the last element because it's just a closing bracket
+			for (int i = 0; i < eventArr.length-1; i++){
 				eventString = eventArr[i];
-				String title = eventString.substring(eventString.indexOf("Title: ") + 7, eventString.indexOf("\nDescription: "));
-				String description = eventString.substring(eventString.indexOf("Description: ") + 13, eventString.indexOf("\nType: "));
-				String type = eventString.substring(eventString.indexOf("Type: ") + 6, eventString.indexOf("\nDate: "));				
-				eventString = eventString.substring(eventString.indexOf("\nDate: ") + 7);
+				String title = eventString.substring(eventString.indexOf("Title: ") + 7, eventString.indexOf("\\\nDescription: "));
+				String description = eventString.substring(eventString.indexOf("Description: ") + 13, eventString.indexOf("\\\nType: "));
+				String type = eventString.substring(eventString.indexOf("Type: ") + 6, eventString.indexOf("\\\nDate: "));				
+				eventString = eventString.substring(eventString.indexOf("\\\nDate: ") + 8);
 				
 				int month = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
 				eventString = eventString.substring(eventString.indexOf("/") + 1);
@@ -707,13 +718,13 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					eventString = eventString.substring(eventString.indexOf("/") + 1);
 					int green = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
 					eventString = eventString.substring(eventString.indexOf("/") + 1);
-					int blue = Integer.parseInt(eventString.substring(0, eventString.indexOf("\nCategory: ")));
+					int blue = Integer.parseInt(eventString.substring(0, eventString.indexOf("\\\nCategory: ")));
 					eventString = eventString.substring(eventString.indexOf("Category: ") + 10);
-					String category = eventString.substring(0, eventString.indexOf("\nAlignment: "));
+					String category = eventString.substring(0, eventString.indexOf("\\\nAlignment: "));
 					eventString = eventString.substring(eventString.indexOf("Alignment: ") + 11);
-					String alignment = eventString.substring(0, eventString.indexOf("\nTags: "));
+					String alignment = eventString.substring(0, eventString.indexOf("\\\nTags: "));
 					eventString = eventString.substring(eventString.indexOf("Tags: ") + 6);
-					String[] tagArr = eventString.substring(0, eventString.indexOf("\nImages: ")).split(", ");
+					String[] tagArr = eventString.substring(0, eventString.indexOf("\\\nImages: ")).split(", ");
 					ArrayList<String> tagList = new ArrayList<String>();
 					for (int j = 0; j < tagArr.length; j++){
 						if (tagArr[j].equals("none"))
@@ -746,19 +757,19 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						event = new Period(title, description, month, day, year, month2, day2, year2, red, green, blue, category, tagList, imgList);
 					}
 				} else {
-					int year = Integer.parseInt(eventString.substring(0, eventString.indexOf("\nColor: ")));
+					int year = Integer.parseInt(eventString.substring(0, eventString.indexOf("\\\nColor: ")));
 					eventString = eventString.substring(eventString.indexOf("Color: ") + 7);
 					int red = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
 					eventString = eventString.substring(eventString.indexOf("/") + 1);
 					int green = Integer.parseInt(eventString.substring(0, eventString.indexOf("/")));
 					eventString = eventString.substring(eventString.indexOf("/") + 1);
-					int blue = Integer.parseInt(eventString.substring(0, eventString.indexOf("\nCategory: ")));
+					int blue = Integer.parseInt(eventString.substring(0, eventString.indexOf("\\\nCategory: ")));
 					eventString = eventString.substring(eventString.indexOf("Category: ") + 10);
-					String category = eventString.substring(0, eventString.indexOf("\nAlignment: "));
+					String category = eventString.substring(0, eventString.indexOf("\\\nAlignment: "));
 					eventString = eventString.substring(eventString.indexOf("Alignment: ") + 11);
-					String alignment = eventString.substring(0, eventString.indexOf("\nTags: "));
+					String alignment = eventString.substring(0, eventString.indexOf("\\\nTags: "));
 					eventString = eventString.substring(eventString.indexOf("Tags: ") + 6);
-					String[] tagArr = eventString.substring(0, eventString.indexOf("\nImages: ")).split(", ");
+					String[] tagArr = eventString.substring(0, eventString.indexOf("\\\nImages: ")).split(", ");
 					ArrayList<String> tagList = new ArrayList<String>();
 					for (int j = 0; j < tagArr.length; j++){
 						if (tagArr[j].equals("none"))
@@ -772,8 +783,9 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 						imgArr = eventString.split(" | ");
 					ArrayList<MyImage> imgList = new ArrayList<MyImage>();
 					for (int j = 0; j < imgArr.length; j++){
-						if (imgArr[j].equals("none"))
+						if (imgArr[j].equals("none\\"))
 							break;
+						// print("imgArr: " + imgArr[j]);
 						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
@@ -783,7 +795,6 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 				eventTree.add(event);
 			}
 			
-            bis.close();
             fis.close();
         } catch (IOException e) {
 			System.err.println("IOException occurred in readFromFile()");
@@ -1048,17 +1059,11 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		repaint();
 	}
 
-	private void print(String s){
-		System.out.println(s);
-	}
-
-	private void print(boolean b){
-		System.out.println("" + b);
-	}
+	private void print(String s){ System.out.println(s); }
+	private void print(int i){ System.out.println(""+i); }
+	private void print(boolean b){ System.out.println(""+b); }
 	
 	private void updateComponentVisibility(boolean isPeriod){
-		// print("update component visibility");
-		// print("showtaghider = " + showTagHider);
 		boolean showEditTools1 = editMode && selectedEvent == null;
 		boolean showEditTools2 = editMode && selectedEvent != null;
 		
@@ -1094,8 +1099,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		deleteImageButton.setVisible(showEditTools2 && selectedEvent.getImages().size() > 0);
 		
 		if (showEditTools2){
-			descriptionTextArea.setEditable(true);
-			descriptionTextArea.setFont(new Font("Helvetica", Font.PLAIN, 15));
+			descriptionTextPane.setEditable(true);
+			descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 15));
 			descriptionPane.setBounds(descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2);
 			
 			prevImageButton.setBounds(prevImageButtonX2, prevImageButtonY2, prevImageButton.getWidth(), prevImageButton.getHeight());
@@ -1103,11 +1108,11 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			captionTextArea.setBounds(captionX2, captionY2, captionW2, captionH2);
 			captionTextArea.setEditable(true);
 		} else if (!editMode && selectedEvent != null){
-			descriptionTextArea.setEditable(false);
-			descriptionTextArea.setFont(new Font("Helvetica", Font.PLAIN, 30));
-			descriptionTextArea.setText(selectedEvent.toString(GenericEvent.today().getYear(), modernDating));
+			descriptionTextPane.setEditable(false);
+			descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 30));
+			descriptionTextPane.setText(selectedEvent.toString(GenericEvent.today().getYear(), modernDating));
 			descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
-			descriptionTextArea.setCaretPosition(0);
+			descriptionTextPane.setCaretPosition(0);
 			prevImageButton.setVisible(imageIndex > 0);
 			nextImageButton.setVisible(imageIndex < selectedEvent.getImages().size() - 1);
 			prevImageButton.setBounds(prevImageButtonX1, prevImageButtonY1, prevImageButton.getWidth(), prevImageButton.getHeight());
@@ -1145,8 +1150,11 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	
 	private void initializeFieldText(){
 		titleField.setText(selectedEvent.getTitle());
-		descriptionTextArea.setText(selectedEvent.getDescription());
-		descriptionTextArea.setCaretPosition(0);
+		// descriptionTextPane.setText(selectedEvent.getDescription());
+		
+		configureRTFPane(descriptionTextPane);
+
+		descriptionTextPane.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);
 		
 		redField.setText(Date.numFormat(selectedEvent.getColor().getRed(), 3));
@@ -1204,6 +1212,25 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		if (!(selectedEvent instanceof Period)){
 			Event e = (Event)selectedEvent;
 			eventAlignmentComboBox.setSelectedItem(e.getAlignment());
+		}
+	}
+
+	private void configureRTFPane(JTextPane textPane){
+		try {
+			String rtfHeader = "{\\rtf1\\ansi\\deff0" + 
+			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
+			"\\pard";
+			String rtfFooter = "}";
+			String rtfString = rtfHeader + selectedEvent.getDescription() + rtfFooter;
+			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes(StandardCharsets.UTF_8));
+			
+			RTFEditorKit rtfKit = (RTFEditorKit)textPane.getEditorKit();
+			Document doc = textPane.getDocument();
+			doc.remove(0, doc.getLength());
+			rtfKit.read(rtfStream, doc, 0);
+
+		} catch (Exception e){
+			e.printStackTrace();
 		}
 	}
 	
