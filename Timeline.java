@@ -428,6 +428,9 @@ public class Timeline{
 				rect.drawMe(g);
 				g.setColor(setTextColor(rect.getColor()));
 				rect.getEvent().drawString(g, rect.getX() + 5, rect.getY() + g.getFontMetrics().getHeight() + 3);
+				// g.setColor(Color.red);
+				// g.drawRect(0, rect.getY() + g.getFontMetrics().getHeight() + 3, screenWidth, 1);
+				// g.drawRect(rect.getX() + 5, 0, 1, screenHeight);
 			}
 
 			// System.out.println("finished drawing events for " + currentYear);

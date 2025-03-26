@@ -154,33 +154,35 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	public void drawString(Graphics g, int x, int y){
 		Font defaultFont, altFont;
 		String editedTitle;
-		if (title.contains("<b>") && title.contains("</b>")){
+		if (title.contains("\\b") && title.contains("\\b0")){
+			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
+			x -= 2;
 			defaultFont = boldFont;
 			altFont = boldItalicFont;
-			editedTitle = title.substring(title.indexOf("<b>")+3, title.indexOf("</b>"));
+			editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
 		} else {
 			defaultFont = normalFont;
 			altFont = italicFont;
 			editedTitle = title;
 		}
 		
-		if (title.contains("<i>") && title.contains("</i>")){
-			int prevStringX = x;
+		if (title.contains("\\i") && title.contains("\\i0")){
+			int prevStringX = x-3;
 			do {
-				if (editedTitle.indexOf("<i>") == 0){
+				if (editedTitle.indexOf("\\i") == 0){
 					g.setFont(altFont);
-					String frag = editedTitle.substring(editedTitle.indexOf("<i>")+3, editedTitle.indexOf("</i>"));
+					String frag = editedTitle.substring(editedTitle.indexOf("\\i")+2, editedTitle.indexOf("\\i0"));
 					g.drawString(frag, prevStringX, y);
 					prevStringX += g.getFontMetrics().stringWidth(frag);
-					editedTitle = editedTitle.substring(editedTitle.indexOf("</i>")+4);
+					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
 				} else {
 					g.setFont(defaultFont);
-					String frag = editedTitle.substring(0, editedTitle.indexOf("<i>"));
+					String frag = editedTitle.substring(0, editedTitle.indexOf("\\i"));
 					g.drawString(frag, prevStringX, y);
 					prevStringX += g.getFontMetrics().stringWidth(frag);
-					editedTitle = editedTitle.substring(editedTitle.indexOf("<i>"));
+					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
 				}
-			} while (editedTitle.contains("<i>") && editedTitle.contains("</i>"));
+			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
 			
 			if (editedTitle.length() > 0){
 				g.setFont(defaultFont);
@@ -197,29 +199,34 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		int formattedStringWidth = 0;
 		
 		Font defaultFont, altFont;
-		String editedTitle;
-		if (title.contains("<b>") && title.contains("</b>")){
+		String editedTitle = title;
+
+		editedTitle = editedTitle.replace("\\i ", "\\i");
+		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
+		editedTitle = editedTitle.replace("\\b ", "\\b");
+		editedTitle = editedTitle.replace("\\b0 ", "\\b0");
+		if (title.contains("\\b") && title.contains("\\b0")){
 			defaultFont = boldFont;
 			altFont = boldItalicFont;
-			editedTitle = title.substring(title.indexOf("<b>")+3, title.indexOf("</b>"));
+			editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
 		} else {
 			defaultFont = normalFont;
 			altFont = italicFont;
 			editedTitle = title;
 		}
 		
-		if (title.contains("<i>") && title.contains("</i>")){
+		if (title.contains("\\i") && title.contains("\\i0")){
 			do {
-				if (editedTitle.indexOf("<i>") == 0){
+				if (editedTitle.indexOf("\\i") == 0){
 					g.setFont(altFont);
-					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(editedTitle.indexOf("<i>")+3, editedTitle.indexOf("</i>")));
-					editedTitle = editedTitle.substring(editedTitle.indexOf("</i>")+4);
+					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(editedTitle.indexOf("\\i")+2, editedTitle.indexOf("\\i0")));
+					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
 				} else {
 					g.setFont(defaultFont);
-					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(0, editedTitle.indexOf("<i>")));
-					editedTitle = editedTitle.substring(editedTitle.indexOf("<i>"));
+					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(0, editedTitle.indexOf("\\i")));
+					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
 				}
-			} while (editedTitle.contains("<i>") && editedTitle.contains("</i>"));
+			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
 			
 			if (editedTitle.length() > 0){
 				g.setFont(defaultFont);

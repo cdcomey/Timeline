@@ -1351,19 +1351,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 	}
 
-	// private String reAddRTFDelimiters(String text, char delim){
-	// 	String delimStartText = "\\" + delim1 + delim2;
-	// 	String delimEndText = "\\" + delim1 + "0" + delim2;
-	// 	int delimStart = text.indexOf(delimStartText);
-	// 	int delimEnd = text.indexOf(delimEndText);
-	// 	if (delimEnd > -1 && (delimStart == -1 || delimStart > delimEnd)){
-	// 	} else {
-	// 		print("FALSE: " + delimStartText + " (" + delimStart + ")" + " " + delimEndText + " (" + delimEnd + ")");
-	// 	}
-
-	// 	return text;
-	// }
-
 	private String reAddRTFDelimiters(String text, char delim){
 		String delimStartText = "\\" + delim;
 		String delimEndText = "\\" + delim + "0";
