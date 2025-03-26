@@ -575,12 +575,10 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			String description = out.toString();
 			System.out.println("in saveChanges: " + description);
 			description = description.substring(description.indexOf("\\cf0 ")+5, description.lastIndexOf("\\ul0\\par"));
-			int italicStart = description.indexOf("\\i ");
-			int italicEnd = description.indexOf("\\i0 ");
-			if (italicEnd > -1 && (italicStart == -1 || italicStart > italicEnd)){
-				description = "\\i " + description;
-			}
-			print("after processing: " + description);
+			description = reAddRTFDelimiters(description, 'i', " ");
+			description = reAddRTFDelimiters(description, 'b', " ");
+			description = reAddRTFDelimiters(description, 'i', "\\b");
+			description = reAddRTFDelimiters(description, 'b', "\\i");
 							
 			// date
 			String monthString = monthField.getText();
@@ -1348,8 +1346,20 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 	}
 
-	private String getRTFFromTextPane(JTextPane textPane){
-		return "";
+	private String reAddRTFDelimiters(String text, char delim1, String delim2){
+		String delimStartText = "\\" + delim1 + delim2;
+		String delimEndText = "\\" + delim1 + "0" + delim2;
+		int delimStart = text.indexOf(delimStartText);
+		int delimEnd = text.indexOf(delimEndText);
+		if (delimEnd > -1 && (delimStart == -1 || delimStart > delimEnd)){
+			print("re-adding " + delim1);
+			text = delimStartText + text;
+		} else {
+			print("FALSE: " + delimStartText + " (" + delimStart + ")" + " " + delimEndText + " (" + delimEnd + ")");
+			print(text);
+		}
+
+		return text;
 	}
 	
 	private void presentFieldHandler(){
