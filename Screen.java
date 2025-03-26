@@ -114,7 +114,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		initializeJComponents();
 		
 		timeline = new Timeline(screenWidth, screenHeight, timelineTitle);
-		editMode = true;
+		editMode = false;
 		modernDating = false;
 		controlKeyDown = false;
 		shiftKeyDown = false;
@@ -1162,8 +1162,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		deleteImageButton.setVisible(showEditTools2 && selectedEvent.getImages().size() > 0);
 		
 		if (showEditTools2){
-			// descriptionTextPane.setEditable(true);
-			// descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 15));
+			descriptionTextPane.setEditable(true);
 			descriptionPane.setBounds(descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2);
 			
 			prevImageButton.setBounds(prevImageButtonX2, prevImageButtonY2, prevImageButton.getWidth(), prevImageButton.getHeight());
@@ -1172,8 +1171,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			captionTextArea.setEditable(true);
 		} else if (!editMode && selectedEvent != null){
 			descriptionTextPane.setEditable(false);
-			descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 30));
-			descriptionTextPane.setText(selectedEvent.toString(GenericEvent.today().getYear(), modernDating));
 			descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
 			descriptionTextPane.setCaretPosition(0);
 			prevImageButton.setVisible(imageIndex > 0);
@@ -1215,7 +1212,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		titleField.setText(selectedEvent.getTitle());
 		// descriptionTextPane.setText(selectedEvent.getDescription());
 		
-		updateRTFPane(descriptionTextPane);
+		updateRTFPane(descriptionTextPane, editMode);
 
 		descriptionTextPane.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);
@@ -1278,11 +1275,13 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 	}
 
-	private void updateRTFPane(JTextPane textPane){
+	private void updateRTFPane(JTextPane textPane, boolean editMode){
+		int fontSize = editMode ? 15 : 30;
+		print("updating font size to " + fontSize);
 		try {
 			String rtfHeader = "{\\rtf1\\ansi\\deff0" + 
 			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
-			"\\pard ";
+			"\\fs" + (2*fontSize) + "\\pard ";
 			String rtfFooter = "}";
 			// String baseStr = selectedEvent.getDescription();
 			print("in updateRTFPane: " + selectedEvent.getDescription());
