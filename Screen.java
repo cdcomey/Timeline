@@ -19,6 +19,7 @@ import javax.swing.text.MutableAttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.rtf.RTFEditorKit;
 
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -981,35 +982,11 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			showTagHider = false;
 			updateComponentVisibility(true);
 		}else if (e.getKeyCode() == 37){ //left arrow
-			//this shifts the timeline back 1, 10, 100, or 1000 years depending on whether control or shift is held
-			if (controlKeyDown){
-				if (shiftKeyDown)
-					timeline.setCenterYear(timeline.getCenterYear()-1000);
-				else
-					timeline.setCenterYear(timeline.getCenterYear()-10);
-			} else {
-				if (shiftKeyDown)
-					timeline.setCenterYear(timeline.getCenterYear()-100);
-				else
-					timeline.setCenterYear(timeline.getCenterYear()-1);
-			}
-			//timeline.setCenterYear(timeline.getCenterYear() - (int)Math.pow(10, (shiftKeyDown ? 2 : 0) + (controlKeyDown ? 1 : 0)));
-			//the above line does the same thing and is more concise and nice-looking, but i believe it is slower because of the pow method
+			scrollTimeline(-1);
 		} else if (e.getKeyCode() == 38){ //up arrow
 			timeline.shiftTimelineUp();
 		} else if (e.getKeyCode() == 39){ //right arrow
-			//this shifts the timeline forward 1, 10, 100, or 1000 years depending on whether control or shift is held
-			if (controlKeyDown){
-				if (shiftKeyDown)
-					timeline.setCenterYear(timeline.getCenterYear()+1000);
-				else
-					timeline.setCenterYear(timeline.getCenterYear()+10);
-			} else {
-				if (shiftKeyDown)
-					timeline.setCenterYear(timeline.getCenterYear()+100);
-				else
-					timeline.setCenterYear(timeline.getCenterYear()+1);
-			}
+			scrollTimeline(1);
 		} else if (e.getKeyCode() == 40){ //down arrow
 			timeline.shiftTimelineDown();
 		} else if (e.getKeyCode() == 45){ //minus/underscore
@@ -1104,6 +1081,23 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		
 		updateComponentVisibility(selectedEvent == null ? true : selectedEvent instanceof Period);
 		repaint();
+	}
+
+	//this shifts the timeline forward or back 1, 10, 100, or 1000 years depending on whether control or shift is held
+	private void scrollTimeline(int direction){
+		int scrollAmount = direction;
+		if (selectedEvent != null)
+			scrollAmount = 0;
+		else if (controlKeyDown && shiftKeyDown)
+			scrollAmount *= 1000;
+		else if (shiftKeyDown)
+			scrollAmount *= 100;
+		else if (controlKeyDown)
+			scrollAmount *= 10;
+
+		timeline.setCenterYear(timeline.getCenterYear()+scrollAmount);
+		//timeline.setCenterYear(timeline.getCenterYear() - (int)Math.pow(10, (shiftKeyDown ? 2 : 0) + (controlKeyDown ? 1 : 0)));
+		//the above line does the same thing and is more concise and nice-looking, but i believe it is slower because of the pow method
 	}
 
 	private void print(String s){ System.out.println(s); }
