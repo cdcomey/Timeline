@@ -65,39 +65,40 @@ public class Period extends GenericEvent{
 		String s = date.longForm(currentYear, modernDating);
         s += " - " + (present ? "present" : (date2.longForm(currentYear, modernDating) + " : " + Date.dateDiff(date, date2)));
 		if (tags.size() > 0){
-			s += "\nTags: ";
+			s += "\\\nTags: ";
 			for (int i = 0; i < tags.size(); i++){
 				s += tags.get(i) + ", ";
 			}
 			s = s.substring(0, s.length() - 2);
 		}
 		
-		return s + "\n" + title + "\n\n" + description;
+		return s + "\\\n" + title + "\\\n\\\n" + description;
 	}
 	
     @Override
 	public String toStringVerbose(){
 		String s = "";
+		String endStr = "\\\n";
 		if (title.charAt(title.length()-1) == '\n')
 			title = title.substring(0, title.length()-1);
-		if (description.length() > 0 && description.charAt(description.length()-1) == '\n')
+		if (description.length() > 0 && description.charAt(description.length()-1) == endStr.charAt(endStr.length()-1));
 			description = description.substring(0, description.length()-1);
-		s += "Title: " + title + "\n";
-		s += "Description: " + description + "\n";
-		s += "Type: Period\n";
+		s += "Title: " + title + endStr;
+		s += "Description: " + description + endStr;
+		s += "Type: Period" + endStr;
 		s += "Date: " + date.shortForm();
-        s += " - " + (present ? "present\n" : (date2.shortForm() + "\n"));
-		s += "Color: " + color.getRed() + "/" + color.getGreen() + "/" + color.getBlue() + "\n";
-		s += "Category: " + category + "\n";
-		s += "Alignment: null\n";
-		s += "Tags: " + getTagString() + "\n";
+        s += " - " + (present ? "present\n" : (date2.shortForm() + endStr));
+		s += "Color: " + color.getRed() + "/" + color.getGreen() + "/" + color.getBlue() + endStr;
+		s += "Category: " + category + endStr;
+		s += "Alignment: null" + endStr;
+		s += "Tags: " + getTagString() + endStr;
 		s += "Images: ";
 		for (int i = 0; i < images.size(); i++)
 			s += images.get(i).toString() + " | ";
 		if (images.size() > 0)
 			s = s.substring(0, s.length()-2);
 		else
-			s += "none";
+			s += "none\\";
 		
 		return s;
 	}

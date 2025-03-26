@@ -69,8 +69,6 @@ public class Event extends GenericEvent{
 	public String toStringVerbose(){
 		String s = "";
 		String endStr = "\\\n";
-		System.out.println(title);
-		System.out.println(description);
 		if (title.charAt(title.length()-1) == '\n')
 			title = title.substring(0, title.length()-1);
 		if (description.length() > 0 && description.charAt(description.length()-1) == endStr.charAt(endStr.length()-1))

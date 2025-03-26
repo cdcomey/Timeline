@@ -565,6 +565,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			// title and description
 			String title = saveTextPane(titleTextPane);
 			String description = saveTextPane(descriptionTextPane);
+			print("DESCRIPTION: " + description);
 							
 			// date
 			String monthString = monthField.getText();
@@ -672,7 +673,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		if (allChecksPassed){
 			eventTree.remove(selectedEvent);
 			eventTree.add(event);
-			print("full event before saving: " + event.toStringVerbose());
 			selectedEvent = null;
 			updateComponentVisibility(event instanceof Period);
 			writeToFile();
@@ -687,7 +687,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			Document doc = textPane.getDocument();
 			kit.write(out, doc, 0, doc.getLength());
 			text = out.toString();
-			print("in saveTextPane: " + text);
 			int textStart = text.indexOf("\\cf0 ");
 			int textEnd = text.lastIndexOf("\\ul0\\par");
 			if (textStart != -1 && textEnd != -1){
@@ -763,16 +762,15 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 					}
 					
 					eventString = eventString.substring(eventString.indexOf("Images: ") + 8);
+					String[] imgArr = {eventString};
+					if (eventString.indexOf(" | ") >= 0)
+						imgArr = eventString.split(" | ");
 					ArrayList<MyImage> imgList = new ArrayList<MyImage>();
-					if (!eventString.equals("none")){
-						// System.out.println("string: " + eventString);
-						String[] imgArr = eventString.split(" \\| ");
-						// System.out.println("length: " + imgArr.length);
-						
-						for (int j = 0; j < imgArr.length; j++){
-							// System.out.println(imgArr[j]);
-							imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
-						}
+					for (int j = 0; j < imgArr.length; j++){
+						if (imgArr[j].equals("none\\"))
+							break;
+						// print("imgArr for " + title + ": " + imgArr[j]);
+						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
 					if (date2String.equals("present")){
@@ -781,7 +779,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 						int month2 = Integer.parseInt(date2String.substring(0, date2String.indexOf("/")));
 						date2String = date2String.substring(date2String.indexOf("/") + 1);
 						int day2 = Integer.parseInt(date2String.substring(0, date2String.indexOf("/")));
-						date2String = date2String.substring(date2String.indexOf("/") + 1);
+						date2String = date2String.substring(date2String.indexOf("/") + 1, date2String.indexOf("\\"));
+						System.out.println(date2String);
 						int year2 = Integer.parseInt(date2String);
 						
 						event = new Period(title, description, month, day, year, month2, day2, year2, red, green, blue, category, tagList, imgList);
@@ -984,7 +983,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			shiftKeyDown = true;
 		} else if (e.getKeyCode() == 17){ //control
 			controlKeyDown = true;
-			print("controlKeyDown");
 		} else if (e.getKeyCode() == 27){ //escape
 			selectedEvent = null;
 			showTagHider = false;
@@ -1053,7 +1051,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			shiftKeyDown = false;
 		} else if (e.getKeyCode() == 17){ //control
 			controlKeyDown = false;
-			print("controlKeyUp");
 		}
 	}
 	
@@ -1067,7 +1064,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	public void mouseClicked(MouseEvent e){
 		int mouseX = e.getX();
 		int mouseY = e.getY();
-		System.out.println("(" + mouseX + ", " + mouseY + ")");
+		// System.out.println("(" + mouseX + ", " + mouseY + ")");
 		// print(timeline.getDrawnEventCoordinates().size() + " + " + timeline.getDrawnPeriodCoordinates().size());
 		
 		for (int i = 0; i < timeline.getDrawnEventCoordinates().size() + timeline.getDrawnPeriodCoordinates().size(); i++){
@@ -1223,8 +1220,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		if (editMode){
 			updateRTFPane(descriptionTextPane, selectedEvent.getDescription(), true);
 		} else {
-			print("toString");
-			System.out.println(selectedEvent);
 			updateRTFPane(descriptionTextPane, selectedEvent.toString(GenericEvent.today().getYear(), modernDating), false);
 		}
 
@@ -1291,15 +1286,12 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 
 	private void updateRTFPane(JTextPane textPane, String text, boolean editMode){
 		int fontSize = editMode ? 15 : 30;
-		print("updating font size to " + fontSize);
 		try {
 			String rtfHeader = "{\\rtf1\\ansi\\deff0" + 
 			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
 			"\\fs" + (2*fontSize) + "\\pard ";
 			String rtfFooter = "}";
-			print("in updateRTFPane: " + text);
 			String rtfString = rtfHeader + text + rtfFooter;
-			print("rtfString: " + rtfString);
 			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes(StandardCharsets.UTF_8));
 			
 			RTFEditorKit rtfKit = (RTFEditorKit)textPane.getEditorKit();
@@ -1343,7 +1335,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			
 
 		} else {
-			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
 			Element element = doc.getCharacterElement(start);
 			AttributeSet attrs = element.getAttributes();
 			boolean isCurrentlySet = StyleConstants.isBold(attrs) && style.equals(StyleConstants.Bold) ||
@@ -1354,10 +1345,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			StyleConstants.setItalic(newAttrs, style.equals(StyleConstants.Italic) ? !isCurrentlySet : StyleConstants.isItalic(attrs));
 
 			doc.setCharacterAttributes(start, end - start, newAttrs, true);
-			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
 			textPane.setSelectionStart(start);
 			textPane.setSelectionEnd(end);
-			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
 		}
 	}
 

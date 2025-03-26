@@ -59,7 +59,6 @@ public class MyImage{
 	public int[] findDims(int maxWidth, int maxHeight){
 		BufferedImage img = null;
 		int dims[] = {0, 0};
-		// print("image name = " + imageName);
         try {
 
 			File file = new File(imageName);
@@ -75,7 +74,7 @@ public class MyImage{
 	
 	public void drawFromFile(Graphics g, int x, int y, int maxWidth, int maxHeight, boolean xCentered, boolean yCentered){
 		BufferedImage img = null;
-		// print("image name = " + imageName);
+		
         try {
 
 			File file = new File(imageName);
@@ -84,7 +83,7 @@ public class MyImage{
 			int dims[] = findDimsWithImage(img, maxWidth, maxHeight);
 			int width = dims[0];
 			int height = dims[1];
-			// print(width + " " + height);
+
 			if (xCentered)
 				x -= width/2;
 			if (yCentered)
@@ -93,9 +92,5 @@ public class MyImage{
         } catch (IOException e) {
 			System.err.println("IOException in MyImage.drawFromFile()\n" + e);
 		}
-	}
-
-	private static void print(String s){
-		System.out.println(s);
 	}
 }
