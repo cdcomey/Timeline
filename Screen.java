@@ -11,12 +11,20 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.Document;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Element;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.BadLocationException;
 import javax.swing.text.rtf.RTFEditorKit;
 
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.KeyboardFocusManager;
+import java.awt.KeyEventDispatcher;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -31,7 +39,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
-import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
@@ -42,7 +50,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.TreeSet;
 import java.util.ArrayList;
 
-public class Screen extends JPanel implements ActionListener, KeyListener, MouseListener{
+public class Screen extends JPanel implements ActionListener, KeyEventDispatcher, MouseListener{
 	
 	private final int screenWidth = 1700;
 	private final int screenHeight = 950;
@@ -92,8 +100,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	public Screen(String timelineTitle){
 		setLayout(null);
 		setFocusable(true);
-		addKeyListener(this);
 		addMouseListener(this);
+		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		
 		// timelineTitle is the name of the timeline
 		// loads folder with that name into the Timeline class
@@ -105,7 +113,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		initializeJComponents();
 		
 		timeline = new Timeline(screenWidth, screenHeight, timelineTitle);
-		editMode = false;
+		editMode = true;
 		modernDating = false;
 		controlKeyDown = false;
 		shiftKeyDown = false;
@@ -139,7 +147,6 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 
 		descriptionTextPane = new JTextPane();
 		descriptionTextPane.setEditorKit(new RTFEditorKit());
-		descriptionTextPane.setContentType("text/rtf");
 		add(descriptionTextPane);
 		
 		// set 1 is when editMode is false
@@ -559,8 +566,19 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		try{
 			// title and description
 			String title = titleField.getText();
-			String description = descriptionTextPane.getText();
-			
+
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			RTFEditorKit kit = (RTFEditorKit)descriptionTextPane.getEditorKit();
+			Document doc = descriptionTextPane.getDocument();
+			kit.write(out, doc, 0, doc.getLength());
+			String description = out.toString();
+			System.out.println("in saveChanges: " + description);
+			description = description.substring(description.indexOf("\\cf0 ")+5, description.lastIndexOf("\\ul0\\par"));
+			if (description.indexOf("\\i0 ") > description.indexOf("\\i ") && description.indexOf("\\i ") != -1){
+				description = "\\i " + description;
+			}
+			print("after processing: " + description);
+							
 			// date
 			String monthString = monthField.getText();
 			int month = 0;
@@ -659,14 +677,15 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			}
 		} catch (Exception ex){
 			System.err.println("Exception occurred in actionPerformed() attempting to save changes");
-			System.err.println(ex);
-			// ex.printStackTrace();
+			// System.err.println(ex);
+			ex.printStackTrace();
 		}
 		
 		//saving the changed event, then removing the old and adding the new allows the new event to be sorted if the date is changed
 		if (allChecksPassed){
 			eventTree.remove(selectedEvent);
 			eventTree.add(event);
+			print("full event before saving: " + event.toStringVerbose());
 			selectedEvent = null;
 			updateComponentVisibility(event instanceof Period);
 			writeToFile();
@@ -785,7 +804,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 					for (int j = 0; j < imgArr.length; j++){
 						if (imgArr[j].equals("none\\"))
 							break;
-						// print("imgArr: " + imgArr[j]);
+						// print("imgArr for " + title + ": " + imgArr[j]);
 						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
@@ -912,19 +931,20 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	}
 	
 	private void writeToFile(){
-		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".txt");
-		String s = "";
+		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf");
+		String s = "{\\rtf1\\ansi\\deff0" + 
+			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}\n";
 		for (GenericEvent e : eventTree){
-			s += e.toStringVerbose() + "\nend\n\n";
+			s += e.toStringVerbose() + "\nend\\\n\\\n";;
 		}
+
+		s += "}";
 		
-		try(FileOutputStream fos = new FileOutputStream(file);
-                BufferedOutputStream bos = new BufferedOutputStream(fos)) {
+		try(FileOutputStream fos = new FileOutputStream(file)) {
             //convert string to byte array
             byte[] bytes = s.getBytes();
             //write byte array to file
-            bos.write(bytes);
-            bos.close();
+            fos.write(bytes);
             fos.close();
             System.out.println("Data written to file successfully.");
         } catch (IOException e) {
@@ -933,13 +953,27 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
         }
 	}
 
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent e){
+		if (e.getID() == KeyEvent.KEY_PRESSED){
+			keyPressed(e);
+			// print(descriptionTextPane.getText());
+			// printRaw(descriptionTextPane.getText());
+		} else if (e.getID() == KeyEvent.KEY_RELEASED){
+			keyReleased(e);
+		}
+
+		return false;
+	}
+
 	public void keyPressed(KeyEvent e){
-		// System.out.println(e.getKeyCode());
+		System.out.println(e.getKeyCode());
 		
 		if (e.getKeyCode() == 16){ //shift
 			shiftKeyDown = true;
 		} else if (e.getKeyCode() == 17){ //control
 			controlKeyDown = true;
+			print("controlKeyDown");
 		} else if (e.getKeyCode() == 27){ //escape
 			selectedEvent = null;
 			showTagHider = false;
@@ -982,6 +1016,16 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		} else if (e.getKeyCode() == 61){ //equals/plus
 			if (controlKeyDown)
 				timeline.zoomIn();
+		} else if (e.getKeyCode() == 66){ //B
+			if (controlKeyDown && descriptionTextPane.hasFocus()){
+				print("bolded");
+				toggleStyle(descriptionTextPane, StyleConstants.Bold);
+			}
+		} else if (e.getKeyCode() == 73){ //I
+			if (controlKeyDown && descriptionTextPane.hasFocus()){
+				print("italicized");
+				toggleStyle(descriptionTextPane, StyleConstants.Italic);
+			}
 		} else if (e.getKeyCode() == 112){ //F1
 			editMode = !editMode;
 			showTagHider = false;
@@ -1020,6 +1064,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 			shiftKeyDown = false;
 		} else if (e.getKeyCode() == 17){ //control
 			controlKeyDown = false;
+			print("controlKeyUp");
 		}
 	}
 	
@@ -1062,6 +1107,28 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 	private void print(String s){ System.out.println(s); }
 	private void print(int i){ System.out.println(""+i); }
 	private void print(boolean b){ System.out.println(""+b); }
+
+	private void printRaw(String s){
+		if (s == null){
+			print("s is empty");
+			return;
+		}
+
+		print("string is " + s.length());			
+		for (int i = 0; i < s.length(); i++){
+			char chr = s.charAt(i);
+			if (chr == '\r')
+				System.out.print("\\r");
+			else if (chr == '\t')
+				System.out.print("\\t");
+			else if (chr == '\n')
+				System.out.print("\\n");
+			else
+				System.out.print(chr);
+		}
+
+		System.out.println();
+	}
 	
 	private void updateComponentVisibility(boolean isPeriod){
 		boolean showEditTools1 = editMode && selectedEvent == null;
@@ -1099,8 +1166,8 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		deleteImageButton.setVisible(showEditTools2 && selectedEvent.getImages().size() > 0);
 		
 		if (showEditTools2){
-			descriptionTextPane.setEditable(true);
-			descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 15));
+			// descriptionTextPane.setEditable(true);
+			// descriptionTextPane.setFont(new Font("Helvetica", Font.PLAIN, 15));
 			descriptionPane.setBounds(descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2);
 			
 			prevImageButton.setBounds(prevImageButtonX2, prevImageButtonY2, prevImageButton.getWidth(), prevImageButton.getHeight());
@@ -1152,7 +1219,7 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		titleField.setText(selectedEvent.getTitle());
 		// descriptionTextPane.setText(selectedEvent.getDescription());
 		
-		configureRTFPane(descriptionTextPane);
+		updateRTFPane(descriptionTextPane);
 
 		descriptionTextPane.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);
@@ -1215,13 +1282,16 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		}
 	}
 
-	private void configureRTFPane(JTextPane textPane){
+	private void updateRTFPane(JTextPane textPane){
 		try {
 			String rtfHeader = "{\\rtf1\\ansi\\deff0" + 
 			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
-			"\\pard";
+			"\\pard ";
 			String rtfFooter = "}";
+			// String baseStr = selectedEvent.getDescription();
+			print("in updateRTFPane: " + selectedEvent.getDescription());
 			String rtfString = rtfHeader + selectedEvent.getDescription() + rtfFooter;
+			print("rtfString: " + rtfString);
 			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes(StandardCharsets.UTF_8));
 			
 			RTFEditorKit rtfKit = (RTFEditorKit)textPane.getEditorKit();
@@ -1232,6 +1302,59 @@ public class Screen extends JPanel implements ActionListener, KeyListener, Mouse
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	private void toggleStyle(JTextPane textPane, Object style){
+		StyledDocument doc = descriptionTextPane.getStyledDocument();
+		int start = descriptionTextPane.getSelectionStart();
+		int end = descriptionTextPane.getSelectionEnd();
+
+		if (start == end){
+			// No text is selected, toggle the current typing style
+			MutableAttributeSet inputAttributes = textPane.getInputAttributes();
+
+			if (style == StyleConstants.Bold){
+				try {
+					int caretPos = textPane.getCaretPosition();
+					if (caretPos < doc.getLength() && doc.getText(caretPos+1, 1) != "\n")
+						textPane.setCaretPosition(caretPos+1);
+				} catch (BadLocationException e){
+					e.printStackTrace();
+				}
+
+				if (StyleConstants.isBold(inputAttributes))
+					StyleConstants.setBold(inputAttributes, false);
+				else
+					StyleConstants.setBold(inputAttributes, true);
+			} else if (style == StyleConstants.Italic){
+				if (StyleConstants.isItalic(inputAttributes))
+					StyleConstants.setItalic(inputAttributes, false);
+				else
+					StyleConstants.setItalic(inputAttributes, true);
+			}
+			
+
+		} else {
+			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
+			Element element = doc.getCharacterElement(start);
+			AttributeSet attrs = element.getAttributes();
+			boolean isCurrentlySet = StyleConstants.isBold(attrs) && style.equals(StyleConstants.Bold) ||
+									StyleConstants.isItalic(attrs) && style.equals(StyleConstants.Italic);
+
+			SimpleAttributeSet newAttrs = new SimpleAttributeSet(attrs);
+			StyleConstants.setBold(newAttrs, style.equals(StyleConstants.Bold) ? !isCurrentlySet : StyleConstants.isBold(attrs));
+			StyleConstants.setItalic(newAttrs, style.equals(StyleConstants.Italic) ? !isCurrentlySet : StyleConstants.isItalic(attrs));
+
+			doc.setCharacterAttributes(start, end - start, newAttrs, true);
+			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
+			textPane.setSelectionStart(start);
+			textPane.setSelectionEnd(end);
+			print(descriptionTextPane.getSelectionStart() + " " + descriptionTextPane.getSelectionEnd());
+		}
+	}
+
+	private String getRTFFromTextPane(JTextPane textPane){
+		return "";
 	}
 	
 	private void presentFieldHandler(){
