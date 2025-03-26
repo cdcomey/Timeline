@@ -688,10 +688,14 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			kit.write(out, doc, 0, doc.getLength());
 			text = out.toString();
 			print("in saveTextPane: " + text);
-			text = text.substring(text.indexOf("\\cf0 ")+5, text.lastIndexOf("\\ul0\\par"));
-			text = text.substring(0, text.indexOf("\\par"));
-			text = reAddRTFDelimiters(text, 'i');
-			text = reAddRTFDelimiters(text, 'b');
+			int textStart = text.indexOf("\\cf0 ");
+			int textEnd = text.lastIndexOf("\\ul0\\par");
+			if (textStart != -1 && textEnd != -1){
+				text = text.substring(textStart+5, textEnd);
+				text = text.substring(0, text.indexOf("\\par"));
+				text = reAddRTFDelimiters(text, 'i');
+				text = reAddRTFDelimiters(text, 'b');
+			}
 		} catch (Exception e){
 			e.printStackTrace();
 		}
@@ -1215,8 +1219,14 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 	
 	private void initializeFieldText(){
-		updateRTFPane(titleTextPane, selectedEvent.getTitle(), true);		
-		updateRTFPane(descriptionTextPane, selectedEvent.getDescription(), editMode);
+		updateRTFPane(titleTextPane, selectedEvent.getTitle(), true);
+		if (editMode){
+			updateRTFPane(descriptionTextPane, selectedEvent.getDescription(), true);
+		} else {
+			print("toString");
+			System.out.println(selectedEvent);
+			updateRTFPane(descriptionTextPane, selectedEvent.toString(GenericEvent.today().getYear(), modernDating), false);
+		}
 
 		descriptionTextPane.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);

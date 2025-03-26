@@ -167,6 +167,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		}
 		
 		if (title.contains("\\i") && title.contains("\\i0")){
+			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
 			int prevStringX = x-3;
 			do {
 				if (editedTitle.indexOf("\\i") == 0){

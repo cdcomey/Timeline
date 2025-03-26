@@ -55,14 +55,14 @@ public class Event extends GenericEvent{
 	public String toString(int currentYear, boolean modernDating){
 		String s = date.longForm(currentYear, modernDating);
 		if (tags.size() > 0){
-			s += "\nTags: ";
+			s += "\\\nTags: \\";
 			for (int i = 0; i < tags.size(); i++){
 				s += tags.get(i) + ", ";
 			}
 			s = s.substring(0, s.length() - 2);
 		}
 		
-		return s + "\n" + title + "\n\n" + description;
+		return s + "\\\n" + title + "\\\n\\\n" + description;
 	}
 	
 	@Override
