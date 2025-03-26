@@ -62,9 +62,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	private JButton prevImageButton, nextImageButton, findImageButton, saveImageButton, deleteImageButton;
 	
 	private JTextArea tagTextArea, captionTextArea;
-	private JTextPane descriptionTextPane;
-	private JScrollPane descriptionPane, tagPane;
-	private JTextField titleField, monthField, dayField, yearField, month2Field, day2Field, year2Field;
+	private JTextPane titleTextPane, descriptionTextPane;
+	private JScrollPane descriptionScrollPane, tagPane;
+	private JTextField monthField, dayField, yearField, month2Field, day2Field, year2Field;
 	private JTextField redField, greenField, blueField, hexField;
 	private JComboBox<String> eventAlignmentComboBox, eventShapeComboBox, tagComboBox;
 	private JComboBox<Tag> categoryComboBox;
@@ -86,9 +86,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	private String imagePath = "";
 	private final String timelineTitle;
 	
-	// both the descriptionPane and captionTextArea will change bounds depending on whether editMode is on
-	private int descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1;
-	private int descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2;
+	// both the descriptionScrollPane and captionTextArea will change bounds depending on whether editMode is on
+	private int descriptionScrollPaneX1, descriptionScrollPaneY1, descriptionScrollPaneW1, descriptionScrollPaneH1;
+	private int descriptionScrollPaneX2, descriptionScrollPaneY2, descriptionScrollPaneW2, descriptionScrollPaneH2;
 	private int captionX1, captionY1, captionW1, captionH1;
 	private int captionX2, captionY2, captionW2, captionH2;
 	
@@ -138,40 +138,37 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	// helper function for constructor
 	// only run once, used to keep the constructor readable
 	private void initializeJComponents(){
-		titleField = new JTextField("Event Title");
-		titleField.setBounds(30, 30, screenWidth/2, 30);
-		add(titleField);
-		
-		// descriptionTextPane = new JTextArea();
-		// descriptionTextPane.setLineWrap(true);
-		// descriptionTextPane.setWrapStyleWord(true);
+		titleTextPane = new JTextPane();
+		titleTextPane.setEditorKit(new RTFEditorKit());
+		titleTextPane.setBounds(30, 30, screenWidth/2, 30);
+		add(titleTextPane);
 
 		descriptionTextPane = new JTextPane();
 		descriptionTextPane.setEditorKit(new RTFEditorKit());
 		add(descriptionTextPane);
 		
 		// set 1 is when editMode is false
-		descriptionPaneX1 = screenWidth*1/20;
-		descriptionPaneY1 = screenHeight*1/20;
-		descriptionPaneW1 = screenWidth*12/20;
-		descriptionPaneH1 = screenHeight*18/20;
+		descriptionScrollPaneX1 = screenWidth*1/20;
+		descriptionScrollPaneY1 = screenHeight*1/20;
+		descriptionScrollPaneW1 = screenWidth*12/20;
+		descriptionScrollPaneH1 = screenHeight*18/20;
 		
 		// set 2 is when editMode is true
-		descriptionPaneX2 = titleField.getX();
-		descriptionPaneY2 = titleField.getY() + titleField.getHeight() + 30;
-		descriptionPaneW2 = titleField.getWidth();
-		descriptionPaneH2 = screenHeight - 30 - (titleField.getY() + titleField.getHeight() + 30);
+		descriptionScrollPaneX2 = titleTextPane.getX();
+		descriptionScrollPaneY2 = titleTextPane.getY() + titleTextPane.getHeight() + 30;
+		descriptionScrollPaneW2 = titleTextPane.getWidth();
+		descriptionScrollPaneH2 = screenHeight - 30 - (titleTextPane.getY() + titleTextPane.getHeight() + 30);
 		
-		descriptionPane = new JScrollPane(descriptionTextPane); 
-        descriptionPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        descriptionPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
-		add(descriptionPane);
+		descriptionScrollPane = new JScrollPane(descriptionTextPane); 
+        descriptionScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        descriptionScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		descriptionScrollPane.setBounds(descriptionScrollPaneX1, descriptionScrollPaneY1, descriptionScrollPaneW1, descriptionScrollPaneH1);
+		add(descriptionScrollPane);
 		
 		final int fieldHeight = 30;
 		
 		monthField = new JTextField("Month");
-		monthField.setBounds(titleField.getX() + titleField.getWidth() + 30, titleField.getY(), 80, fieldHeight);
+		monthField.setBounds(titleTextPane.getX() + titleTextPane.getWidth() + 30, titleTextPane.getY(), 80, fieldHeight);
 		add(monthField);		
 		
 		dayField = new JTextField("Day");
@@ -216,7 +213,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		isImageEventCheckBox.addActionListener(this);
 		
 		redField = new JTextField("RED");
-		redField.setBounds(monthField.getX(), descriptionPaneY2 + 10, 30, fieldHeight);
+		redField.setBounds(monthField.getX(), descriptionScrollPaneY2 + 10, 30, fieldHeight);
 		add(redField);
 		
 		greenField = new JTextField("GRN");
@@ -348,8 +345,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		add(hideTaggedEventsButton);
 		hideTaggedEventsButton.addActionListener(this);
 		
-		prevImageButtonX1 = descriptionPaneX1 + descriptionPaneW1 + (screenWidth - descriptionPaneX1 - descriptionPaneW1 - 80)/2;
-		prevImageButtonY1 = descriptionPaneY1;
+		prevImageButtonX1 = descriptionScrollPaneX1 + descriptionScrollPaneW1 + (screenWidth - descriptionScrollPaneX1 - descriptionScrollPaneW1 - 80)/2;
+		prevImageButtonY1 = descriptionScrollPaneY1;
 		prevImageButtonX2 = removeTagButton.getX() + removeTagButton.getWidth() - 80;
 		prevImageButtonY2 = removeTagButton.getY() + removeTagButton.getHeight() + buttonHeight;
 		prevImageButton = new JButton("^ ^ ^");
@@ -358,7 +355,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		prevImageButton.addActionListener(this);
 		
 		nextImageButtonX1 = prevImageButtonX1;
-		nextImageButtonY1 = descriptionPaneY1+ descriptionPaneH1 - buttonHeight;
+		nextImageButtonY1 = descriptionScrollPaneY1+ descriptionScrollPaneH1 - buttonHeight;
 		nextImageButtonX2 = prevImageButtonX2;
 		nextImageButtonY2 = prevImageButtonY2 + buttonHeight + 15;
 		nextImageButton = new JButton("v v v");
@@ -381,7 +378,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		add(findImageButton);
 		findImageButton.addActionListener(this);
 		
-		captionX1 = descriptionPaneX1 + descriptionPaneW1 + 5;
+		captionX1 = descriptionScrollPaneX1 + descriptionScrollPaneW1 + 5;
 		captionY1 = prevImageButtonY1 + screenHeight*2/3 + 5;
 		captionW1 = screenWidth - captionX1 - 5;
 		captionH1 = nextImageButtonY1 - captionY1 - 5;
@@ -438,13 +435,13 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 					selectedEvent.getImages().get(imageIndex).drawFromFile(g, 
 						prevImageButtonX1 + prevImageButton.getWidth()/2, 
 						prevImageButtonY1 + prevImageButton.getHeight() + 5 + (screenHeight*2/3 * 1/2), 
-						screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
+						screenWidth - descriptionScrollPaneX1 - descriptionScrollPaneW1 - 2*5, 
 						screenHeight*2/3, true, true);
 					// g.setColor(Color.white);
 					// g.drawRect(
-					// 	descriptionPaneX1 + descriptionPaneW1 + 5,
+					// 	descriptionScrollPaneX1 + descriptionScrollPaneW1 + 5,
 					// 	prevImageButtonY1 + prevImageButton.getHeight() + 5, 
-					// 	screenWidth - descriptionPaneX1 - descriptionPaneW1 - 2*5, 
+					// 	screenWidth - descriptionScrollPaneX1 - descriptionScrollPaneW1 - 2*5, 
 					// 	screenHeight*2/3);
 				}
 			}
@@ -566,19 +563,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		boolean allChecksPassed = false;
 		try{
 			// title and description
-			String title = titleField.getText();
-
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			RTFEditorKit kit = (RTFEditorKit)descriptionTextPane.getEditorKit();
-			Document doc = descriptionTextPane.getDocument();
-			kit.write(out, doc, 0, doc.getLength());
-			String description = out.toString();
-			System.out.println("in saveChanges: " + description);
-			description = description.substring(description.indexOf("\\cf0 ")+5, description.lastIndexOf("\\ul0\\par"));
-			description = reAddRTFDelimiters(description, 'i', " ");
-			description = reAddRTFDelimiters(description, 'b', " ");
-			description = reAddRTFDelimiters(description, 'i', "\\b");
-			description = reAddRTFDelimiters(description, 'b', "\\i");
+			String title = saveTextPane(titleTextPane);
+			String description = saveTextPane(descriptionTextPane);
 							
 			// date
 			String monthString = monthField.getText();
@@ -691,6 +677,26 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			updateComponentVisibility(event instanceof Period);
 			writeToFile();
 		}
+	}
+
+	private String saveTextPane(JTextPane textPane){
+		String text = "";
+		try{
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			RTFEditorKit kit = (RTFEditorKit)textPane.getEditorKit();
+			Document doc = textPane.getDocument();
+			kit.write(out, doc, 0, doc.getLength());
+			text = out.toString();
+			print("in saveTextPane: " + text);
+			text = text.substring(text.indexOf("\\cf0 ")+5, text.lastIndexOf("\\ul0\\par"));
+			text = text.substring(0, text.indexOf("\\par"));
+			text = reAddRTFDelimiters(text, 'i');
+			text = reAddRTFDelimiters(text, 'b');
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+
+		return text;
 	}
 	
 	private void readFromFile(String timelineTitle){
@@ -968,7 +974,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 
 	public void keyPressed(KeyEvent e){
-		System.out.println(e.getKeyCode());
+		// System.out.println(e.getKeyCode());
 		
 		if (e.getKeyCode() == 16){ //shift
 			shiftKeyDown = true;
@@ -995,13 +1001,15 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 				timeline.zoomIn();
 		} else if (e.getKeyCode() == 66){ //B
 			if (controlKeyDown && descriptionTextPane.hasFocus()){
-				print("bolded");
 				toggleStyle(descriptionTextPane, StyleConstants.Bold);
+			} else if (controlKeyDown && titleTextPane.hasFocus()){
+				toggleStyle(titleTextPane, StyleConstants.Bold);
 			}
 		} else if (e.getKeyCode() == 73){ //I
 			if (controlKeyDown && descriptionTextPane.hasFocus()){
-				print("italicized");
 				toggleStyle(descriptionTextPane, StyleConstants.Italic);
+			} else if (controlKeyDown && titleTextPane.hasFocus()){
+				toggleStyle(titleTextPane, StyleConstants.Italic);
 			}
 		} else if (e.getKeyCode() == 112){ //F1
 			editMode = !editMode;
@@ -1136,8 +1144,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		
 		addNewEventButton.setVisible(showEditTools1);
 		addNewPeriodButton.setVisible(showEditTools1);
-		titleField.setVisible(showEditTools2);
-		descriptionPane.setVisible(selectedEvent != null);
+		titleTextPane.setVisible(showEditTools2);
+		descriptionScrollPane.setVisible(selectedEvent != null);
 		monthField.setVisible(showEditTools2);
 		dayField.setVisible(showEditTools2);
 		yearField.setVisible(showEditTools2);
@@ -1161,7 +1169,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		
 		if (showEditTools2){
 			descriptionTextPane.setEditable(true);
-			descriptionPane.setBounds(descriptionPaneX2, descriptionPaneY2, descriptionPaneW2, descriptionPaneH2);
+			descriptionScrollPane.setBounds(descriptionScrollPaneX2, descriptionScrollPaneY2, descriptionScrollPaneW2, descriptionScrollPaneH2);
 			
 			prevImageButton.setBounds(prevImageButtonX2, prevImageButtonY2, prevImageButton.getWidth(), prevImageButton.getHeight());
 			nextImageButton.setBounds(nextImageButtonX2, nextImageButtonY2, nextImageButton.getWidth(), nextImageButton.getHeight());
@@ -1169,7 +1177,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			captionTextArea.setEditable(true);
 		} else if (!editMode && selectedEvent != null){
 			descriptionTextPane.setEditable(false);
-			descriptionPane.setBounds(descriptionPaneX1, descriptionPaneY1, descriptionPaneW1, descriptionPaneH1);
+			descriptionScrollPane.setBounds(descriptionScrollPaneX1, descriptionScrollPaneY1, descriptionScrollPaneW1, descriptionScrollPaneH1);
 			descriptionTextPane.setCaretPosition(0);
 			prevImageButton.setVisible(imageIndex > 0);
 			nextImageButton.setVisible(imageIndex < selectedEvent.getImages().size() - 1);
@@ -1207,10 +1215,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 	
 	private void initializeFieldText(){
-		titleField.setText(selectedEvent.getTitle());
-		// descriptionTextPane.setText(selectedEvent.getDescription());
-		
-		updateRTFPane(descriptionTextPane, editMode);
+		updateRTFPane(titleTextPane, selectedEvent.getTitle(), true);		
+		updateRTFPane(descriptionTextPane, selectedEvent.getDescription(), editMode);
 
 		descriptionTextPane.setCaretPosition(0);
 		tagComboBox.setSelectedIndex(0);
@@ -1273,7 +1279,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 	}
 
-	private void updateRTFPane(JTextPane textPane, boolean editMode){
+	private void updateRTFPane(JTextPane textPane, String text, boolean editMode){
 		int fontSize = editMode ? 15 : 30;
 		print("updating font size to " + fontSize);
 		try {
@@ -1281,9 +1287,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
 			"\\fs" + (2*fontSize) + "\\pard ";
 			String rtfFooter = "}";
-			// String baseStr = selectedEvent.getDescription();
-			print("in updateRTFPane: " + selectedEvent.getDescription());
-			String rtfString = rtfHeader + selectedEvent.getDescription() + rtfFooter;
+			print("in updateRTFPane: " + text);
+			String rtfString = rtfHeader + text + rtfFooter;
 			print("rtfString: " + rtfString);
 			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes(StandardCharsets.UTF_8));
 			
@@ -1298,9 +1303,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 
 	private void toggleStyle(JTextPane textPane, Object style){
-		StyledDocument doc = descriptionTextPane.getStyledDocument();
-		int start = descriptionTextPane.getSelectionStart();
-		int end = descriptionTextPane.getSelectionEnd();
+		StyledDocument doc = textPane.getStyledDocument();
+		int start = textPane.getSelectionStart();
+		int end = textPane.getSelectionEnd();
 
 		if (start == end){
 			// No text is selected, toggle the current typing style
@@ -1346,17 +1351,26 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 	}
 
-	private String reAddRTFDelimiters(String text, char delim1, String delim2){
-		String delimStartText = "\\" + delim1 + delim2;
-		String delimEndText = "\\" + delim1 + "0" + delim2;
+	// private String reAddRTFDelimiters(String text, char delim){
+	// 	String delimStartText = "\\" + delim1 + delim2;
+	// 	String delimEndText = "\\" + delim1 + "0" + delim2;
+	// 	int delimStart = text.indexOf(delimStartText);
+	// 	int delimEnd = text.indexOf(delimEndText);
+	// 	if (delimEnd > -1 && (delimStart == -1 || delimStart > delimEnd)){
+	// 	} else {
+	// 		print("FALSE: " + delimStartText + " (" + delimStart + ")" + " " + delimEndText + " (" + delimEnd + ")");
+	// 	}
+
+	// 	return text;
+	// }
+
+	private String reAddRTFDelimiters(String text, char delim){
+		String delimStartText = "\\" + delim;
+		String delimEndText = "\\" + delim + "0";
 		int delimStart = text.indexOf(delimStartText);
 		int delimEnd = text.indexOf(delimEndText);
-		if (delimEnd > -1 && (delimStart == -1 || delimStart > delimEnd)){
-			print("re-adding " + delim1);
-			text = delimStartText + text;
-		} else {
-			print("FALSE: " + delimStartText + " (" + delimStart + ")" + " " + delimEndText + " (" + delimEnd + ")");
-			print(text);
+		if (delimStart == delimEnd && delimStart != -1){
+			text = delimStartText + " " + text;
 		}
 
 		return text;
