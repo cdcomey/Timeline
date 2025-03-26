@@ -153,34 +153,40 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	
 	public void drawString(Graphics g, int x, int y){
 		Font defaultFont, altFont;
-		String editedTitle;
+		String editedTitle = title;
+		editedTitle = editedTitle.replace("\\i ", "\\i");
+		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
+		editedTitle = editedTitle.replace("\\b ", "\\b");
+		editedTitle = editedTitle.replace("\\b0 ", "\\b0");
 		if (title.contains("\\b") && title.contains("\\b0")){
 			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
 			x -= 2;
 			defaultFont = boldFont;
 			altFont = boldItalicFont;
-			editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
+			editedTitle = editedTitle.replace("\\b0", "").replace("\\b", "");
+			
 		} else {
 			defaultFont = normalFont;
 			altFont = italicFont;
-			editedTitle = title;
 		}
 		
 		if (title.contains("\\i") && title.contains("\\i0")){
-			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
-			int prevStringX = x-3;
+			int prevStringX = x;
 			do {
 				if (editedTitle.indexOf("\\i") == 0){
 					g.setFont(altFont);
 					String frag = editedTitle.substring(editedTitle.indexOf("\\i")+2, editedTitle.indexOf("\\i0"));
 					g.drawString(frag, prevStringX, y);
 					prevStringX += g.getFontMetrics().stringWidth(frag);
+					// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
+					prevStringX += 2;
 					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
 				} else {
 					g.setFont(defaultFont);
 					String frag = editedTitle.substring(0, editedTitle.indexOf("\\i"));
 					g.drawString(frag, prevStringX, y);
 					prevStringX += g.getFontMetrics().stringWidth(frag);
+					prevStringX -= 2;
 					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
 				}
 			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
@@ -209,7 +215,8 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		if (title.contains("\\b") && title.contains("\\b0")){
 			defaultFont = boldFont;
 			altFont = boldItalicFont;
-			editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
+			editedTitle = editedTitle.replace("\\b0", "").replace("\\b", "");
+			// editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
 		} else {
 			defaultFont = normalFont;
 			altFont = italicFont;
@@ -224,6 +231,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
 				} else {
 					g.setFont(defaultFont);
+					// System.out.println(editedTitle);
 					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(0, editedTitle.indexOf("\\i")));
 					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
 				}

@@ -37,8 +37,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -50,6 +48,7 @@ import java.nio.charset.StandardCharsets;
 
 import java.util.TreeSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Screen extends JPanel implements ActionListener, KeyEventDispatcher, MouseListener{
 	
@@ -130,7 +129,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		
 		lightModeColor = new Color(230, 230, 230);
 		darkModeColor = new Color(40, 40, 40);
-		backgroundColor = lightModeColor;
+		backgroundColor = darkMode ? darkModeColor : lightModeColor;
 		
 		updateComponentVisibility(true);
 	}
@@ -565,7 +564,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			// title and description
 			String title = saveTextPane(titleTextPane);
 			String description = saveTextPane(descriptionTextPane);
-			print("DESCRIPTION: " + description);
+			// print("DESCRIPTION: " + description);
 							
 			// date
 			String monthString = monthField.getText();
@@ -680,6 +679,13 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 
 	private String saveTextPane(JTextPane textPane){
+		/*
+		{\rtf1\ansi
+		{\fonttbl\f0\fnil Monospaced;\f1\fnil Lucida Grande;}
+
+		\f1\fs26\i0\b0 The \i italic\i0  box\par
+		}
+		*/
 		String text = "";
 		try{
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -687,11 +693,19 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			Document doc = textPane.getDocument();
 			kit.write(out, doc, 0, doc.getLength());
 			text = out.toString();
-			int textStart = text.indexOf("\\cf0 ");
-			int textEnd = text.lastIndexOf("\\ul0\\par");
+			text = removeRTFTokens(text);
+			int textStart = 0;
+			int textEnd = text.length()-1;
+			/*
+Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'music'. It is dynamic, speeding up as the number of enemies decreases, the first example of dynamic music. It is debatably not music, but the sound of the enemies moving. It is also not melodic, merely four descending notes repeating.
+			*/
+			// int textStart = text.indexOf("\\cf0 ");
+			// int textEnd = text.lastIndexOf("\\ul0\\par");
 			if (textStart != -1 && textEnd != -1){
-				text = text.substring(textStart+5, textEnd);
-				text = text.substring(0, text.indexOf("\\par"));
+				// text = text.substring(textStart+5, textEnd);
+				// if (text.lastIndexOf("\\par") != -1)
+				// 	text = text.substring(0, text.lastIndexOf("\\par"));
+				// text = text.replace("\\fs26", "");
 				text = reAddRTFDelimiters(text, 'i');
 				text = reAddRTFDelimiters(text, 'b');
 			}
@@ -764,7 +778,14 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 					eventString = eventString.substring(eventString.indexOf("Images: ") + 8);
 					String[] imgArr = {eventString};
 					if (eventString.indexOf(" | ") >= 0)
-						imgArr = eventString.split(" | ");
+						imgArr = eventString.split(" \\| ");
+
+					// System.out.print("[");
+					// for (int j = 0; j < imgArr.length-1; j++){
+					// 	System.out.print(imgArr[j] + ", ");
+					// }
+					// System.out.println(imgArr[imgArr.length-1] + "]");
+
 					ArrayList<MyImage> imgList = new ArrayList<MyImage>();
 					for (int j = 0; j < imgArr.length; j++){
 						if (imgArr[j].equals("none\\"))
@@ -773,14 +794,14 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 						imgList.add(new MyImage(imgArr[j].substring(0, imgArr[j].indexOf(";")), imgArr[j].substring(imgArr[j].indexOf(";")+1)));
 					}
 					
-					if (date2String.equals("present")){
+					if (date2String.equals("present\\")){
 						event = new Period(title, description, month, day, year, true, red, green, blue, category, tagList, imgList);
 					} else {
+						// System.out.println(date2String);
 						int month2 = Integer.parseInt(date2String.substring(0, date2String.indexOf("/")));
 						date2String = date2String.substring(date2String.indexOf("/") + 1);
 						int day2 = Integer.parseInt(date2String.substring(0, date2String.indexOf("/")));
 						date2String = date2String.substring(date2String.indexOf("/") + 1, date2String.indexOf("\\"));
-						System.out.println(date2String);
 						int year2 = Integer.parseInt(date2String);
 						
 						event = new Period(title, description, month, day, year, month2, day2, year2, red, green, blue, category, tagList, imgList);
@@ -1254,6 +1275,10 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		
 		if (selectedEvent.isPresent()){
 			presentCheckBox.setSelected(true);
+			if (selectedEvent instanceof Period){
+				monthField.setText(Integer.toString(selectedEvent.getMonth()));
+				dayField.setText(Integer.toString(selectedEvent.getDay()));
+			}
 		} else {
 			presentCheckBox.setSelected(false);
 			monthField.setText(Integer.toString(selectedEvent.getMonth()));
@@ -1292,7 +1317,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			"\\fs" + (2*fontSize) + "\\pard ";
 			String rtfFooter = "}";
 			String rtfString = rtfHeader + text + rtfFooter;
-			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes(StandardCharsets.UTF_8));
+			ByteArrayInputStream rtfStream = new ByteArrayInputStream(rtfString.getBytes());
 			
 			RTFEditorKit rtfKit = (RTFEditorKit)textPane.getEditorKit();
 			Document doc = textPane.getDocument();
@@ -1348,6 +1373,33 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			textPane.setSelectionStart(start);
 			textPane.setSelectionEnd(end);
 		}
+	}
+
+	private String removeRTFTokens(String text){
+		String[] tokens = {"{", "\\rtf1", "\\ansi", "\\fs26", "\\ul0", "\\fonttbl", "\\f0", "\\fnil Monospaced;", 
+		"\\f1", "\\fnil Lucida Grande;", "\\li0", "\\ri0", "\\fi0", "\\ql", "\\fs30", "\\fs60", "\\cf0",
+		"\n}\n\n\\i0\\b0 ", "\n}\n\n\\i0\\b0\n}", "\n}\n\n\\i0", "\n}\n\n", "\n\n}", "\\par\n\\par\n}", "\\par\n}"};
+		for (String token : tokens){
+			text = text.replace(token, "");
+		}
+
+		text = text.replace("\\b \\i\\b0 ", "\\i ");
+		text = text.replace("\\i \\b\\i0 ", "\\b ");
+		// print("text so far: " + text);
+			// \\b \\i \n\}\n\n\\i0\\b0 
+			// text = text.replace("{\\fonttbl\\f0\\fnil Monospaced;\\f1\\fnil Lucida Grande;}", "");
+			// text = text.replace("\\li0\\ri0\\fi0\\ql\\f1\\fs30", "");
+			// text = text.replace("\\ul0\\cf0", "");
+		if (text.length() > 6 && text.substring(0, 6).equals("\\i0\\b0")){
+			text = text.substring(6);
+		} else if (text.length() > 5 && text.substring(0, 5).equals("\\i\\b0")){
+			text = "\\i " + text.substring(5);
+		} else if (text.length() > 5 && text.substring(0, 5).equals("\\b\\i0")){
+			text = "\\b " + text.substring(5);
+		}
+		// System.out.println(Arrays.toString(text.getBytes(StandardCharsets.UTF_8)));
+
+		return text;
 	}
 
 	private String reAddRTFDelimiters(String text, char delim){

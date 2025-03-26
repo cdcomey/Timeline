@@ -142,6 +142,7 @@ public class Timeline{
 		
 		// similarly, this block of code hides any event that does not have a tag the user has said they want to see
 		else if (taggedEventsVisibility == 1){
+			// System.out.println("attempting to show only tagged events");
 			skipEvent = true;
 			for (String each : tags){
 				for (int j = 0; j < eventTags.size(); j++){

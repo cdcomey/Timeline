@@ -81,13 +81,13 @@ public class Period extends GenericEvent{
 		String endStr = "\\\n";
 		if (title.charAt(title.length()-1) == '\n')
 			title = title.substring(0, title.length()-1);
-		if (description.length() > 0 && description.charAt(description.length()-1) == endStr.charAt(endStr.length()-1));
+		if (description.length() > 0 && description.charAt(description.length()-1) == endStr.charAt(endStr.length()-1))
 			description = description.substring(0, description.length()-1);
 		s += "Title: " + title + endStr;
 		s += "Description: " + description + endStr;
 		s += "Type: Period" + endStr;
 		s += "Date: " + date.shortForm();
-        s += " - " + (present ? "present\n" : (date2.shortForm() + endStr));
+        s += " - " + (present ? "present\\\n" : (date2.shortForm() + endStr));
 		s += "Color: " + color.getRed() + "/" + color.getGreen() + "/" + color.getBlue() + endStr;
 		s += "Category: " + category + endStr;
 		s += "Alignment: null" + endStr;
