@@ -574,7 +574,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			String description = out.toString();
 			System.out.println("in saveChanges: " + description);
 			description = description.substring(description.indexOf("\\cf0 ")+5, description.lastIndexOf("\\ul0\\par"));
-			if (description.indexOf("\\i0 ") > description.indexOf("\\i ") && description.indexOf("\\i ") != -1){
+			int italicStart = description.indexOf("\\i ");
+			int italicEnd = description.indexOf("\\i0 ");
+			if (italicEnd > -1 && (italicStart == -1 || italicStart > italicEnd)){
 				description = "\\i " + description;
 			}
 			print("after processing: " + description);
