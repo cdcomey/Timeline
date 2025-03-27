@@ -285,7 +285,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 				s = s.replaceAll(stringToReplace, properNoun);
 			}
 		} catch (FileNotFoundException ex){
-			// System.err.println("FileNotFoundException in Event.capitalize(): could not find " + path);
+			// System.err.println("FileNotFoundException in GenericEvent.capitalize(): could not find " + path);
 		}
 			
 		return s;

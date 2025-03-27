@@ -7,9 +7,10 @@ public class Period extends GenericEvent{
 	private Date date2;
 	
 	//blank event/period
-	public Period(){
+	public Period(int year){
 		title = "New period";
-        date2 = new Date(1, 1, 2);
+		date = new Date(1, 1, year);
+        date2 = new Date(1, 1, year+1);
 	}
 	
 	//standard period with separate dates and a defined color

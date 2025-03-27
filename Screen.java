@@ -467,13 +467,13 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		if (e.getSource() == saveChangesButton){
 			saveChanges();
 		} else if (e.getSource() == addNewEventButton){
-			Event event = new Event();
+			Event event = new Event(timeline.getCenterYear());
 			eventTree.add(event);
 			selectedEvent = event;
 			updateComponentVisibility(false);
 			initializeFieldText();
 		} else if (e.getSource() == addNewPeriodButton){
-			Period period = new Period();
+			Period period = new Period(timeline.getCenterYear());
 			eventTree.add(period);
 			selectedEvent = period;
 			updateComponentVisibility(true);
@@ -706,13 +706,20 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf");
 		// print(file.getName());
 		String eventString = "";
+		eventTree = new TreeSet<GenericEvent>();
          
         try (FileInputStream fis = new FileInputStream(file)) {
 			
             RTFEditorKit rtfKit = new RTFEditorKit();
             StyledDocument doc = new DefaultStyledDocument();
 			String s = new String(Files.readAllBytes(Paths.get("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf")));
-			s = s.substring(s.indexOf("Title: "), s.length());
+
+			// this means the file is empty or broken
+			int titleLoc = s.indexOf("Title: ");
+			if (titleLoc == -1)
+				return;
+
+			s = s.substring(titleLoc, s.length());
 
 			String[] eventArr = {};
 			String regex = "\\nend\\\\\\n\\\\\\n";
@@ -720,7 +727,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			// for (int i = 0; i < eventArr.length; i++){
 			// 	print(i + " " + eventArr[i]);
 			// }
-			eventTree = new TreeSet<GenericEvent>();
 			
 			// we skip the last element because it's just a closing bracket
 			for (int i = 0; i < eventArr.length-1; i++){
@@ -1300,7 +1306,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 
 	// change the JTextPane to be italic, bold, both, or neither
-	private void toggleStyle(JTextPane textPane, StyleConstants style){
+	private void toggleStyle(JTextPane textPane, Object style){
 		StyledDocument doc = textPane.getStyledDocument();
 		int start = textPane.getSelectionStart();
 		int end = textPane.getSelectionEnd();

@@ -8,10 +8,10 @@ public class Event extends GenericEvent{
 	private boolean isImageEvent;
 	
 	//blank event/period
-	public Event(){
+	public Event(int year){
 		title = "New event";
 		description = "";
-		date = new Date(1, 1, 1);
+		date = new Date(1, 1, year);
 		alignment = "Centered";
 		color = new Color(128, 128, 128);
 		hex = RGBtoHex(color.getRed(), color.getGreen(), color.getBlue());
