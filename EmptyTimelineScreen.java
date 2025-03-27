@@ -73,7 +73,7 @@ public class EmptyTimelineScreen extends JPanel implements ActionListener{
             timeline_dir.mkdirs();
             timeline_dir_str += "/";
 
-            File timeline_file = new File(timeline_dir_str + title + ".txt");
+            File timeline_file = new File(timeline_dir_str + title + ".rtf");
             try (FileWriter writer = new FileWriter(timeline_file)) {
                 writer.write("\n");
             } catch (IOException ex) {
