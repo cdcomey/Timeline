@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.util.ArrayList;
 
+// periods are events with a start and end date
 public class Period extends GenericEvent{
 	
 	private Date date2;

@@ -6,7 +6,8 @@ import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.imageio.ImageIO;
-	
+
+// stores an Image and a caption
 public class MyImage{
 	private String imageName, caption;
 	
@@ -28,6 +29,7 @@ public class MyImage{
 	public String getImageName(){ return imageName; }
 	public String getCaption(){ return caption; }
 
+	// scales the image so that it fits into the specified dims
 	private int[] findDimsWithImage(BufferedImage img, int maxWidth, int maxHeight){
 		int width = img.getWidth();
 		int height = img.getHeight();
@@ -56,6 +58,7 @@ public class MyImage{
 		return dims;
 	}
 
+	// get image dimensions
 	public int[] findDims(int maxWidth, int maxHeight){
 		BufferedImage img = null;
 		int dims[] = {0, 0};
@@ -72,9 +75,10 @@ public class MyImage{
 		return dims;
 	}
 	
+	// can either draw from the top-left (default) or centered
 	public void drawFromFile(Graphics g, int x, int y, int maxWidth, int maxHeight, boolean xCentered, boolean yCentered){
 		BufferedImage img = null;
-		
+
         try {
 
 			File file = new File(imageName);

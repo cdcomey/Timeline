@@ -15,6 +15,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*  this allows the user to create their own timeline
+    the user inputs the title, start year, default years displayed on screen, categories, and tags
+    the class creates the necessary directory and files for the Screen class to use
+    the JPanel then transitions from this to a Screen instance
+*/ 
 public class EmptyTimelineScreen extends JPanel implements ActionListener{
     private final int screenWidth = 1000;
     private final int screenHeight = 600;
@@ -104,12 +109,3 @@ public class EmptyTimelineScreen extends JPanel implements ActionListener{
         }
     }
 }
-
-/*
-create ETS in Runner
-create title in ETS
-in ETS, run Runner.switchscreens(title)
-    {
-        layout.show(panel, "Screen2",)
-    }
-*/

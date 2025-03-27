@@ -50,6 +50,7 @@ import java.util.TreeSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// the bulk of the program, this holds the JPanel and handles most of the GUI
 public class Screen extends JPanel implements ActionListener, KeyEventDispatcher, MouseListener{
 	
 	private final int screenWidth = 1700;
@@ -61,7 +62,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	private JButton prevImageButton, nextImageButton, findImageButton, saveImageButton, deleteImageButton;
 	
 	private JTextArea tagTextArea, captionTextArea;
-	private JTextPane titleTextPane, descriptionTextPane;
+	private JTextPane titleTextPane, descriptionTextPane;	// the title and description are JTextPanes to handle RTF
 	private JScrollPane descriptionScrollPane, tagPane;
 	private JTextField monthField, dayField, yearField, month2Field, day2Field, year2Field;
 	private JTextField redField, greenField, blueField, hexField;
@@ -95,7 +96,6 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	private int prevImageButtonX1, prevImageButtonY1, prevImageButtonX2, prevImageButtonY2;
 	private int nextImageButtonX1, nextImageButtonY1, nextImageButtonX2, nextImageButtonY2;
 
-	
 	
 	public Screen(String timelineTitle){
 		setLayout(null);
@@ -428,6 +428,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 					img.drawFromFile(g, xCenter, yCenter, width, height, true, true);
 				}
 			}
+
+			// draw images
 			if (selectedEvent.getImages().size() >= imageIndex+1){
 				if (editMode){
 				} else {
@@ -561,10 +563,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		GenericEvent event = new GenericEvent();
 		boolean allChecksPassed = false;
 		try{
-			// title and description
+			// title and description need special handling for their RTF
 			String title = saveTextPane(titleTextPane);
 			String description = saveTextPane(descriptionTextPane);
-			// print("DESCRIPTION: " + description);
 							
 			// date
 			String monthString = monthField.getText();
@@ -591,7 +592,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 			int red = 128;
 			int green = 128;
 			int blue = 128;
-			
+
 			Tag category = new Tag("null", new Color(red, green, blue));
 			if (categoryComboBox.getSelectedItem() instanceof Tag && !category.equals("<category>")){
 				category = (Tag)categoryComboBox.getSelectedItem();
@@ -679,33 +680,18 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	}
 
 	private String saveTextPane(JTextPane textPane){
-		/*
-		{\rtf1\ansi
-		{\fonttbl\f0\fnil Monospaced;\f1\fnil Lucida Grande;}
-
-		\f1\fs26\i0\b0 The \i italic\i0  box\par
-		}
-		*/
 		String text = "";
 		try{
+			// read in the text from the JTextPane as an RTF string
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			RTFEditorKit kit = (RTFEditorKit)textPane.getEditorKit();
 			Document doc = textPane.getDocument();
 			kit.write(out, doc, 0, doc.getLength());
+
+			// process the string to remove unwanted tokens
 			text = out.toString();
 			text = removeRTFTokens(text);
-			int textStart = 0;
-			int textEnd = text.length()-1;
-			/*
-Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'music'. It is dynamic, speeding up as the number of enemies decreases, the first example of dynamic music. It is debatably not music, but the sound of the enemies moving. It is also not melodic, merely four descending notes repeating.
-			*/
-			// int textStart = text.indexOf("\\cf0 ");
-			// int textEnd = text.lastIndexOf("\\ul0\\par");
-			if (textStart != -1 && textEnd != -1){
-				// text = text.substring(textStart+5, textEnd);
-				// if (text.lastIndexOf("\\par") != -1)
-				// 	text = text.substring(0, text.lastIndexOf("\\par"));
-				// text = text.replace("\\fs26", "");
+			if (text.length() > 0){
 				text = reAddRTFDelimiters(text, 'i');
 				text = reAddRTFDelimiters(text, 'b');
 			}
@@ -961,6 +947,7 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 		}
 	}
 	
+	// print every event between an RTF header and footer, and write to a .rtf file
 	private void writeToFile(){
 		File file = new File("Timelines/" + timelineTitle + "/" + timelineTitle + ".rtf");
 		String s = "{\\rtf1\\ansi\\deff0" + 
@@ -984,6 +971,7 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
         }
 	}
 
+	// this is used so that key presses can still be registered even when a text pane is focused
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent e){
 		if (e.getID() == KeyEvent.KEY_PRESSED){
@@ -1100,6 +1088,8 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 			// print(mouseX <= rect.getX2());
 			// print(mouseY >= rect.getY());
 			// print(mouseY <= rect.getY2());
+			
+			// click on an event/period
 			if (mouseX >= rect.getX() && mouseX <= rect.getX2() && mouseY >= rect.getY() && mouseY <= rect.getY2() && selectedEvent == null){
 				// System.out.println("clicked on " + rect.getEvent().getTitle());
 				selectedEvent = rect.getEvent();
@@ -1131,28 +1121,6 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 	private void print(String s){ System.out.println(s); }
 	private void print(int i){ System.out.println(""+i); }
 	private void print(boolean b){ System.out.println(""+b); }
-
-	private void printRaw(String s){
-		if (s == null){
-			print("s is empty");
-			return;
-		}
-
-		print("string is " + s.length());			
-		for (int i = 0; i < s.length(); i++){
-			char chr = s.charAt(i);
-			if (chr == '\r')
-				System.out.print("\\r");
-			else if (chr == '\t')
-				System.out.print("\\t");
-			else if (chr == '\n')
-				System.out.print("\\n");
-			else
-				System.out.print(chr);
-		}
-
-		System.out.println();
-	}
 	
 	private void updateComponentVisibility(boolean isPeriod){
 		boolean showEditTools1 = editMode && selectedEvent == null;
@@ -1309,9 +1277,11 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 		}
 	}
 
+	// set the font type in the text pane
 	private void updateRTFPane(JTextPane textPane, String text, boolean editMode){
 		int fontSize = editMode ? 15 : 30;
 		try {
+			// for some reason, the actual font is half of the input, so it should be doubled to compensate
 			String rtfHeader = "{\\rtf1\\ansi\\deff0" + 
 			"{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;\\f1\\fswiss\\fcharset0 Helvetica-Oblique;}" + 
 			"\\fs" + (2*fontSize) + "\\pard ";
@@ -1329,13 +1299,14 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 		}
 	}
 
-	private void toggleStyle(JTextPane textPane, Object style){
+	// change the JTextPane to be italic, bold, both, or neither
+	private void toggleStyle(JTextPane textPane, StyleConstants style){
 		StyledDocument doc = textPane.getStyledDocument();
 		int start = textPane.getSelectionStart();
 		int end = textPane.getSelectionEnd();
 
+		// if no text is selected, toggle the current style for future text
 		if (start == end){
-			// No text is selected, toggle the current typing style
 			MutableAttributeSet inputAttributes = textPane.getInputAttributes();
 
 			if (style == StyleConstants.Bold){
@@ -1357,9 +1328,10 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 				else
 					StyleConstants.setItalic(inputAttributes, true);
 			}
-			
-
-		} else {
+		}
+		
+		// if text is selected, toggle that text's style
+		else {
 			Element element = doc.getCharacterElement(start);
 			AttributeSet attrs = element.getAttributes();
 			boolean isCurrentlySet = StyleConstants.isBold(attrs) && style.equals(StyleConstants.Bold) ||
@@ -1375,6 +1347,7 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 		}
 	}
 
+	// remove various unwanted RTF tokens from the start and end of the text
 	private String removeRTFTokens(String text){
 		String[] tokens = {"{", "\\rtf1", "\\ansi", "\\fs26", "\\ul0", "\\fonttbl", "\\f0", "\\fnil Monospaced;", 
 		"\\f1", "\\fnil Lucida Grande;", "\\li0", "\\ri0", "\\fi0", "\\ql", "\\fs30", "\\fs60", "\\cf0",
@@ -1383,13 +1356,9 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 			text = text.replace(token, "");
 		}
 
+		// this, combined with reAddRTFDelimiters, handles edge cases for /i /i0 and /b /b0 being present
 		text = text.replace("\\b \\i\\b0 ", "\\i ");
 		text = text.replace("\\i \\b\\i0 ", "\\b ");
-		// print("text so far: " + text);
-			// \\b \\i \n\}\n\n\\i0\\b0 
-			// text = text.replace("{\\fonttbl\\f0\\fnil Monospaced;\\f1\\fnil Lucida Grande;}", "");
-			// text = text.replace("\\li0\\ri0\\fi0\\ql\\f1\\fs30", "");
-			// text = text.replace("\\ul0\\cf0", "");
 		if (text.length() > 6 && text.substring(0, 6).equals("\\i0\\b0")){
 			text = text.substring(6);
 		} else if (text.length() > 5 && text.substring(0, 5).equals("\\i\\b0")){
@@ -1402,6 +1371,8 @@ Space Invaders\i0 , released for arcades,\i  \i0 was the first game to have 'mus
 		return text;
 	}
 
+	// if the text starts italicized or bolded, the initial \i or \b is cut off
+	// this method re-adds them
 	private String reAddRTFDelimiters(String text, char delim){
 		String delimStartText = "\\" + delim;
 		String delimEndText = "\\" + delim + "0";

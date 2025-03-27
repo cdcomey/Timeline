@@ -75,6 +75,7 @@ public class Timeline{
 		initializeNotchData();
 	}
 
+	// get the center year and zoom level from the config file
 	private void readConfigFile(){
 		try (BufferedReader br = new BufferedReader(new FileReader("Timelines/" + name + "/config.txt"))) {
             String line;
@@ -91,6 +92,7 @@ public class Timeline{
         }
 	}
 	
+	// draw the line and the triangles on the edges
 	private void drawBasicLine(Graphics g){
 		// draw the arrows on the edges of the timeline
 		g.setColor(timelineColor);
@@ -286,6 +288,7 @@ public class Timeline{
 		return dims[1];
 	}
 	
+	// this is mostly a simpler version of findPeriodCoordinates
 	private void findEventCoords(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility){
 		it = eventSet.iterator();
 		int eventX1 = -1;
@@ -301,7 +304,7 @@ public class Timeline{
 		
 		while (it.hasNext()){
 			GenericEvent ge = it.next();
-			if (ge == null || ge instanceof Period)
+			if (ge == null || ge instanceof Period) // like before, we disregard periods
 				continue;
 
 			Event currentEvent = (Event)ge;
@@ -378,7 +381,9 @@ public class Timeline{
 		}
 	}
 	
+	// the main method
 	public void drawTimeline(Graphics g, TreeSet<GenericEvent> eventSet, String[] tags, byte taggedEventsVisibility, boolean modernDating, boolean darkMode){
+		// the timeline will be a distinct color to stand out from the background
 		timelineColor = darkMode ? Color.white : Color.black;
 		
 		drawBasicLine(g);
@@ -407,12 +412,14 @@ public class Timeline{
 			// System.out.println("finished finding image event coords for " + currentYear);
 			// System.out.println(centerYear + " - (" + numberOfNotches + " / 2) = " + deviation);
 			
+			// first, we draw all the lines, because we don't want them to cover up the text of the events
 			for (int j = 0; j < drawnLineCoordinates.size(); j++){
 				Rectangle rect = drawnLineCoordinates.get(j);
 				g.setColor(rect.getColor());
 				rect.drawDashedLine(g, notchHeight, notchWidth);
 			}
 			
+			// next, we draw the periods
 			for (int j = 0; j < drawnPeriodCoordinates.size(); j++){
 				Rectangle rect = drawnPeriodCoordinates.get(j);
 				rect.drawMe(g);
@@ -424,6 +431,7 @@ public class Timeline{
 				}
 			}
 			
+			// finally, we draw the events
 			for (int j = 0; j < drawnEventCoordinates.size(); j++){
 				Rectangle rect = drawnEventCoordinates.get(j);
 				rect.drawMe(g);

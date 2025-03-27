@@ -1,3 +1,5 @@
+// holds a date as three ints
+// contains a variety of methods for processing dates
 public class Date implements Comparable<Date>{
 	
 	private final int month, day, year;
@@ -52,11 +54,13 @@ public class Date implements Comparable<Date>{
 	public int getYear(){ return year; }
 	public String monthString(){ return monthNames[month-1]; }
 	
+	// eg March 15, 2015 (10 years ago)
 	public String longForm(int currentYear, boolean modernDating){
 		int yearsAgo = currentYear - year;
 		return monthString() + " " + day + ", " + yearString(year, modernDating) + " (" + yearsAgo + " year" + (yearsAgo == 1 ? "" : "s") + " ago)";
 	}
 	
+	// eg 03/15/25
 	public String shortForm(){
 		String date = "";
 		date += numFormat(month, 2) + "/";
@@ -65,6 +69,7 @@ public class Date implements Comparable<Date>{
 		return date;
 	}
 	
+	// eg March 15 (on non-leap years) is the 75th day of the year
 	public int getDayOfYear(){
 		int num = 0;
 		for (int i = 0; i < month-1; i++)
@@ -77,6 +82,7 @@ public class Date implements Comparable<Date>{
 		return num;
 	}
 	
+	// eg numFormat(3, 3) -> 003
 	public static String numFormat(int num, int digits){
 		int digitsInNum = String.valueOf(num).length();
 		String s = "";
@@ -117,6 +123,8 @@ public class Date implements Comparable<Date>{
 		return "1";
 	}
 	
+	// the length of time between d1 and d2
+	// output: String, eg 3 years, 2 months, 1 day long
 	public static String dateDiff(Date d1, Date d2){
 		if (d1.equals(d2))
 			return "";

@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.util.ArrayList;
 
+// standard events (ie not periods)
 public class Event extends GenericEvent{
 	
 	private String alignment;

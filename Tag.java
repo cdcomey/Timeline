@@ -1,5 +1,6 @@
 import java.awt.Color;
 
+// tags are used for easier navigation of the timeline to find related events
 public class Tag implements Comparable<Tag>{
 	private final String title, colorName;
 	private final Color color;

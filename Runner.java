@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 public class Runner{
     private static JFrame frame;
 
+    // this will be run in EmptyTimelineScreen once the setup is finished
     public static void switchToMainScreen(String title){
         Screen screen = new Screen(title);
         frame = new JFrame(title);
@@ -16,14 +17,7 @@ public class Runner{
     public static void main(String args[]){
         // load in timeline from files
         if (args.length > 0){
-            Screen sc = new Screen(args[0]);
-            frame = new JFrame(args[0]);
-            
-            frame.add(sc);
-    
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
+            switchToMainScreen(args[0]);
         } 
         
         // load timeline creator

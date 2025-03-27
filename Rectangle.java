@@ -1,6 +1,8 @@
 import java.awt.Graphics;
 import java.awt.Color;
 
+// Rectangles are what are drawn on the timeline
+// they contain an event/period, and display info on that event when clicked
 public class Rectangle{
 	
 	private final int x, x2, width, height;
@@ -59,6 +61,9 @@ public class Rectangle{
 		y2 = y + height;
 	}
 	
+	// draws a rectangle with rounded corners
+	// this is actually two rectangles positioned to look like the main rectangle with corners missing
+	// then small circles to fill in the gaps
 	public void drawMe(Graphics g){
 		int spacing = 5;
 		g.setColor(color);

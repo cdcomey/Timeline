@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.Calendar;
 import java.util.ArrayList;
 
+// most of the information about an Event or Period
 public class GenericEvent implements Comparable<GenericEvent>{
 	
 	protected String title, description;
@@ -151,13 +152,22 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		return true;
 	}
 	
+	// custom method that accounts for RTF
+	// essentially, we cut the string into pieces based on whether they are italicized or not
+	// we then stitch the pieces together so that they appear to be a single string
 	public void drawString(Graphics g, int x, int y){
 		Font defaultFont, altFont;
 		String editedTitle = title;
+
+		// sometimes the RTF markers will have spaces after them, and sometimes they don't
+		// this makes it easier to process
 		editedTitle = editedTitle.replace("\\i ", "\\i");
 		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
 		editedTitle = editedTitle.replace("\\b ", "\\b");
 		editedTitle = editedTitle.replace("\\b0 ", "\\b0");
+
+		// this is only built to handle the entire text being bold, since this is what the bold text was intended for in this project
+		// this sets the fonts to be used for the rest of the method, then removes the bold markers
 		if (title.contains("\\b") && title.contains("\\b0")){
 			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
 			x -= 2;
@@ -170,7 +180,9 @@ public class GenericEvent implements Comparable<GenericEvent>{
 			altFont = italicFont;
 		}
 		
+		// breaks string into italicized and standard pieces, then draws them separately
 		if (title.contains("\\i") && title.contains("\\i0")){
+			// the ending of the previous piece
 			int prevStringX = x;
 			do {
 				if (editedTitle.indexOf("\\i") == 0){
@@ -191,6 +203,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 				}
 			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
 			
+			// if the last part of the string is non-italicized, draw that as well
 			if (editedTitle.length() > 0){
 				g.setFont(defaultFont);
 				g.drawString(editedTitle, prevStringX, y);
@@ -201,6 +214,9 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		}
 	}
 	
+	// determine the length of the title, accounting for the varying width of bold and italic segments
+	// this also removes the RTF markers that are not displayed as text, so should not contribute to the length
+	// this method is similar to drawString
 	public int formattedLength(Graphics g){
 		Font tempFont = g.getFont();
 		int formattedStringWidth = 0;
@@ -208,6 +224,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		Font defaultFont, altFont;
 		String editedTitle = title;
 
+		// similar to drawString, standardize the RTF formatting and set up the fonts
 		editedTitle = editedTitle.replace("\\i ", "\\i");
 		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
 		editedTitle = editedTitle.replace("\\b ", "\\b");
@@ -268,7 +285,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 				s = s.replaceAll(stringToReplace, properNoun);
 			}
 		} catch (FileNotFoundException ex){
-			System.err.println("FileNotFoundException in Event.capitalize(): could not find " + path);
+			// System.err.println("FileNotFoundException in Event.capitalize(): could not find " + path);
 		}
 			
 		return s;
