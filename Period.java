@@ -9,6 +9,7 @@ public class Period extends GenericEvent{
 	//blank event/period
 	public Period(int year){
 		title = "New period";
+		splitTitle = super.splitRTFString(title);
 		date = new Date(1, 1, year);
         date2 = new Date(1, 1, year+1);
 	}
@@ -16,6 +17,7 @@ public class Period extends GenericEvent{
 	//standard period with separate dates and a defined color
 	public Period(String title, String description, int month, int day, int year, int month2, int day2, int year2, int red, int green, int blue, String category, ArrayList<String> tags, ArrayList<MyImage> images){
 		this.title = title;
+		splitTitle = super.splitRTFString(title);
 		this.description = description;
 		date = new Date(month, day, year);
 		date2 = new Date(month2, day2, year2);
@@ -34,6 +36,7 @@ public class Period extends GenericEvent{
 	//period with separate dates, a defined color, and with the end date set to the present day
 	public Period(String title, String description, int month, int day, int year, boolean present, int red, int green, int blue, String category, ArrayList<String> tags, ArrayList<MyImage> images){
 		this.title = title;
+		splitTitle = super.splitRTFString(title);
 		this.description = description;
 		date = new Date(month, day, year);
 		color = new Color(red, green, blue);

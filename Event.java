@@ -10,6 +10,7 @@ public class Event extends GenericEvent{
 	//blank event/period
 	public Event(int year){
 		title = "New event";
+		splitTitle = super.splitRTFString(title);
 		description = "";
 		date = new Date(1, 1, year);
 		alignment = "Centered";
@@ -26,6 +27,7 @@ public class Event extends GenericEvent{
 		String category, String alignment, ArrayList<String> tags, ArrayList<MyImage> images, boolean isImageEvent){
 			
 		this.title = title;
+		splitTitle = super.splitRTFString(title);
 		this.description = capitalize(description);
 		date = new Date(month, day, year);
 		color = new Color(red, green, blue);

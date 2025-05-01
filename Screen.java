@@ -1357,7 +1357,8 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 	private String removeRTFTokens(String text){
 		String[] tokens = {"{", "\\rtf1", "\\ansi", "\\fs26", "\\ul0", "\\fonttbl", "\\f0", "\\fnil Monospaced;", 
 		"\\f1", "\\fnil Lucida Grande;", "\\li0", "\\ri0", "\\fi0", "\\ql", "\\fs30", "\\fs60", "\\cf0",
-		"\n}\n\n\\i0\\b0 ", "\n}\n\n\\i0\\b0\n}", "\n}\n\n\\i0", "\n}\n\n", "\n\n}", "\\par\n\\par\n}", "\\par\n}"};
+		"\n}\n\n\\i0\\b0 ", "\n}\n\n\\i0\\b0\n}", "\n}\n\n\\i0", "\n}\n\n", "\n\n}", "\\par\n\\par\n}", "\\par\n}",
+		"\n\\f1", "\n\\f0"};
 		for (String token : tokens){
 			text = text.replace(token, "");
 		}
@@ -1374,6 +1375,9 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		}
 		// System.out.println(Arrays.toString(text.getBytes(StandardCharsets.UTF_8)));
 
+		text = text.replace("\\i  ", "\\i ");
+		text = text.replace("\\b  ", "\\b ");
+
 		return text;
 	}
 
@@ -1385,7 +1389,7 @@ public class Screen extends JPanel implements ActionListener, KeyEventDispatcher
 		int delimStart = text.indexOf(delimStartText);
 		int delimEnd = text.indexOf(delimEndText);
 		if (delimStart == delimEnd && delimStart != -1){
-			text = delimStartText + " " + text;
+			text = delimStartText + text;
 		}
 
 		return text;

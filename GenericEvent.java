@@ -8,11 +8,31 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Calendar;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+enum FontType {
+	DEFAULT,
+	ITALIC,
+	BOLD,
+	BOLDITALIC
+}
+
+class FormattedString{
+	public FontType fontType;
+	public String text;
+
+	public FormattedString(FontType fontType, String text){
+		this.fontType = fontType;
+		this.text = text;
+	}
+}
 
 // most of the information about an Event or Period
 public class GenericEvent implements Comparable<GenericEvent>{
 	
 	protected String title, description;
+	protected FormattedString[] splitTitle;
 	protected boolean present;
 	protected Date date;
 	protected static String dir;
@@ -33,6 +53,7 @@ public class GenericEvent implements Comparable<GenericEvent>{
 	//blank event/period
 	public GenericEvent(){
 		title = "GenericEvent";
+		splitTitle = splitRTFString(title);
 		description = "";
 		date = new Date(1, 1, 1);
 		color = new Color(128, 128, 128);
@@ -151,120 +172,96 @@ public class GenericEvent implements Comparable<GenericEvent>{
 		tags.add(newTag);
 		return true;
 	}
-	
-	// custom method that accounts for RTF
-	// essentially, we cut the string into pieces based on whether they are italicized or not
-	// we then stitch the pieces together so that they appear to be a single string
-	public void drawString(Graphics g, int x, int y){
-		Font defaultFont, altFont;
-		String editedTitle = title;
 
-		// sometimes the RTF markers will have spaces after them, and sometimes they don't
-		// this makes it easier to process
-		editedTitle = editedTitle.replace("\\i ", "\\i");
-		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
-		editedTitle = editedTitle.replace("\\b ", "\\b");
-		editedTitle = editedTitle.replace("\\b0 ", "\\b0");
+	private static void saveFrag(boolean isBold, boolean isItalic, String frag, ArrayList<FormattedString> fragList){
+		if (frag.isEmpty())
+			return;
+		FontType font = FontType.values()[(isBold ? 2 : 0) + (isItalic ? 1 : 0)];
+		fragList.add(new FormattedString(font, frag));
+	}
 
-		// this is only built to handle the entire text being bold, since this is what the bold text was intended for in this project
-		// this sets the fonts to be used for the rest of the method, then removes the bold markers
-		if (title.contains("\\b") && title.contains("\\b0")){
-			// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
-			x -= 2;
-			defaultFont = boldFont;
-			altFont = boldItalicFont;
-			editedTitle = editedTitle.replace("\\b0", "").replace("\\b", "");
-			
-		} else {
-			defaultFont = normalFont;
-			altFont = italicFont;
-		}
-		
-		// breaks string into italicized and standard pieces, then draws them separately
-		if (title.contains("\\i") && title.contains("\\i0")){
-			// the ending of the previous piece
-			int prevStringX = x;
-			do {
-				if (editedTitle.indexOf("\\i") == 0){
-					g.setFont(altFont);
-					String frag = editedTitle.substring(editedTitle.indexOf("\\i")+2, editedTitle.indexOf("\\i0"));
-					g.drawString(frag, prevStringX, y);
-					prevStringX += g.getFontMetrics().stringWidth(frag);
-					// drawString actually draws several pixels to the right for bolded/italicized text, so this needs to be accounted for
-					prevStringX += 2;
-					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
-				} else {
-					g.setFont(defaultFont);
-					String frag = editedTitle.substring(0, editedTitle.indexOf("\\i"));
-					g.drawString(frag, prevStringX, y);
-					prevStringX += g.getFontMetrics().stringWidth(frag);
-					prevStringX -= 2;
-					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
-				}
-			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
-			
-			// if the last part of the string is non-italicized, draw that as well
-			if (editedTitle.length() > 0){
-				g.setFont(defaultFont);
-				g.drawString(editedTitle, prevStringX, y);
+	protected static FormattedString[] splitRTFString(String title){
+		String editedTitle = title.replaceAll("\\\\([bi]0?)\\s", "\\\\$1");
+
+		boolean isBold = false;
+		boolean isItalic = false;
+		int lastPos = 0;
+		ArrayList<FormattedString> result = new ArrayList<FormattedString>();
+
+		Pattern pattern = Pattern.compile("\\\\(b0?|i0?)");
+		Matcher matcher = pattern.matcher(editedTitle);
+
+		while (matcher.find()){
+			String control = matcher.group(1);
+			int matchStart = matcher.start();
+
+			String frag = editedTitle.substring(lastPos, matchStart);
+			saveFrag(isBold, isItalic, frag, result);
+
+			switch (control) {
+				case "b" -> isBold = true;
+				case "b0" -> isBold = false;
+				case "i" -> isItalic = true;
+				case "i0" -> isItalic = false;
 			}
-		} else {
-			g.setFont(defaultFont);
-			g.drawString(editedTitle, x, y);
+
+			lastPos = matcher.end();
+		}
+
+		if (lastPos < editedTitle.length()){
+			saveFrag(isBold, isItalic, editedTitle.substring(lastPos), result);
+		}
+
+		return result.toArray(new FormattedString[0]);
+	}
+
+	public void drawString(Graphics g, int x, int y){
+		for (FormattedString s : splitTitle){
+			// System.out.println(s.fontType + " | " + s.text);
+			switch (s.fontType){
+				case DEFAULT:
+					g.setFont(normalFont);
+					g.drawString(s.text, x, y);
+					x += g.getFontMetrics().stringWidth(s.text);
+					// x += 2;
+					break;
+				case ITALIC:
+					g.setFont(italicFont);
+					g.drawString(s.text, x, y);
+					x += g.getFontMetrics().stringWidth(s.text);
+					// x -= 2;
+					break;
+				case BOLD:
+					g.setFont(boldFont);
+					g.drawString(s.text, x, y);
+					x += g.getFontMetrics().stringWidth(s.text);
+					break;
+				case BOLDITALIC:
+					g.setFont(boldItalicFont);
+					g.drawString(s.text, x, y);
+					x += g.getFontMetrics().stringWidth(s.text);
+					break;
+			}
 		}
 	}
 	
 	// determine the length of the title, accounting for the varying width of bold and italic segments
-	// this also removes the RTF markers that are not displayed as text, so should not contribute to the length
-	// this method is similar to drawString
 	public int formattedLength(Graphics g){
-		Font tempFont = g.getFont();
-		int formattedStringWidth = 0;
-		
-		Font defaultFont, altFont;
-		String editedTitle = title;
-
-		// similar to drawString, standardize the RTF formatting and set up the fonts
-		editedTitle = editedTitle.replace("\\i ", "\\i");
-		editedTitle = editedTitle.replace("\\i0 ", "\\i0");
-		editedTitle = editedTitle.replace("\\b ", "\\b");
-		editedTitle = editedTitle.replace("\\b0 ", "\\b0");
-		if (title.contains("\\b") && title.contains("\\b0")){
-			defaultFont = boldFont;
-			altFont = boldItalicFont;
-			editedTitle = editedTitle.replace("\\b0", "").replace("\\b", "");
-			// editedTitle = title.substring(title.indexOf("\\b")+2, title.indexOf("\\b0"));
-		} else {
-			defaultFont = normalFont;
-			altFont = italicFont;
-			editedTitle = title;
-		}
-		
-		if (title.contains("\\i") && title.contains("\\i0")){
-			do {
-				if (editedTitle.indexOf("\\i") == 0){
-					g.setFont(altFont);
-					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(editedTitle.indexOf("\\i")+2, editedTitle.indexOf("\\i0")));
-					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i0")+3);
-				} else {
-					g.setFont(defaultFont);
-					// System.out.println(editedTitle);
-					formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle.substring(0, editedTitle.indexOf("\\i")));
-					editedTitle = editedTitle.substring(editedTitle.indexOf("\\i"));
-				}
-			} while (editedTitle.contains("\\i") && editedTitle.contains("\\i0"));
-			
-			if (editedTitle.length() > 0){
-				g.setFont(defaultFont);
-				formattedStringWidth += g.getFontMetrics().stringWidth(editedTitle);
+		Font storageFont = g.getFont();
+		int length = 0;
+		for (FormattedString s : splitTitle){
+			switch (s.fontType){
+				case DEFAULT -> g.setFont(normalFont);
+				case ITALIC -> g.setFont(italicFont);
+				case BOLD -> g.setFont(boldFont);
+				case BOLDITALIC -> g.setFont(boldItalicFont);
 			}
-		} else {
-			g.setFont(defaultFont);
-			formattedStringWidth = g.getFontMetrics().stringWidth(editedTitle);
+
+			length += g.getFontMetrics().stringWidth(s.text);
 		}
-		
-		g.setFont(tempFont);
-		return formattedStringWidth;
+
+		g.setFont(storageFont);
+		return length;
 	}
 	
 	protected String capitalize(String s){
